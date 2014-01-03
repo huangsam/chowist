@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    bson (1.9.2)
+    mongo (1.9.2)
+      bson (~> 1.9.2)
     rack (1.5.2)
     sinatra (1.1.0)
       rack (~> 1.1)
@@ -11,4 +14,5 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  mongo
   sinatra (= 1.1.0)
