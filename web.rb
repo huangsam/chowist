@@ -1,14 +1,6 @@
 require 'sinatra'
 
 get '/' do
-	"Hi!"
-end
-
-get '/:name' do
-	name = params[:name]
-	"Hi there #{name}!"
-end
-
-get '/discount' do
-	markdown :intro
+	content_type :json
+	File.read('public/restaurants.min.json')
 end

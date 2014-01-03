@@ -2,7 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     rack (1.5.2)
-    rdiscount (2.1.7)
     sinatra (1.1.0)
       rack (~> 1.1)
       tilt (~> 1.1)
@@ -12,5 +11,4 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  rdiscount
-  sinatra (= 1.1.0)
+  sinatra
