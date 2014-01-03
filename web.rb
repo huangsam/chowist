@@ -6,7 +6,7 @@ json = JSON.parse(str)
 
 get '/' do
 	content_type :json
-	json.to_json()
+	str
 end
 
 get '/:name' do
