@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'mongo'
 require 'uri'
+require 'bson_ext'
 
 def get_connection
     return @db_connection if @db_connection
@@ -13,10 +14,13 @@ end
  
 db = get_connection
 
-puts "Collections"
-puts "==========="
 collections = db.collection_names
 
+# just show 5
+darray = []
+docs = coll.find().limit(5)
+docs.each{ |doc| darray += doc.to_json }
+
 get '/' do
-	collections
+	darray
 end
