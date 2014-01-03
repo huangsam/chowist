@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'mongo'
 require 'uri'
-require 'bson_ext'
 
 def get_connection
     return @db_connection if @db_connection
