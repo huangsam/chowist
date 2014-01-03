@@ -16,6 +16,9 @@ db = get_connection
 
 collections = db.collection_names
 
+last_collection = collections[-1]
+coll = db.collection(last_collection)
+
 # just show 5
 darray = []
 docs = coll.find().limit(5)
