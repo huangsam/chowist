@@ -1,9 +1,9 @@
 require 'sinatra'
 require 'json'
-#require 'haml'
+require 'haml'
 
 get '/' do
-	erb :index
+	haml :index
 end
 
 get '/places' do

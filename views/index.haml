@@ -1,0 +1,37 @@
+<!doctype html>
+%html.no-js{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Cisco Chef
+    %link{:href => "css/foundation.css", :rel => "stylesheet"}/
+    %script{:src => "js/modernizr.js"}
+  %body
+    .row
+      .large-12.columns
+        %img{:src => "img/logo.png"}/
+    .row
+      .large-12.columns
+        .panel
+          %h2 Pick a restaurant already!
+          %p The map below shows some pretty zesty places around the SJC campus.
+    .row
+      .large-6.medium-6.columns
+        .callout.panel
+          %h4 Use this to gather all of our entries
+          %p
+            %strong GET
+            http://ciscochef.herokuapp.com/places
+      .large-6.medium-6.columns
+        .callout.panel
+          %h4 Use this to gather just one entry
+          %p
+            %strong GET
+            http://ciscochef.herokuapp.com/places/:id
+    .row
+      .large-12.columns
+        %iframe{:height => "480", :src => "https://mapsengine.google.com/map/embed?mid=zuM5w0GHTmnc.k0-psWJiBtLI", :width => "100%"}
+    %script{:src => "js/jquery.js"}
+    %script{:src => "js/foundation.min.js"}
+    :javascript
+      $(document).foundation();
