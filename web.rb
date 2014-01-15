@@ -8,9 +8,7 @@ end
 
 get '/places' do
 	content_type :json
-	str = File.read('public/restaurants.min.json')
-	json = JSON.parse(str)
-	str
+	File.read('public/restaurants.min.json')
 end
 
 get '/places/:id' do

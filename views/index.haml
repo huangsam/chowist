@@ -14,20 +14,20 @@
       .large-12.columns
         .panel
           %h2 Pick a restaurant already!
-          %p The map below shows some pretty zesty places around the SJC campus.
+          %p The map below highlights a slew of zesty places around San Jose.
     .row
       .large-6.medium-6.columns
         .callout.panel
-          %h4 Use this to gather all of our entries
+          %h4 To select all entries
           %p
             %strong GET
-            http://ciscochef.herokuapp.com/places
+            "http://#{request.host}:#{request.port}/places"
       .large-6.medium-6.columns
         .callout.panel
-          %h4 Use this to gather just one entry
+          %h4 To select one entry
           %p
             %strong GET
-            http://ciscochef.herokuapp.com/places/:id
+            "http://#{request.host}:#{request.port}/places/:id"
     .row
       .large-12.columns
         %iframe{:height => "480", :src => "https://mapsengine.google.com/map/embed?mid=zuM5w0GHTmnc.k0-psWJiBtLI", :width => "100%"}
