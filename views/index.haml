@@ -23,14 +23,12 @@
         .callout.panel
           %h4 To select all entries
           %p
-            %strong GET
-            "http://#{request.host}:#{request.port}/places"
+            %strong GET /places
       .large-6.medium-6.columns
         .callout.panel
           %h4 To select one entry
           %p
-            %strong GET
-            "http://#{request.host}:#{request.port}/places/:id"
+            %strong GET /places/:id
     .row
       .large-12.columns
         %iframe{:height => "480", :src => "https://mapsengine.google.com/map/embed?mid=zuM5w0GHTmnc.k0-psWJiBtLI", :width => "100%"}
