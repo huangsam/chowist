@@ -1,19 +1,25 @@
 require 'sinatra'
 require 'json'
-
-str = File.read('public/restaurants.min.json')
-json = JSON.parse(str)
+#require 'haml'
 
 get '/' do
+	erb :index
+end
+
+get '/places' do
 	content_type :json
+	str = File.read('public/restaurants.min.json')
+	json = JSON.parse(str)
 	str
 end
 
-get '/:name' do
+get '/places/:id' do
 	content_type :json
+	str = File.read('public/restaurants.min.json')
+	json = JSON.parse(str)
 	output = ''
 	json["places"].map do |key|
-		if key["_id"] == params[:name]
+		if key["_id"] == params[:id].to_i
 			output = key.to_json()
 			break
 		end

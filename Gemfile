@@ -1,3 +1,4 @@
 source "https://rubygems.org"
-ruby "1.9.3"
+gem 'foreman', '0.61'
+#gem 'haml'
 gem 'sinatra'

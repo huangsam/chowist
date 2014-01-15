@@ -1,0 +1,22 @@
+!!!
+%html
+    %head
+        :css
+            h1,h2{
+                font-family:arial;
+                color:#ffffff;
+            }
+            div#box{
+                background-color: #99ccff;
+                color: #99ccff;
+            }
+
+            %title Cisco Chef
+    %body
+        %p{:align => "center"}
+            %img{:src => "medium.png"}/
+        %div{:id => "box"}
+            %h1{:align => "center"} Pick one!
+            %h2{:align => "center"} A map showing some zesty restaurants around the Bay Area.
+        %p{:align => "center"}
+            %iframe{:height => "480", :src => "https://mapsengine.google.com/map/embed?mid=zuM5w0GHTmnc.k0-psWJiBtLI", :width => "80%"}
