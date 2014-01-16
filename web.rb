@@ -1,8 +1,9 @@
-require 'sinatra'
+require 'bson_ext'
+require 'haml'
 require 'json'
 require 'mongo'
+require 'sinatra'
 require 'uri'
-require 'haml'
 
 def get_connection
 	return @db_connection if @db_connection
@@ -23,7 +24,7 @@ get '/places' do
     output = ''
     coll = db.collection("places")
     coll.find().each do |row|
-        output += row
+        output += row.inspect
     end
     output
 end
@@ -34,7 +35,7 @@ get '/places/:time' do
     output = ''
     coll = db.collection("places")
     coll.find("minutes" => {"$lte" => params[:time].to_i}).each do |row|
-        output += row
+        output += row.inspect
     end
     output
 end
