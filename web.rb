@@ -1,4 +1,3 @@
-require 'bson_ext'
 require 'haml'
 require 'json'
 require 'mongo'
