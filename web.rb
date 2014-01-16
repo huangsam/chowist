@@ -20,23 +20,17 @@ end
 get '/places' do
     content_type :json
     db = get_connection
-    output = ''
     coll = db.collection("places")
-    coll.find().each do |row|
-        output += row.inspect
-    end
-    output
+    cursor = coll.find()
+	JSON.pretty_generate(cursor.to_a)
 end
 
 get '/places/:time' do
     content_type :json
     db = get_connection
-    output = ''
     coll = db.collection("places")
-    coll.find("minutes" => {"$lte" => params[:time].to_i}).each do |row|
-        output += row.inspect
-    end
-    output
+	cursor = coll.find("minutes" => {"$lte" => 60})
+	JSON.pretty_generate(cursor.to_a)
 end
 
 __END__
