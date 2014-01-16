@@ -29,7 +29,7 @@ get '/places/:time' do
     content_type :json
     db = get_connection
     coll = db.collection("places")
-	cursor = coll.find("minutes" => {"$lte" => 60})
+	cursor = coll.find("minutes" => {"$lte" => params[:time].to_i})
 	JSON.pretty_generate(cursor.to_a)
 end
 
