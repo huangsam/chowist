@@ -21,16 +21,16 @@
     .row
       .large-6.medium-6.columns
         .callout.panel
-          %h4 To select all entries
+          %h4 Select all entries!
           %p
             %strong GET
             {basepath}/places
       .large-6.medium-6.columns
         .callout.panel
-          %h4 To select one entry
+          %h4 Eating under a certain time?
           %p
             %strong GET
-            {basepath}/places/:id
+            {basepath}/places/:time
     .row
       .large-12.columns
         %iframe{:height => "480", :src => "https://mapsengine.google.com/map/embed?mid=zuM5w0GHTmnc.k0-psWJiBtLI", :width => "100%"}

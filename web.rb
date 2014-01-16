@@ -20,22 +20,21 @@ end
 get '/places' do
     content_type :json
     db = get_connection
+    output = ''
     coll = db.collection("places")
     coll.find().each do |row|
-        puts row
+        output += row
     end
+    output
 end
 
-get '/places/:id' do
+get '/places/:time' do
     content_type :json
-    str = File.read('public/restaurants.min.json')
-    json = JSON.parse(str)
+    db = get_connection
     output = ''
-    json["places"].map do |key|
-        if key["_id"] == params[:id].to_i
-            output = key.to_json()
-            break
-        end
+    coll = db.collection("places")
+    coll.find("minutes" => {"$lte" => params[:time].to_i}).each do |row|
+        output += row
     end
     output
 end
