@@ -2,6 +2,7 @@ require 'haml'
 require 'json'
 require 'mongo'
 require 'sinatra'
+require 'newrelic_rpm'
 require 'uri'
 
 def get_connection
