@@ -32,12 +32,14 @@
         }
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
       
-        var places = $.ajax({
+        var places;
+
+        $.ajax({
           url: "/places",
           type: "get",
           dataType: "JSON"
           }, function(data){
-            return data
+            places = data
         });
       
         for (i=0; i<places.length;i++) {
