@@ -5,6 +5,8 @@ require 'sinatra'
 require 'newrelic_rpm'
 require 'uri'
 
+include Mongo
+
 def get_connection
     return @db_connection if @db_connection
     db = URI.parse(ENV['MONGOHQ_URL'])
@@ -18,7 +20,7 @@ get '/' do
     haml :index
 end
 
-get '/map-simple' do
+get '/map' do
     erb :map
 end
 
