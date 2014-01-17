@@ -33,7 +33,7 @@
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
       
         var places = $.ajax({
-          url: "http://ciscochef.herokuapp.com/places",
+          url: "/places",
           type: "get",
           dataType: "JSON"
           }, function(data){
