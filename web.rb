@@ -18,6 +18,10 @@ get '/' do
     haml :index
 end
 
+get '/map-simple' do
+    erb :map
+end
+
 get '/places' do
     content_type :json
     db = get_connection

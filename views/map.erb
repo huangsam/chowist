@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Geocoding service</title>
+    <style>
+      html, body, #map-canvas {
+      height: 100%;
+      margin: 0px;
+      padding: 0px
+      }
+      #panel {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOIFjvlaAiWC1LBw72qVNx4S1f2GCF_lA&sensor=false"></script>
+    <script>
+      var map;
+      function initialize() {
+        var mapOptions = {
+          zoom: 12,
+          center: new google.maps.LatLng(37.39, -121.927768)
+        }
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      
+        var places = $.ajax({
+          url: "http://ciscochef.herokuapp.com/places",
+          type: "get",
+          dataType: "JSON"
+          }, function(data){
+            return data
+        });
+      
+        for (i=0; i<places.length;i++) {
+          console.log(places[i])
+          var marker = new google.maps.Marker({
+              map: map,
+              position: new google.maps.LatLng(places[i].lat,places[i].long)
+          });
+        }
+      }
+      
+      google.maps.event.addDomListener(window, 'load', initialize);
+      
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
