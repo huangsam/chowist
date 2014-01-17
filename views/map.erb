@@ -32,26 +32,168 @@
         }
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
       
-        var places;
-
-        $.ajax({
-          type: 'get',
-          url: '/places',
-          dataType: 'jsonp',
-          async: false,
-          success: function(data) {
-            places = data;
+        var places = [
+          {
+            "_id": {"$oid": "52d83f8d14284ffcfe00014f"},
+            "name": "Banana Leaf",
+            "address": "182 Ranch Dr Milpitas CA 95035",
+            "lat": 37.4284055,
+            "long": -121.92023840000002,
+            "minutes": 60,
+            "party": "3-8",
+            "yelp": "http://www.yelp.com/biz/banana-leaf-restaurant-milpitas"
+          },
+          {
+            "_id": {"$oid": "52d83ffdb066aadf2c0000fc"},
+            "name": "Chili Garden",
+            "address": "210 Barber Ct Milpitas CA 95035",
+            "lat": 37.423813,
+            "long": -121.919155,
+            "minutes": 45,
+            "party": "2-4",
+            "yelp": "http://www.yelp.com/biz/chili-garden-restaurant-milpitas"
+          },
+          {
+            "_id": {"$oid": "52d8401a14284f1494000161"},
+            "name": "Dish Dash",
+            "address": "190 S Murphy Ave Sunnyvale CA 94086",
+            "lat": 37.376192,
+            "long": -122.03017,
+            "minutes": 90,
+            "party": "6-10",
+            "yelp": "http://www.yelp.com/biz/dishdash-sunnyvale"
+          },
+          {
+            "_id": {"$oid": "52d84030ec0cf6296d000192"},
+            "name": "Five Guys",
+            "address": "4180 N First St San Jose CA 95112",
+            "lat": 37.416107,
+            "long": -121.954944,
+            "minutes": 30,
+            "party": "2-5",
+            "yelp": "http://www.yelp.com/biz/five-guys-burgers-and-fries-san-jose-6"
+          },
+          {
+            "_id": {"$oid": "52d840473224a8009000011f"},
+            "name": "Gobi Mongolian BBQ",
+            "address": "1135 Tasman Dr Sunnyvale CA 94089",
+            "lat": 37.403799,
+            "long": -121.994674,
+            "minutes": 60,
+            "party": "2-5",
+            "yelp": "http://www.yelp.com/biz/gobi-mongolian-bbq-sunnyvale"
+          },
+          {
+            "_id": {"$oid": "52d840583224a8382200010c"},
+            "name": "Minas Korean BBQ",
+            "address": "3730 N 1st St San Jose CA 95134",
+            "lat": 37.410648,
+            "long": -121.945591,
+            "minutes": 45,
+            "party": "2-4",
+            "yelp": "http://www.yelp.com/biz/minas-korean-bbq-san-jose"
+          },
+          {
+            "_id": {"$oid": "52d84063757e144ff400017a"},
+            "name": "Pho Kim Long",
+            "address": "2082 N Capitol Ave San Jose CA 95132",
+            "lat": 37.407058,
+            "long": -121.886768,
+            "minutes": 60,
+            "party": "4-10",
+            "yelp": "http://www.yelp.com/biz/pho-kim-long-restaurant-san-jose"
+          },
+          {
+            "_id": {"$oid": "52d84073757e145e49000138"},
+            "name": "Sizzling Stone",
+            "address": "510 Barber Ln Milpitas CA 95035",
+            "lat": 37.42039,
+            "long": -121.917119,
+            "minutes": 45,
+            "party": "3-6",
+            "yelp": "http://www.yelp.com/biz/sizzling-stone-milpitas"
+          },
+          {
+            "_id": {"$oid": "52d8408614284ffcfe00015a"},
+            "name": "Smoke Eaters",
+            "address": "3175 Mission College Blvd Santa Clara CA 95054",
+            "lat": 37.388735,
+            "long": -121.98554,
+            "minutes": 60,
+            "party": "3-8",
+            "yelp": "http://www.yelp.com/biz/smokeeaters-santa-clara-2"
+          },
+          {
+            "_id": {"$oid": "52d84093ec0cf6f74c0001af"},
+            "name": "Smoking Pig",
+            "address": "1144 N 4th St San Jose CA 95112",
+            "lat": 37.358758,
+            "long": -121.902704,
+            "minutes": 120,
+            "party": "4-10",
+            "yelp": "http://www.yelp.com/biz/smoking-pig-bbq-san-jose"
+          },
+          {
+            "_id": {"$oid": "52d840aecdf2ff34ce000168"},
+            "name": "El Taco de Oro Restaurant",
+            "address": "5220 N 1st St Alviso CA 95002",
+            "lat": 37.42612,
+            "long": -121.974498,
+            "minutes": 30,
+            "party": "2-4",
+            "yelp": "http://www.yelp.com/biz/el-taco-de-oro-restaurant-and-taqueria-alviso"
+          },
+          {
+            "_id": {"$oid": "52d840bbcdf2ff86cc00010d"},
+            "name": "Tasty Indian Pizza",
+            "address": "528 Lawrence Expy Sunnyvale CA 94085",
+            "lat": 37.382874,
+            "long": -121.995084,
+            "minutes": 30,
+            "party": "2-4",
+            "yelp": "http://www.yelp.com/biz/tasty-indian-pizza-sunnyvale"
+          },
+          {
+            "_id": {"$oid": "52d840c7cdf2ff3a850001a9"},
+            "name": "Thai Orchid Thai Cuisine",
+            "address": "2591 N 1st St San Jose CA 95131",
+            "lat": 37.385773,
+            "long": -121.927768,
+            "minutes": 45,
+            "party": "2-4",
+            "yelp": "http://www.yelp.com/biz/thai-orchid-thai-cuisine-san-jose"
           }
-        })
-      
+        ]
+        var markers = []
         for (i=0; i<places.length;i++) {
-          console.log(places[i])
-          var marker = new google.maps.Marker({
-              map: map,
-              position: new google.maps.LatLng(places[i].lat,places[i].long)
-          });
+          var contentString = '<div id="content">'+
+            '<h1 id="firstHeading" class="firstHeading">'+places[i].name+'</h1>'+
+            '<p>The address is '+places[i].address+'. A party of '+places[i].party+
+            ' people takes about '+places[i].minutes+' minutes.</p>'+
+            '<p><a href="'+places[i].yelp+'">Yelp Website</a></p>'+
+            '</div>'
+          var point = new google.maps.LatLng(places[i].lat,places[i].long)
+          var marker = createMarker(point,contentString)
+      
         }
       }
+      
+      var infowindow = new google.maps.InfoWindow();
+      
+      function createMarker(latlng, html) {
+        var contentString = html;
+        var marker = new google.maps.Marker({
+          position: latlng,
+          map: map,
+          zIndex: Math.round(latlng.lat()*-100000)<<5
+        });
+      
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(contentString); 
+          infowindow.open(map,marker);
+        });
+      }
+      
       
       google.maps.event.addDomListener(window, 'load', initialize);
       
