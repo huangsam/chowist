@@ -1,4 +1,4 @@
-ciscochef
+ciscochef [![Build Status](https://travis-ci.org/huangsam/ciscochef.png?branch=master)](https://travis-ci.org/huangsam/ciscochef)
 =========
 
 <pre>
