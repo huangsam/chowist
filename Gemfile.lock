@@ -20,6 +20,7 @@ GEM
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
+    rake (0.9.6)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -50,6 +51,7 @@ DEPENDENCIES
   mongo (~> 1.9)
   newrelic_rpm
   rack-test
+  rake
   rspec
   simplecov (>= 0.4.2)
   sinatra
