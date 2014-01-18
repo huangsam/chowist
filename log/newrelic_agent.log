@@ -243,3 +243,18 @@
 [01/17/14 20:36:09 -0800 SAMHUA-WS01 (5444)] INFO : Finished instrumentation
 [01/17/14 20:36:09 -0800 SAMHUA-WS01 (5444)] WARN : Failed to determine processor count, assuming 1
 [01/17/14 20:36:15 -0800 SAMHUA-WS01 (5444)] INFO : Doing deferred dependency-detection before Rack startup
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Starting the New Relic agent in "development" environment.
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Reading configuration from config/newrelic.yml
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Enabling the Request Sampler.
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Environment: development
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : No known dispatcher detected.
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Application: My Application
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] WARN : Agent configured not to send data in this environment.
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Installing Mongo instrumentation
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Installing Net instrumentation
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Installing Sinatra instrumentation
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Skipping auto-injection of middleware for Sinatra - requires Sinatra 1.2.1+
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Installing deferred Rack instrumentation
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Finished instrumentation
+[01/18/14 12:04:23 -0800 SCH-VAIO (6180)] WARN : Failed to determine processor count, assuming 1

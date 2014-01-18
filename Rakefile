@@ -1,4 +1,4 @@
-require './web'
+require './app'
 
 task :default => :help
 

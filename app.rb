@@ -36,7 +36,7 @@ post '/places' do
     doc = JSON.parse(request.body.read)
     db = get_connection
     coll = db.collection("places")
-    if doc.yelp =~ URI:regexp and doc.lat and doc.long
+    if ["name", "address", "lat", "long"].all? {|s| doc.key? s}
         coll.insert(doc)
         "Object was successfully created."
     else
