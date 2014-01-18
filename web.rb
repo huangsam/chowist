@@ -26,20 +26,22 @@ end
 
 get '/places' do
     content_type :json
-    return @data if @data
     db = get_connection
     coll = db.collection("places")
     cursor = coll.find()
-    @data = JSON.pretty_generate(cursor.to_a)
-    @data
+    JSON.pretty_generate(cursor.to_a)
 end
 
 post '/places' do
     doc = JSON.parse(request.body.read)
     db = get_connection
     coll = db.collection("places")
-    coll.insert(doc)
-    "The object you added was successfully created."
+    if doc.yelp =~ URI:regexp and doc.lat and doc.long
+        coll.insert(doc)
+        "Object was successfully created."
+    else
+        "Object was unsuccessful."
+    end
 end
 
 get '/places/:time' do
