@@ -1,6 +1,6 @@
 require 'rspec/core/rake_task'
 
-task :default => :help
+task :default => :spec
 
 desc "Run specs"
 task :spec do
