@@ -10,6 +10,7 @@ group :development, :test do
     gem 'foreman', '0.61'
     gem 'rack-test', :require => 'rack/test'
     gem 'rspec'
+    gem 'rspec-core'
     gem 'simplecov', '>=0.4.2', :require => false
 end
 

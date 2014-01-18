@@ -53,5 +53,6 @@ DEPENDENCIES
   rack-test
   rake
   rspec
+  rspec-core
   simplecov (>= 0.4.2)
   sinatra
