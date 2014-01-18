@@ -1,4 +1,9 @@
+require 'haml'
+require 'json'
+require 'mongo'
+require 'newrelic_rpm'
 require 'sinatra/base'
+require 'uri'
 
 module Website
   class MySite < Sinatra::Base
