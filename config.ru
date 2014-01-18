@@ -1,3 +1,8 @@
-require './app'
+#!/usr/bin/env rackup
+# encoding: utf-8
 
-run Sinatra::Application
+require File.expand_path("../config/boot.rb", __FILE__)
+
+run Rack::URLMap.new({
+  "/"    => Website::MySite,
+})
