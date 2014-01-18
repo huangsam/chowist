@@ -19,25 +19,22 @@
           %h2 Pick a restaurant already!
           %p The map below highlights a slew of zesty places around San Jose.
     .row
-      .large-6.medium-6.columns
+      .large-12.columns
+        %iframe{:height => "480", :src => "/map", :width => "100%"}
+    .row
+      %hr
+      .medium-6.columns
         .callout.panel
-          %h4 Need all entries?
+          %h3 Need all entries?
           %p
             %strong GET
             {basepath}/places
-      .large-6.medium-6.columns
+      .medium-6.columns
         .callout.panel
-          %h4 Under a time crunch?
+          %h3 Under a time crunch?
           %p
             %strong GET
             {basepath}/places/:time
-    .row
-      .large-9.columns
-        %iframe{:height => "480", :src => "/map", :width => "100%"}
-      .large-3.columns
-        %a.twitter-timeline{"data-widget-id" => "424335186080169984", :href => "https://twitter.com/search?q=%23ciscochef"} Tweets about "#ciscochef"
-        :javascript
-          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     .row
       .large-12.medium-12.columns
         %h5
