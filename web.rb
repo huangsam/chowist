@@ -26,10 +26,12 @@ end
 
 get '/places' do
     content_type :json
+    return @data if @data
     db = get_connection
     coll = db.collection("places")
     cursor = coll.find()
-    JSON.pretty_generate(cursor.to_a)
+    @data = JSON.pretty_generate(cursor.to_a)
+    @data
 end
 
 post '/places' do
