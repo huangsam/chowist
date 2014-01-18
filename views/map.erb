@@ -38,9 +38,9 @@
             $.each(result, function(i, place) {
               var contentString = '<div id="content">'+
                 '<h1 id="firstHeading" class="firstHeading">'+place.name+'</h1>'+
-                '<p>The address is '+place.address+'. A party of '+place.party+
-                ' people takes about '+place.minutes+' minutes.</p>'+
-                '<p><a href="'+place.yelp+'">Yelp Website</a></p>'+
+                '<p>The address is <strong>'+place.address+'</strong>. A party of <strong>'+
+                place.party+'</strong> people takes about <strong>'+place.minutes+
+                '</strong> minutes.</p>'+'<p><a href="'+place.yelp+'">Yelp Website</a></p>'+
                 '</div>'
               var point = new google.maps.LatLng(place.lat,place.long)
               var marker = createMarker(point,contentString)
