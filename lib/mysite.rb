@@ -6,7 +6,8 @@ module Website
     configure do
       # set app specific settings
       # for example different view folders
-      set :public, "public"
+      set :public_folder, "public"
+      set :views, "views"
     end
 
     get '/' do
