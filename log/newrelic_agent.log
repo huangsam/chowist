@@ -258,3 +258,64 @@
 [01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Installing deferred Rack instrumentation
 [01/18/14 12:04:23 -0800 SCH-VAIO (6180)] INFO : Finished instrumentation
 [01/18/14 12:04:23 -0800 SCH-VAIO (6180)] WARN : Failed to determine processor count, assuming 1
+[01/18/14 20:59:03 -0800 SAMHUA-WS01 (6628)] INFO : Starting the New Relic agent in "development" environment.
+[01/18/14 20:59:03 -0800 SAMHUA-WS01 (6628)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[01/18/14 20:59:03 -0800 SAMHUA-WS01 (6628)] INFO : Reading configuration from config/newrelic.yml
+[01/18/14 20:59:03 -0800 SAMHUA-WS01 (6628)] INFO : Enabling the Request Sampler.
+[01/18/14 20:59:03 -0800 SAMHUA-WS01 (6628)] INFO : Environment: development
+[01/18/14 20:59:03 -0800 SAMHUA-WS01 (6628)] INFO : No known dispatcher detected.
+[01/18/14 20:59:03 -0800 SAMHUA-WS01 (6628)] INFO : Application: My Application
+[01/18/14 20:59:03 -0800 SAMHUA-WS01 (6628)] WARN : Agent configured not to send data in this environment.
+[01/18/14 20:59:03 -0800 SAMHUA-WS01 (6628)] INFO : Installing Mongo instrumentation
+[01/18/14 20:59:04 -0800 SAMHUA-WS01 (6628)] INFO : Installing Net instrumentation
+[01/18/14 20:59:04 -0800 SAMHUA-WS01 (6628)] INFO : Installing Sinatra instrumentation
+[01/18/14 20:59:04 -0800 SAMHUA-WS01 (6628)] INFO : Skipping auto-injection of middleware for Sinatra - requires Sinatra 1.2.1+
+[01/18/14 20:59:04 -0800 SAMHUA-WS01 (6628)] INFO : Installing deferred Rack instrumentation
+[01/18/14 20:59:04 -0800 SAMHUA-WS01 (6628)] INFO : Finished instrumentation
+[01/18/14 20:59:04 -0800 SAMHUA-WS01 (6628)] WARN : Failed to determine processor count, assuming 1
+[01/18/14 20:59:04 -0800 SAMHUA-WS01 (6628)] INFO : Doing deferred dependency-detection before Rack startup
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Starting the New Relic agent in "development" environment.
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Reading configuration from config/newrelic.yml
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Enabling the Request Sampler.
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Environment: development
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : No known dispatcher detected.
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Application: My Application
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] WARN : Agent configured not to send data in this environment.
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Installing Mongo instrumentation
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Installing Net instrumentation
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Installing Sinatra instrumentation
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Installing deferred Rack instrumentation
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Finished instrumentation
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] WARN : Failed to determine processor count, assuming 1
+[01/18/14 21:03:21 -0800 SAMHUA-WS01 (6340)] INFO : Doing deferred dependency-detection before Rack startup
+[01/18/14 21:05:53 -0800 SAMHUA-WS01 (5420)] INFO : Starting the New Relic agent in "development" environment.
+[01/18/14 21:05:53 -0800 SAMHUA-WS01 (5420)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[01/18/14 21:05:53 -0800 SAMHUA-WS01 (5420)] INFO : Reading configuration from config/newrelic.yml
+[01/18/14 21:05:53 -0800 SAMHUA-WS01 (5420)] INFO : Enabling the Request Sampler.
+[01/18/14 21:05:53 -0800 SAMHUA-WS01 (5420)] INFO : Environment: development
+[01/18/14 21:05:53 -0800 SAMHUA-WS01 (5420)] INFO : No known dispatcher detected.
+[01/18/14 21:05:53 -0800 SAMHUA-WS01 (5420)] INFO : Application: My Application
+[01/18/14 21:05:53 -0800 SAMHUA-WS01 (5420)] WARN : Agent configured not to send data in this environment.
+[01/18/14 21:05:54 -0800 SAMHUA-WS01 (5420)] INFO : Installing Mongo instrumentation
+[01/18/14 21:05:54 -0800 SAMHUA-WS01 (5420)] INFO : Installing Net instrumentation
+[01/18/14 21:05:54 -0800 SAMHUA-WS01 (5420)] INFO : Installing Sinatra instrumentation
+[01/18/14 21:05:54 -0800 SAMHUA-WS01 (5420)] INFO : Installing deferred Rack instrumentation
+[01/18/14 21:05:54 -0800 SAMHUA-WS01 (5420)] INFO : Finished instrumentation
+[01/18/14 21:05:54 -0800 SAMHUA-WS01 (5420)] WARN : Failed to determine processor count, assuming 1
+[01/18/14 21:05:54 -0800 SAMHUA-WS01 (5420)] INFO : Doing deferred dependency-detection before Rack startup
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Starting the New Relic agent in "development" environment.
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Reading configuration from config/newrelic.yml
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Enabling the Request Sampler.
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Environment: development
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : No known dispatcher detected.
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Application: My Application
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] WARN : Agent configured not to send data in this environment.
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Installing Mongo instrumentation
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Installing Net instrumentation
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Installing Sinatra instrumentation
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Installing deferred Rack instrumentation
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Finished instrumentation
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] WARN : Failed to determine processor count, assuming 1
+[01/18/14 21:08:24 -0800 SAMHUA-WS01 (7276)] INFO : Doing deferred dependency-detection before Rack startup

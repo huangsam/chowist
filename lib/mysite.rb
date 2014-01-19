@@ -20,10 +20,15 @@ module Website
   class MySite < Sinatra::Base
 
     configure do
-      # set app specific settings
-      # for example different view folders
-      set :public_folder, "public"
-      set :views, "views"
+        # set app specific settings
+        # for example different view folders
+        set :static, true
+        set :public_folder, "public"
+        set :views, "views"
+    end
+
+    not_found do
+        haml :notfound
     end
 
     get '/' do

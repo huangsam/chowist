@@ -6,6 +6,7 @@
 *.swp
 *.rbc
 *.sass-cache
+/.bundle
 /coverage
 /pkg
 /log
