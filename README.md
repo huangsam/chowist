@@ -19,16 +19,13 @@ people around the Bay Area.
 ## TODO list
 
 For this leg of the project, the focus is to make the app
-efficient and resilient to failure. Here are the remaining tasks:
+clean, elegant and resilient. Here are the remaining tasks:
 
 - Create documentation for REST API with wiki or doc software
 - Create unit tests and model helpers as necessary
-- Enable Continuous Integration
-- Optimize Sinatra's routing logic
 
 Some goodies would include the following:
 
-- Create 404, 503, ... custom pages for Sinatra
 - Enable a custom domain like www.ciscochef.com
 - Enable API keys
 - Refine UI/UX of homepage via CSS
