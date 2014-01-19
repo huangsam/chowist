@@ -20,16 +20,13 @@ module Website
   class MySite < Sinatra::Base
 
     configure do
-        # set app specific settings
-        # for example different view folders
         set :static, true
         set :public_folder, "public"
         set :views, "views"
     end
 
-    not_found do
-        haml :notfound
-    end
+    not_found { haml :notfound }
+    error { @error = request.env['sinatra_error'] ; haml :error }
 
     get '/' do
         haml :index
