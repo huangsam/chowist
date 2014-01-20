@@ -16,12 +16,13 @@ that it will look great on computers, smartphones and tablets.
 This map will benefit not only employees at Cisco, but also
 people around the Bay Area.
 
+[Click here](https://github.com/huangsam/ciscochef/wiki) to check out the project wiki!
+
 ## TODO list
 
 For this leg of the project, the focus is to make the app
 clean, elegant and resilient. Here are the remaining tasks:
 
-- Create documentation for REST API with wiki or doc software
 - Create unit tests and model helpers as necessary
 
 Some goodies would include the following:
