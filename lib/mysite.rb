@@ -43,8 +43,19 @@ module Website
     get '/places' do
         content_type :json
         db = get_connection
+
+        time = params[:time]
+        max = params[:max]
+        min = params[:min]
+
+        query = {}
+
+        if time then query["minutes"] = { "$lte" => time.to_i } end
+        if max then query["maxparty"] = { "$lte" => max.to_i } end
+        if min then query["minparty"] = { "$gte" => min.to_i } end
+
         coll = db.collection("places")
-        cursor = coll.find()
+        cursor = coll.find(query)
         JSON.pretty_generate(cursor.to_a)
     end
 
@@ -58,15 +69,6 @@ module Website
         else
             "Object was unsuccessful."
         end
-    end
-
-    # try combining into /places
-    get '/places/:time' do
-        content_type :json
-        db = get_connection
-        coll = db.collection("places")
-        cursor = coll.find("minutes" => {"$lte" => params[:time].to_i})
-        JSON.pretty_generate(cursor.to_a)
     end
 
   end
