@@ -36,10 +36,6 @@ module Website
         erb :map
     end
 
-    get '/notfound' do
-        haml :notfound
-    end
-
     get '/places' do
         content_type :json
         db = get_connection
