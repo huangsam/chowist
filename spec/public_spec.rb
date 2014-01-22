@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Website::MySite do
+describe Website::Public do
     
     def app
-        @app ||= Website::MySite
+        @app ||= Website::Public
     end
     
     context "basic http" do
@@ -21,17 +21,4 @@ describe Website::MySite do
         end
     end
 
-    describe "get /places" do
-        it "should work" do
-            get '/places'
-            expect(last_response).to be_ok
-        end
-    end
-
-    context "posting place" do
-        it "should fail" do
-            post '/place', {:name => "Candy"}.to_json, "content_type" => "application/json"
-            expect(last_response.body) == "Object was unsuccessful."
-        end
-    end
 end
