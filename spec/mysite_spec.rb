@@ -15,7 +15,7 @@ describe Website::MySite do
 
   describe "GET '/map'" do
     it "should be successful" do
-      get '/'
+      get '/map'
       last_response.should be_ok
     end
   end
