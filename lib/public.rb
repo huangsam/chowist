@@ -1,10 +1,6 @@
 require 'haml'
-require 'json'
-require 'mongo'
 require 'newrelic_rpm'
 require 'sinatra/base'
-require 'slim'
-require 'uri'
 
 module Website
 
@@ -16,13 +12,9 @@ module Website
         set :views, "views"
     end
 
-    not_found { slim :notfound }
+    not_found { haml :notfound }
 
     get '/' do
-        slim :index
-    end
-
-    get '/haml' do
         haml :index
     end
 
