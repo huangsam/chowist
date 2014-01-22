@@ -11,7 +11,7 @@ ciscochef
 http://www.patorjk.com/software/taag
 </pre>
 
-This is a web application that shows a dynamically created
+This is a [web application](http://ciscochef.herokuapp.com/) that shows a dynamically created
 map of places that my Cisco coworkers and I have deemed worthy
 of eating at around the San Jose campus. It's responsive, meaning
 that it will look great on computers, smartphones and tablets.
