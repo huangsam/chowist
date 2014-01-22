@@ -3,6 +3,7 @@ require 'json'
 require 'mongo'
 require 'newrelic_rpm'
 require 'sinatra/base'
+require 'slim'
 require 'uri'
 
 module Website
@@ -19,6 +20,10 @@ module Website
 
     get '/' do
         slim :index
+    end
+
+    get '/haml' do
+        haml :index
     end
 
     get '/map' do

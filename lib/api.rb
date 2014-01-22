@@ -1,4 +1,4 @@
-require 'haml'
+require 'slim'
 require 'json'
 require 'mongo'
 require 'newrelic_rpm'
