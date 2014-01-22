@@ -1,7 +1,7 @@
 ciscochef
 =========
 
-[![Build Status](https://travis-ci.org/huangsam/ciscochef.png?branch=master)](https://travis-ci.org/huangsam/ciscochef) [![Dependency Status](https://gemnasium.com/huangsam/ciscochef.png)](https://gemnasium.com/huangsam/ciscochef)
+[![Build Status](https://travis-ci.org/huangsam/ciscochef.png?branch=master)](https://travis-ci.org/huangsam/ciscochef) [![Dependency Status](https://gemnasium.com/huangsam/ciscochef.png)](https://gemnasium.com/huangsam/ciscochef) [![Coverage Status](https://coveralls.io/repos/huangsam/ciscochef/badge.png)](https://coveralls.io/r/huangsam/ciscochef)
 
 <pre>
  __                __        _
