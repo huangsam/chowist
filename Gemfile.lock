@@ -70,4 +70,4 @@ DEPENDENCIES
   rake
   rspec
   rspec-core
-  sinatra
+  sinatra (>= 1.2.0)

@@ -2,7 +2,7 @@ source "https://rubygems.org"
 gem 'bson_ext', '~>1.9'
 gem 'haml'
 gem 'mongo', '~>1.9'
-gem 'sinatra'
+gem 'sinatra', '>=1.2.0'
 gem 'rake'
 
 group :development, :test do
