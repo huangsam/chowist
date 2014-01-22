@@ -1,5 +1,7 @@
-ciscochef [![Build Status](https://travis-ci.org/huangsam/ciscochef.png?branch=master)](https://travis-ci.org/huangsam/ciscochef)
+ciscochef
 =========
+
+[![Build Status](https://travis-ci.org/huangsam/ciscochef.png?branch=master)](https://travis-ci.org/huangsam/ciscochef) [![Dependency Status](https://gemnasium.com/huangsam/ciscochef.png)](https://gemnasium.com/huangsam/ciscochef)
 
 <pre>
  __                __        _
@@ -22,10 +24,6 @@ people around the Bay Area.
 
 For this leg of the project, the focus is to make the app
 clean, elegant and resilient. Here are the remaining tasks:
-
-- Create unit tests and model helpers as necessary
-
-Some goodies would include the following:
 
 - Enable a custom domain like www.ciscochef.com
 - Enable API keys
