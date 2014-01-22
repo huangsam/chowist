@@ -18,7 +18,7 @@ def get_connection
 end
 
 module Website
-  class MySite < Sinatra::Base
+  class Public < Sinatra::Base
 
     configure do
         set :static, true
@@ -35,6 +35,22 @@ module Website
 
     get '/map' do
         erb :map
+    end
+
+  end
+
+  class Protected < Sinatra::Base
+
+    not_found { haml :notfound }
+    error { @error = request.env['sinatra_error'] ; haml :error }
+    
+    def self.new(*)
+        app = Rack::Auth::Digest::MD5.new(super) do |username|
+          {'cisco' => 'chef2'}[username]
+        end
+        app.realm = 'Cisco Chefs Only'
+        app.opaque = 'secretkey'
+        app
     end
 
     get '/places' do
@@ -69,4 +85,6 @@ module Website
     end
 
   end
+
+
 end
