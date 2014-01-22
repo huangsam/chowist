@@ -33,7 +33,7 @@
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         $.ajax({
           type: 'GET',
-          url: '/places',
+          url: '/api/places',
           success: function(result) {
             $.each(result, function(i, place) {
               var contentString = '<div id="content">'+
