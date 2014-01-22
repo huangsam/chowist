@@ -15,11 +15,10 @@ module Website
         set :views, "views"
     end
 
-    not_found { haml :notfound }
-    error { @error = request.env['sinatra_error'] ; haml :error }
+    not_found { slim :notfound }
 
     get '/' do
-        haml :index
+        slim :index
     end
 
     get '/map' do

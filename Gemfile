@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 gem 'bson_ext', '~>1.9'
 gem 'haml'
+gem 'slim'
 gem 'mongo', '~>1.9'
 gem 'sinatra'
 gem 'rake'
