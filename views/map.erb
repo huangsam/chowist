@@ -38,9 +38,11 @@
             $.each(result, function(i, place) {
               var contentString = '<div id="content">'+
                 '<h2 id="firstHeading" class="firstHeading">'+place.name+'</h1>'+
-                '<p>Party size: <strong>'+place.minparty+'-'+place.maxparty+'</strong><br>'+
-                'Time to finish: <strong>'+place.minutes+'</strong> minutes<br>'+
-                '<a href="http://www.yelp.com/biz/'+place.yelp+'">Yelp Website</a></p>'+
+                '<ul><li>Party size: <strong>'+place.minparty+'-'+place.maxparty+'</strong></li>'+
+                '<li>Rating: <strong>'+place.rating+'</strong></li>'+
+                '<li>Time: <strong>'+place.minutes+'</strong> minutes</li></ul>'+
+                '<p>'+place.snippet_text+'<a href="http://www.yelp.com/biz/'+place.yelp+
+                '">(click here)</a></p>'+
                 '</div>'
               var point = new google.maps.LatLng(place.lat,place.long)
               var marker = createMarker(point,contentString)
@@ -50,7 +52,7 @@
       }
       
       var infowindow = new google.maps.InfoWindow({
-        maxWidth: 400
+        maxWidth: 300
       });
       
       function createMarker(latlng, html) {

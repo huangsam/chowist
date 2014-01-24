@@ -37,12 +37,14 @@ module Website
         time = params[:time]
         max = params[:max]
         min = params[:min]
+        rating = params[:rating]
 
         query = {}
 
         if time then query["minutes"] = { "$lte" => time.to_i } end
         if max then query["maxparty"] = { "$lte" => max.to_i } end
         if min then query["minparty"] = { "$gte" => min.to_i } end
+        if rating then query["rating"] = { "$gte" => min.to_i } end
 
         coll = db.collection("places")
         cursor = coll.find(query)
