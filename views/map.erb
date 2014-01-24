@@ -42,7 +42,7 @@
                 '<li>Rating: <strong>'+place.rating+'</strong></li>'+
                 '<li>Time: <strong>'+place.minutes+'</strong> minutes</li></ul>'+
                 '<p>'+place.snippet_text+'<a href="http://www.yelp.com/biz/'+place.yelp+
-                '">(click here)</a></p>'+
+                '"><img src="img/Yelp.png" alt="Yelp it!" title="Yelp it!"></a>'+'</p>'+
                 '</div>'
               var point = new google.maps.LatLng(place.lat,place.long)
               var marker = createMarker(point,contentString)
@@ -52,7 +52,7 @@
       }
       
       var infowindow = new google.maps.InfoWindow({
-        maxWidth: 300
+        maxWidth: 250
       });
       
       function createMarker(latlng, html) {
