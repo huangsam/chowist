@@ -44,7 +44,7 @@ module Website
         if time then query["minutes"] = { "$lte" => time.to_i } end
         if max then query["maxparty"] = { "$lte" => max.to_i } end
         if min then query["minparty"] = { "$gte" => min.to_i } end
-        if rating then query["rating"] = { "$gte" => min.to_i } end
+        if rating then query["rating"] = { "$gte" => rating.to_f } end
 
         coll = db.collection("places")
         cursor = coll.find(query)
