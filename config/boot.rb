@@ -1,7 +1,4 @@
-ENV["RACK_ENV"] ||= "development"
+# Set up gems listed in the Gemfile.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
-require 'rubygems' unless defined?(Gem)
-require 'bundler/setup'
-Bundler.require(:default, ENV["RACK_ENV"].to_sym)
-
-Dir["./lib/**/*.rb"].each { |f| require f }
+require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])

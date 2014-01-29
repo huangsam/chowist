@@ -1,9 +1,4 @@
-#!/usr/bin/env rackup
-# encoding: utf-8
+# This file is used by Rack-based servers to start the application.
 
-require File.expand_path("../config/boot.rb", __FILE__)
-
-run Rack::URLMap.new({
-  "/"    => Website::Public,
-  "/api"   => Website::Api
-})
+require ::File.expand_path('../config/environment',  __FILE__)
+run Rails.application
