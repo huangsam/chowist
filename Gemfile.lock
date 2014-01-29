@@ -63,9 +63,13 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.2)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
     execjs (2.0.2)
     ffi (1.9.3-x86-mingw32)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -86,6 +90,8 @@ GEM
     mongo (1.9.2)
       bson (~> 1.9.2)
     multi_json (1.8.4)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
       mini_portile (~> 0.5.0)
     pg (0.15.1-x86-mingw32)
@@ -190,6 +196,7 @@ DEPENDENCIES
   coffee-rails (= 4.0.1)
   coveralls
   debugger
+  figaro
   haml
   jbuilder (~> 1.2)
   jquery-rails (= 3.0.4)
