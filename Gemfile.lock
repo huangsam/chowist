@@ -63,7 +63,7 @@ DEPENDENCIES
   foreman (= 0.61)
   haml
   mongo
-  newrelic_rpm
+  newrelic_rpm (>= 3.7.1.188)
   rack-test
   rake
   rspec
