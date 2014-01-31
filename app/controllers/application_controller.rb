@@ -24,8 +24,14 @@ class ApplicationController < ActionController::Base
     # +min+ - at least x parameter,
     # +rating+ - at least x parameter
     def places
-        db = Mongo::Connection.new('paulo.mongohq.com', 10016).db('app19845046')
-        db.authenticate('test','mongohq')
+        if ENV['MONGOHQ_URL'] then
+            db = URI.parse(ENV['MONGOHQ_URL'])
+            db_name = db.path.gsub(/^\//, '')
+            dbc = Mongo::Connection.new(db.host, db.port).db(db_name)
+            dbc.authenticate(db.user, db.password) unless (db.user.nil? || db.user.nil?)
+        else
+            dbc = Mongo::Connection.new('127.0.0.1', 27017).db('ciscochef')
+        end
 
         time = params[:time]
         max = params[:max]
@@ -39,7 +45,7 @@ class ApplicationController < ActionController::Base
         if min then query["minparty"] = { "$gte" => min.to_i } end
         if rating then query["rating"] = { "$gte" => rating.to_f } end
 
-        coll = db.collection("places")
+        coll = dbc.collection("places")
         cursor = coll.find(query)
         render json: cursor.to_a
     end

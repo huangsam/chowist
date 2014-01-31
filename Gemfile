@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 group :development, :test do
-    gem 'simplecov', require: false
+    gem 'coveralls', require: false
     gem 'rspec-rails', '2.13.1'
     gem 'rack-test'
 end
