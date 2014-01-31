@@ -1,6 +1,14 @@
-language: ruby
-rvm: "2.0.0"
-services: mongodb
+language:
+    - ruby
+rvm:
+    - 1.9.3
+    - 2.0.0
+    - 2.1.0
+gemfile:
+    - gemfiles/gemfile-travis
+services:
+    - mongodb
 before_script:
     - mongoimport --db ciscochef --collection places --file test.json --jsonArray
-script: bundle exec rspec spec
+script:
+    - bundle exec rspec spec
