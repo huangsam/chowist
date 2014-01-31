@@ -50,14 +50,53 @@ at Cisco, but also people around the Bay Area.</p>
 
 <p><a href="https://github.com/huangsam/ciscochef/wiki">Click here</a> to check out the project wiki!</p>
 
-<h2>
-<a name="todo-list" class="anchor" href="#todo-list"><span class="octicon octicon-link"></span></a>TODO list</h2>
+<h3>
+<a name="ruby-version" class="anchor" href="#ruby-version"><span class="octicon octicon-link"></span></a>Ruby version</h3>
 
-<p>Here are the remaining tasks:</p>
+<p>So far, I have tested on both Ruby 1.9 and 2.0 successfully. Your
+mileage may vary when using anything less than 1.9.</p>
 
-<ul>
-<li>Refine UI/UX of homepage</li>
-</ul>
+<h3>
+<a name="system-dependencies" class="anchor" href="#system-dependencies"><span class="octicon octicon-link"></span></a>System dependencies</h3>
+
+<p><a href="http://railsinstaller.com/">RailsInstaller</a> is a good place to start
+if you're missing something.</p>
+
+<h3>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h3>
+
+<p>Configuration to deal with Heroku's MongoHQ platform is the following:
+<code>url = ENV['MONGOHQ_URL'] || 'mongodb://127.0.0.1:27017/ciscochef'</code></p>
+
+<p>Since I did not deploy a Mongo ORM like <code>mongoid</code> yet, the implication
+is that you will need to execute
+<code>mongoimport --db ciscochef --collection places --file test.json --jsonArray</code>
+in an existing mongo server process on your computer. To
+learn more about MongoDB, <a href="http://docs.mongodb.org/manual/">click here</a> for
+documentation.</p>
+
+<h3>
+<a name="how-to-run-the-test-suite" class="anchor" href="#how-to-run-the-test-suite"><span class="octicon octicon-link"></span></a>How to run the test suite</h3>
+
+<p><code>bundle exec rspec spec</code> should have a complete test suite that runs successfully
+on the environment of your choice, given that you have already done the necessary
+import of JSON data.</p>
+
+<h3>
+<a name="deployment-instructions" class="anchor" href="#deployment-instructions"><span class="octicon octicon-link"></span></a>Deployment instructions</h3>
+
+<p><code>bundle install</code> should get all the necessary dependencies. Do not
+include <code>Gemfile.lock</code> when you push on Windows - it will cause Travis CI
+to fail as mentioned
+<a href="http://stackoverflow.com/questions/3642085/make-bundler-use-different-gems-for-different-platforms">here</a>.</p>
+
+<p><code>rails s</code> should do the trick - defaulting the port over to 3000. If you
+need a different port, then do <code>rails s -p ${PORT}</code>. If you want to use
+<a href="https://github.com/ddollar/foreman">foreman</a>, feel free to do
+<code>foreman start</code> instead. This most closely reflects the production
+environment on Heroku. One note for Windows users: make sure to use only
+foreman version 0.61, since anything above that particular version
+is incompatible with Windows.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/huangsam">huangsam</a></p>
