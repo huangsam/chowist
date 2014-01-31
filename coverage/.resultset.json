@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "C:/Users/samhua/git/ciscochef/config/environment.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "C:/Users/samhua/git/ciscochef/config/application.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/application.rb": [
         1,
         null,
         null,
@@ -38,13 +38,13 @@
         null,
         null
       ],
-      "C:/Users/samhua/git/ciscochef/config/boot.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "C:/Users/samhua/git/ciscochef/config/environments/test.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/environments/test.rb": [
         1,
         null,
         null,
@@ -82,7 +82,7 @@
         1,
         null
       ],
-      "C:/Users/samhua/git/ciscochef/config/initializers/backtrace_silencers.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -91,13 +91,13 @@
         null,
         null
       ],
-      "C:/Users/samhua/git/ciscochef/config/initializers/filter_parameter_logging.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "C:/Users/samhua/git/ciscochef/config/initializers/inflections.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -115,14 +115,14 @@
         null,
         null
       ],
-      "C:/Users/samhua/git/ciscochef/config/initializers/mime_types.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "C:/Users/samhua/git/ciscochef/config/initializers/secret_token.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -136,12 +136,12 @@
         null,
         1
       ],
-      "C:/Users/samhua/git/ciscochef/config/initializers/session_store.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "C:/Users/samhua/git/ciscochef/config/initializers/wrap_parameters.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -152,7 +152,7 @@
         1,
         null
       ],
-      "C:/Users/samhua/git/ciscochef/config/routes.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/config/routes.rb": [
         1,
         1,
         null,
@@ -214,14 +214,14 @@
         null,
         null
       ],
-      "C:/Users/samhua/git/ciscochef/app/helpers/application_helper.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/app/helpers/application_helper.rb": [
         null,
         null,
         null,
         1,
         null
       ],
-      "C:/Users/samhua/git/ciscochef/app/controllers/application_controller.rb": [
+      "C:/Users/samhua/git/ciscochef-samhua/app/controllers/application_controller.rb": [
         null,
         null,
         1,
@@ -247,6 +247,9 @@
         null,
         null,
         null,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -270,6 +273,6 @@
         null
       ]
     },
-    "timestamp": 1391152319
+    "timestamp": 1391185456
   }
 }

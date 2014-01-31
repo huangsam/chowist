@@ -24,14 +24,11 @@ class ApplicationController < ActionController::Base
     # +min+ - at least x parameter,
     # +rating+ - at least x parameter
     def places
-        if ENV['MONGOHQ_URL'] then
-            db = URI.parse(ENV['MONGOHQ_URL'])
-            db_name = db.path.gsub(/^\//, '')
-            dbc = Mongo::Connection.new(db.host, db.port).db(db_name)
-            dbc.authenticate(db.user, db.password) unless (db.user.nil? || db.user.nil?)
-        else
-            dbc = Mongo::Connection.new('127.0.0.1', 27017).db('ciscochef')
-        end
+        url = ENV['MONGOHQ_URL'] || 'mongodb://127.0.0.1:27017/ciscochef'
+        db = URI.parse(url)
+        db_name = db.path.gsub(/^\//, '')
+        dbc = Mongo::Connection.new(db.host, db.port).db(db_name)
+        dbc.authenticate(db.user, db.password) unless (db.user.nil? || db.user.nil?)
 
         time = params[:time]
         max = params[:max]
