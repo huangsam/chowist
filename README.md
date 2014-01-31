@@ -22,8 +22,8 @@ at Cisco, but also people around the Bay Area.
 
 ### Ruby version
 
-So far, I have tested on both Ruby 1.9 and 2.0 successfully. Your
-mileage may vary when using anything less than 1.9.
+So far, I have tested the app on both Ruby 1.9.3, 2.0.0 and 2.1.0
+successfully. Your mileage may vary when using otherwise.
 
 ### System dependencies
 
