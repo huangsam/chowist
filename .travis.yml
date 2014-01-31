@@ -1,6 +1,8 @@
 language: ruby
 rvm: "2.0.0"
 services: mongodb
+before_install:
+    - gem install nokogiri
 before_script:
     - mongoimport --db ciscochef --collection places --file test.json --jsonArray
 script: bundle exec rspec spec

@@ -23,7 +23,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml'
 gem 'json'
 gem 'mongo'
-gem 'nokogiri'
 gem 'bson_ext'
 
 gem 'thin'

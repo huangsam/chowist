@@ -182,7 +182,6 @@ DEPENDENCIES
   json
   mongo
   newrelic_rpm
-  nokogiri
   rack-test
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
