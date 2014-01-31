@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>
   File: README
   
@@ -61,10 +61,8 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><div id='filecontents'><h1>ciscochef</h1>
-
-<p><a href="https://travis-ci.org/huangsam/ciscochef"><img src="https://travis-ci.org/huangsam/ciscochef.png?branch=master" alt="Build Status" /></a> <a href="https://gemnasium.com/huangsam/ciscochef"><img src="https://gemnasium.com/huangsam/ciscochef.png" alt="Dependency Status" /></a> <a href="https://coveralls.io/r/huangsam/ciscochef"><img src="https://coveralls.io/repos/huangsam/ciscochef/badge.png" alt="Coverage Status" /></a></p>
-
+    <div id="content"><div id='filecontents'>
+<h1 id="label-ciscochef">ciscochef</h1>
 <pre class="code ruby"><code class="ruby">
  __                __        _
 /   o  _  _  _    /  |_  _ _|_
@@ -72,46 +70,49 @@
 
 http://www.patorjk.com/software/taag
 </code></pre>
+<p>This is a <a href="http://ciscochef.herokuapp.com/">web application</a>
+that shows a dynamically created map of places that my Cisco coworkers and
+I have deemed worthy of eating at around the San Jose campus. It&#39;s
+responsive, meaning that it will look great on computers, smartphones and
+tablets. This map will benefit not only employees at Cisco, but also people
+around the Bay Area.</p>
 
+<p><a href="https://github.com/huangsam/ciscochef/wiki">Click here</a> to
+check out the project wiki!</p>
 
-<p>This is a <a href="http://ciscochef.herokuapp.com/">web application</a> that
-shows a dynamically created map of places that my Cisco coworkers
-and I have deemed worthy of eating at around the San Jose campus.
-It's responsive, meaning that it will look great on computers,
-smartphones and tablets. This map will benefit not only employees
-at Cisco, but also people around the Bay Area.</p>
+<h3 id="label-Ruby+version">Ruby version</h3>
 
-<p><a href="https://github.com/huangsam/ciscochef/wiki">Click here</a> to check out the project wiki!</p>
+<p>So far, I have tested on both Ruby 1.9 and 2.0 successfully. Your mileage
+may vary when using anything less than 1.9.</p>
 
-<h3>Ruby version</h3>
+<h3 id="label-System+dependencies">System dependencies</h3>
 
-<p>So far, I have tested on both Ruby 1.9 and 2.0 successfully. Your mileage may vary when using anything less than 1.9.</p>
+<p><a href="http://railsinstaller.com/">RailsInstaller</a> is a good place to
+start if you&#39;re missing something.</p>
 
-<h3>System dependencies</h3>
+<h3 id="label-Configuration">Configuration</h3>
 
-<p><a href="http://railsinstaller.com/">RailsInstaller</a> is a good place to start if you're missing something.</p>
+<p>MongoDB is currently configured in a janky-way. Feel free to improve upon
+the design. I haven&#39;t found many good ways to do imports/exports for
+<code>:development</code>, <code>:test</code> and <code>:production</code>.
+Therefore, I&#39;m forced to use the external port for Heroku - YUCK!</p>
 
-<h3>Configuration</h3>
+<h3 id="label-How+to+run+the+test+suite">How to run the test suite</h3>
 
-<p>MongoDB is currently configured in a janky-way. Feel free to improve upon the design. I haven't found many good ways to do imports/exports for <code>:development</code>, <code>:test</code> and <code>:production</code>. Therefore, I'm forced to use the external port for Heroku - YUCK!</p>
+<p><code>bundle exec rspec spec</code> should have a complete test suite that
+runs successfully.</p>
 
-<h3>How to run the test suite</h3>
+<h3 id="label-Deployment+instructions">Deployment instructions</h3>
 
-<p><code>bundle exec rspec spec</code> should have a complete test suite that runs successfully.</p>
-
-<h3>Services</h3>
-
-<p>Coveralls, Travis CI and Gemnasium are implemented via service hooks for my GitHub page. Please use your own hooks if you plan to fork my project.</p>
-
-<h3>Deployment instructions</h3>
-
-<p><code>rails s</code> should do the trick! If you want to use <a href="https://github.com/ddollar/foreman">foreman</a>, feel free to do <code>foreman start</code> instead.</p>
+<p><code>rails s</code> should do the trick! If you want to use <a
+href="https://github.com/ddollar/foreman">foreman</a>, feel free to do
+<code>foreman start</code> instead.</p>
 </div></div>
 
     <div id="footer">
-  Generated on Tue Jan 28 22:55:00 2014 by
+  Generated on Thu Jan 30 23:35:27 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.3 (ruby-1.9.3).
+  0.8.7.3 (ruby-2.0.0).
 </div>
 
   </body>

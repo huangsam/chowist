@@ -1,8 +1,6 @@
 ciscochef
 =========
 
-[![Build Status](https://travis-ci.org/huangsam/ciscochef.png?branch=master)](https://travis-ci.org/huangsam/ciscochef) [![Dependency Status](https://gemnasium.com/huangsam/ciscochef.png)](https://gemnasium.com/huangsam/ciscochef) [![Coverage Status](https://coveralls.io/repos/huangsam/ciscochef/badge.png)](https://coveralls.io/r/huangsam/ciscochef)
-
 <pre>
  __                __        _
 /   o  _  _  _    /  |_  _ _|_
@@ -35,10 +33,6 @@ MongoDB is currently configured in a janky-way. Feel free to improve upon the de
 ### How to run the test suite
 
 `bundle exec rspec spec` should have a complete test suite that runs successfully.
-
-### Services
-
-Coveralls, Travis CI and Gemnasium are implemented via service hooks for my GitHub page. Please use your own hooks if you plan to fork my project.
 
 ### Deployment instructions
 

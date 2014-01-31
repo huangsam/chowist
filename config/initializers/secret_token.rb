@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Ciscochef::Application.config.secret_key_base = 'c6866fac08382ce6a454ddc09e37ee08afa769557eab5dfbd8102fa5bdb508852888b0f50ef4898b71d5769fdb0e1b9c772e7d794520c925d0d58e4297e0683d'
+Ciscochef::Application.config.secret_key_base = 'ec8549dfadd9daf3cb8fc83ed65924d01b906bb08626328a152d32c479c617b8ea8f2213c8651604573ec5cf1140f9e084897d3d7a46b4351f6d9a57ac30e7f4'
