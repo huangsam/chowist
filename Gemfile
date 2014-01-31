@@ -4,7 +4,7 @@ gem 'rails', '4.0.2'
 
 group :development, :test do
     gem 'coveralls', require: false
-    gem 'rspec-rails', '2.13.1'
+    gem 'rspec-rails', '2.14.1'
     gem 'rack-test'
 end
 
@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
 gem 'haml'
 gem 'json'
@@ -32,6 +32,6 @@ group :doc do
 end
 
 group :production do
-    gem 'rails_12factor', '0.0.2'
+    gem 'rails_12factor', '>= 0.0.2'
     gem 'newrelic_rpm'
 end
