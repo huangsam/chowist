@@ -33,5 +33,5 @@ end
 
 group :production do
     gem 'rails_12factor', '>= 0.0.2'
-    gem 'newrelic_rpm'
+    gem 'newrelic_rpm', '>= 3.7.1.188'
 end
