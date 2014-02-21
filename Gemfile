@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.3'
+gem 'rails', '~>4.0.3'
 
 group :development, :test do
     gem 'coveralls', require: false
@@ -14,7 +14,7 @@ group :test do
 end
 
 gem 'sass-rails', '~>4.0.0'
-gem 'uglifier', '1.3.0'
+gem 'uglifier', '~>2.4.0'
 gem 'coffee-rails', '~>4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -32,6 +32,6 @@ group :doc do
 end
 
 group :production do
-    gem 'rails_12factor', '>=0.0.2'
+    gem 'rails_12factor', '~>0.0.2'
     gem 'newrelic_rpm', '>=3.7.2.195'
 end
