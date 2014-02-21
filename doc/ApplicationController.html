@@ -196,7 +196,8 @@ primitive form of <code>authenticate</code></p>
     <span class="summary_desc"><div class='inline'>
 <p>returns a JSON array of places: <code>time</code> - under x parameter,
 <code>max</code> - at most x parameter, <code>min</code> - at least x
-parameter, <code>rating</code> - at least x parameter.</p>
+parameter, <code>rating</code> - at least x parameter,
+<code>category</code> - matches x parameter.</p>
 </div></span>
   
 </li>
@@ -308,7 +309,8 @@ parameter, <code>rating</code> - at least x parameter.</p>
     
 <p>returns a JSON array of places: <code>time</code> - under x parameter,
 <code>max</code> - at most x parameter, <code>min</code> - at least x
-parameter, <code>rating</code> - at least x parameter</p>
+parameter, <code>rating</code> - at least x parameter,
+<code>category</code> - matches x parameter</p>
 
 
   </div>
@@ -322,7 +324,6 @@ parameter, <code>rating</code> - at least x parameter</p>
       <pre class="lines">
 
 
-26
 27
 28
 29
@@ -344,10 +345,13 @@ parameter, <code>rating</code> - at least x parameter</p>
 45
 46
 47
-48</pre>
+48
+49
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_places'>places</span>
     <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MONGOHQ_URL</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mongodb://127.0.0.1:27017/ciscochef</span><span class='tstring_end'>&#39;</span></span>
@@ -360,6 +364,7 @@ parameter, <code>rating</code> - at least x parameter</p>
     <span class='id identifier rubyid_max'>max</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:max</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_min'>min</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:min</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_rating'>rating</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:rating</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_category'>category</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:category</span><span class='rbracket'>]</span>
 
     <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
 
@@ -367,6 +372,7 @@ parameter, <code>rating</code> - at least x parameter</p>
     <span class='kw'>if</span> <span class='id identifier rubyid_max'>max</span> <span class='kw'>then</span> <span class='id identifier rubyid_query'>query</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>maxparty</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$lte</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_max'>max</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='rbrace'>}</span> <span class='kw'>end</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_min'>min</span> <span class='kw'>then</span> <span class='id identifier rubyid_query'>query</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>minparty</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$gte</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_min'>min</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='rbrace'>}</span> <span class='kw'>end</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_rating'>rating</span> <span class='kw'>then</span> <span class='id identifier rubyid_query'>query</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rating</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$gte</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_rating'>rating</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='rbrace'>}</span> <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_category'>category</span> <span class='kw'>then</span> <span class='id identifier rubyid_query'>query</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>categories</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$in</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_category'>category</span><span class='rbracket'>]</span> <span class='rbrace'>}</span> <span class='kw'>end</span>
 
     <span class='id identifier rubyid_coll'>coll</span> <span class='op'>=</span> <span class='id identifier rubyid_dbc'>dbc</span><span class='period'>.</span><span class='id identifier rubyid_collection'>collection</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>places</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_cursor'>cursor</span> <span class='op'>=</span> <span class='id identifier rubyid_coll'>coll</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_query'>query</span><span class='rparen'>)</span>
@@ -382,7 +388,7 @@ parameter, <code>rating</code> - at least x parameter</p>
 </div>
 
     <div id="footer">
-  Generated on Fri Jan 31 13:20:08 2014 by
+  Generated on Fri Feb 21 11:52:47 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>
