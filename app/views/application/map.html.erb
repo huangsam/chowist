@@ -37,10 +37,13 @@
           success: function(result) {
             $.each(result, function(i, place) {
               var contentString = '<div id="content">'+
-                '<h2 id="firstHeading" class="firstHeading">'+place.name+'</h1>'+
-                '<ul><li>Party size: <strong>'+place.minparty+'-'+place.maxparty+'</strong></li>'+
+                '<h2 id="firstHeading" class="firstHeading">'+place.name+'</h2>'+
+                '<ul>'+
+                '<li>Categories: <strong>'+place.categories.join(', ')+'</strong></li>'+
+                '<li>Party size: <strong>'+place.minparty+'-'+place.maxparty+'</strong></li>'+
                 '<li>Rating: <strong>'+place.rating+'</strong></li>'+
-                '<li>Time: <strong>'+place.minutes+'</strong> minutes</li></ul>'+
+                '<li>Time: <strong>'+place.minutes+'</strong> minutes</li>'+
+                '</ul>'+
                 '<p>'+place.snippet_text+'<a href="http://www.yelp.com/biz/'+place.yelp+
                 '"><img src="img/Yelp.png" alt="Yelp it!" title="Yelp it!"></a>'+'</p>'+
                 '</div>'
@@ -52,7 +55,7 @@
       }
       
       var infowindow = new google.maps.InfoWindow({
-        maxWidth: 250
+        maxWidth: 285
       });
       
       function createMarker(latlng, html) {
