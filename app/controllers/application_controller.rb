@@ -22,7 +22,8 @@ class ApplicationController < ActionController::Base
     # +time+ - under x parameter,
     # +max+ - at most x parameter,
     # +min+ - at least x parameter,
-    # +rating+ - at least x parameter
+    # +rating+ - at least x parameter,
+    # +category+ - matches x parameter
     def places
         url = ENV['MONGOHQ_URL'] || 'mongodb://127.0.0.1:27017/ciscochef'
         db = URI.parse(url)
@@ -34,6 +35,7 @@ class ApplicationController < ActionController::Base
         max = params[:max]
         min = params[:min]
         rating = params[:rating]
+        category = params[:category]
 
         query = {}
 
@@ -41,6 +43,7 @@ class ApplicationController < ActionController::Base
         if max then query["maxparty"] = { "$lte" => max.to_i } end
         if min then query["minparty"] = { "$gte" => min.to_i } end
         if rating then query["rating"] = { "$gte" => rating.to_f } end
+        if category then query["categories"] = { "$in" => [category] } end
 
         coll = dbc.collection("places")
         cursor = coll.find(query)
