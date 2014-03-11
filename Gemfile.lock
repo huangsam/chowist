@@ -81,7 +81,7 @@ GEM
     mongo (1.9.2)
       bson (~> 1.9.2)
     multi_json (1.9.0)
-    newrelic_rpm (3.7.3.199)
+    newrelic_rpm (3.7.3.204)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
@@ -183,11 +183,11 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   coveralls
   haml
-  jbuilder (~> 2.0.3)
+  jbuilder (~> 2.0.0)
   jquery-rails
   json
   mongo
-  newrelic_rpm (>= 3.7.3.199)
+  newrelic_rpm (>= 3.7.3.204)
   rack-test
   rails (~> 4.0.3)
   rails_12factor (~> 0.0.2)

@@ -18,7 +18,7 @@ gem 'uglifier', '~>2.4.0'
 gem 'coffee-rails', '~>4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~>2.0.3'
+gem 'jbuilder', '~>2.0.0'
 
 gem 'haml'
 gem 'json'
@@ -33,5 +33,5 @@ end
 
 group :production do
     gem 'rails_12factor', '~>0.0.2'
-    gem 'newrelic_rpm', '>=3.7.3.199'
+    gem 'newrelic_rpm', '>=3.7.3.204'
 end
