@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "C:/Users/samhua/git/ciscochef-samhua/app/helpers/application_helper.rb": [
+      "/Users/yumeihuang/projects/ciscochef/app/helpers/application_helper.rb": [
         null,
         null,
         null,
         1,
         null
       ],
-      "C:/Users/samhua/git/ciscochef-samhua/app/controllers/application_controller.rb": [
+      "/Users/yumeihuang/projects/ciscochef/app/controllers/application_controller.rb": [
         null,
         null,
         1,
@@ -34,6 +34,7 @@
         null,
         null,
         null,
+        null,
         1,
         1,
         1,
@@ -45,9 +46,11 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -60,6 +63,6 @@
         null
       ]
     },
-    "timestamp": 1391205742
+    "timestamp": 1394506852
   }
 }
