@@ -193,7 +193,7 @@ DEPENDENCIES
   mongo
   newrelic_rpm (>= 3.8.0.218)
   rack-test
-  rails (~> 4.1.0)
+  rails (= 4.1.1)
   rails_12factor (~> 0.0.2)
   rspec-rails (~> 2.14.1)
   sass-rails (~> 4.0.0)
