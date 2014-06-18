@@ -28,9 +28,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    bson (1.10.1)
-    bson_ext (1.10.1)
-      bson (~> 1.10.1)
+    bson (1.10.2)
+    bson_ext (1.10.2)
+      bson (~> 1.10.2)
     builder (3.2.2)
     capybara (2.3.0)
       mime-types (>= 1.16)
@@ -55,7 +55,7 @@ GEM
       thor
     daemons (1.1.9)
     diff-lcs (1.2.5)
-    docile (1.1.4)
+    docile (1.1.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
@@ -66,7 +66,7 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.6.9)
-    jbuilder (2.1.0)
+    jbuilder (2.1.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.0)
@@ -78,9 +78,9 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     mini_portile (0.6.0)
-    minitest (5.3.4)
-    mongo (1.10.1)
-      bson (~> 1.10.1)
+    minitest (5.3.5)
+    mongo (1.10.2)
+      bson (= 1.10.2)
     multi_json (1.10.1)
     newrelic_rpm (3.8.1.221)
     nokogiri (1.6.2.1)
@@ -173,6 +173,8 @@ GEM
       coffee-rails
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2014.5)
+      tzinfo (>= 1.0.0)
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -204,5 +206,6 @@ DEPENDENCIES
   selenium-webdriver
   thin
   turbolinks
+  tzinfo-data
   uglifier (~> 2.5.0)
   yard

@@ -13,6 +13,9 @@ group :test do
     gem 'capybara'
 end
 
+# Windows compatibility
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
 gem 'sass-rails', '~>4.0.0'
 gem 'uglifier', '~>2.5.0'
 gem 'coffee-rails', '~>4.0.0'

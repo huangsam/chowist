@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/yumeihuang/projects/ciscochef/app/helpers/application_helper.rb": [
+      "C:/Users/samhua/git/ciscochef/app/helpers/application_helper.rb": [
         null,
         null,
         null,
         1,
         null
       ],
-      "/Users/yumeihuang/projects/ciscochef/app/controllers/application_controller.rb": [
+      "C:/Users/samhua/git/ciscochef/app/controllers/application_controller.rb": [
         null,
         null,
         1,
@@ -63,6 +63,6 @@
         null
       ]
     },
-    "timestamp": 1394506852
+    "timestamp": 1403124990
   }
 }

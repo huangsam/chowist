@@ -2,18 +2,18 @@ require 'spec_helper'
 
 describe ApplicationController do
     it "should work for root" do
-        get :index
-        expect(page).to render_template("index")
+        visit '/'
+        expect(page).to have_content("Pick a restaurant already!")
     end
 
     it "should work for map" do
-        get :map
-        expect(page).to render_template("map")
+        visit '/map'
+        expect(page).to have_css("body")
     end
 
     it "should work for places" do
-        get :places
-        expect(response.status).to eq(200)
+        visit '/api/places'
+        expect(page).not_to have_title('Cisco Chef')
     end
 
 end

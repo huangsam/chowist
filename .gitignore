@@ -5,9 +5,9 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 .DS_Store
-.bundle/
-db/*.sqlite3/
-db/*.sqlite3-journal/
-log/*.log/
-tmp/
-coverage/
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*.log
+/tmp
+/coverage/*.json
