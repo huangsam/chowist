@@ -79,3 +79,14 @@ Completed 200 OK in 8ms (Views: 8.0ms)
 Started GET "/api/places" for 127.0.0.1 at 2014-06-18 13:56:30 -0700
 Processing by ApplicationController#places as HTML
 Completed 200 OK in 53ms (Views: 2.0ms)
+Started GET "/api/places" for 127.0.0.1 at 2014-06-20 15:09:48 -0700
+Processing by ApplicationController#places as HTML
+Completed 200 OK in 67ms (Views: 3.2ms)
+Started GET "/" for 127.0.0.1 at 2014-06-20 15:09:48 -0700
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.haml (9.0ms)
+Completed 200 OK in 18ms (Views: 17.1ms)
+Started GET "/map" for 127.0.0.1 at 2014-06-20 15:09:49 -0700
+Processing by ApplicationController#map as HTML
+  Rendered application/map.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 2.5ms)
