@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.6'
 
 group :development, :test do
     gem 'coveralls', require: false
@@ -36,5 +36,5 @@ end
 
 group :production do
     gem 'rails_12factor', '~>0.0.2'
-    gem 'newrelic_rpm', '>=3.9.3.241'
+    gem 'newrelic_rpm'
 end
