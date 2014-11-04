@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.7'
 
 group :development, :test do
     gem 'coveralls', require: false
