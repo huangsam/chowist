@@ -40,7 +40,7 @@
       </nav>
       <section>
         <h1>
-<a name="ciscochef" class="anchor" href="#ciscochef"><span class="octicon octicon-link"></span></a>ciscochef</h1>
+<a id="ciscochef" class="anchor" href="#ciscochef" aria-hidden="true"><span class="octicon octicon-link"></span></a>ciscochef</h1>
 
 <p><a href="https://travis-ci.org/huangsam/ciscochef"><img src="https://travis-ci.org/huangsam/ciscochef.png?branch=master" alt="Build Status"></a> <a href="https://gemnasium.com/huangsam/ciscochef"><img src="https://gemnasium.com/huangsam/ciscochef.png" alt="Dependency Status"></a> <a href="https://coveralls.io/r/huangsam/ciscochef?branch=master"><img src="https://coveralls.io/repos/huangsam/ciscochef/badge.png?branch=master" alt="Coverage Status"></a></p>
 
@@ -55,19 +55,19 @@ at Cisco, but also people around the Bay Area.</p>
 out the project wiki!</p>
 
 <h3>
-<a name="ruby-version" class="anchor" href="#ruby-version"><span class="octicon octicon-link"></span></a>Ruby version</h3>
+<a id="ruby-version" class="anchor" href="#ruby-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ruby version</h3>
 
 <p>So far, I have tested the app on both Ruby 1.9.3, 2.0.0 and 2.1.0
 successfully. Your mileage may vary when using otherwise.</p>
 
 <h3>
-<a name="system-dependencies" class="anchor" href="#system-dependencies"><span class="octicon octicon-link"></span></a>System dependencies</h3>
+<a id="system-dependencies" class="anchor" href="#system-dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>System dependencies</h3>
 
 <p><a href="http://railsinstaller.com/">RailsInstaller</a> is a good place to start
 if you're missing something.</p>
 
 <h3>
-<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h3>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h3>
 
 <p>Configuration to deal with Heroku's MongoHQ platform is the following:
 <code>url = ENV['MONGOHQ_URL'] || 'mongodb://127.0.0.1:27017/ciscochef'</code></p>
@@ -80,14 +80,17 @@ learn more about MongoDB, <a href="http://docs.mongodb.org/manual/">click here</
 documentation.</p>
 
 <h3>
-<a name="how-to-run-the-test-suite" class="anchor" href="#how-to-run-the-test-suite"><span class="octicon octicon-link"></span></a>How to run the test suite</h3>
+<a id="how-to-run-the-test-suite" class="anchor" href="#how-to-run-the-test-suite" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to run the test suite</h3>
 
 <p><code>bundle exec rspec spec</code> should have a complete test suite that
 runs successfully on the environment of your choice, given
 that you have already done the necessary import of JSON data.</p>
 
 <h3>
-<a name="deployment-instructions" class="anchor" href="#deployment-instructions"><span class="octicon octicon-link"></span></a>Deployment instructions</h3>
+<a id="deployment-instructions" class="anchor" href="#deployment-instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment instructions</h3>
+
+<h4>
+<a id="local-machine" class="anchor" href="#local-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local Machine</h4>
 
 <p><code>bundle install</code> should get all the necessary dependencies. Do not
 include <code>Gemfile.lock</code> when you push on Windows - it will cause Travis CI
@@ -101,6 +104,14 @@ need a different port, then do <code>rails s -p ${PORT}</code>. If you want to u
 environment on Heroku. One note for Windows users: make sure to use only
 foreman version 0.61, since anything above that particular version
 is incompatible with Windows.</p>
+
+<h4>
+<a id="vagrant-machine" class="anchor" href="#vagrant-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vagrant Machine</h4>
+
+<p><code>vagrant up</code> and <code>vagrant ssh</code> should get you into a self-provisioned
+machine. Once you are inside, go into the project repository and run
+<code>fig up</code> or <code>fig up -d</code>. This should produce a properly working set
+of services for running Cisco Chef as a containerized application.</p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/huangsam">huangsam</a></p>
