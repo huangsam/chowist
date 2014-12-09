@@ -29,11 +29,6 @@ class ApplicationController < ActionController::Base
         mongo_host = ENV['MONGO_HOST']
         mongo_port = ENV['MONGO_PORT']
 
-        print mongohq_url
-        print mongo_host
-        print mongo_port
-
-        # new approach
         url = nil
 
         if mongohq_url
@@ -43,9 +38,6 @@ class ApplicationController < ActionController::Base
         else
             url = 'mongodb://127.0.0.1:27017/ciscochef'
         end
-
-        # former approach
-        # url = ENV['MONGOHQ_URL'] || 'mongodb://127.0.0.1:27017/ciscochef'
 
         db = URI.parse(url)
         db_name = db.path.gsub(/^\//, '')
