@@ -16,6 +16,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 5000, host: 5000
   config.vm.network "forwarded_port", guest: 8080, host: 18080
 
+  # Update Ubuntu repositories
+  config.vm.provision "shell", inline: "sudo apt-get update"
+
   # Install Docker and some images
   config.vm.provision "docker" do |d|
     d.pull_images "ubuntu:14.04"
