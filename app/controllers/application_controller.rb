@@ -26,19 +26,10 @@ class ApplicationController < ActionController::Base
     # +category+ - matches x parameter
     def places
         mongohq_url = ENV['MONGOHQ_URL']
-        mongo_host = ENV['MONGO_HOST']
-        mongo_port = ENV['MONGO_PORT']
+        mongo_host = ENV['MONGO_PORT_27017_TCP_ADDR'] || ENV['MONGO_HOST'] || '127.0.0.1'
+        mongo_port = ENV['MONGO_PORT_27017_TCP_PORT'] || ENV['MONGO_PORT'] || '27017'
 
-        url = nil
-
-        if mongohq_url
-            url = mongohq_url
-        elsif mongo_host and mongo_port
-            url = 'mongodb://' + mongo_host + ':' + mongo_port + '/ciscochef'
-        else
-            url = 'mongodb://127.0.0.1:27017/ciscochef'
-        end
-
+        url = mongohq_url || 'mongodb://' + mongo_host + ':' + mongo_port + '/ciscochef'
         db = URI.parse(url)
         db_name = db.path.gsub(/^\//, '')
         dbc = Mongo::Connection.new(db.host, db.port).db(db_name)
