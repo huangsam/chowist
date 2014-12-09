@@ -43,6 +43,8 @@ that you have already done the necessary import of JSON data.
 
 ### Deployment instructions
 
+#### Local Machine
+
 `bundle install` should get all the necessary dependencies. Do not
 include `Gemfile.lock` when you push on Windows - it will cause Travis CI
 to fail as mentioned
@@ -55,3 +57,10 @@ need a different port, then do `rails s -p ${PORT}`. If you want to use
 environment on Heroku. One note for Windows users: make sure to use only
 foreman version 0.61, since anything above that particular version
 is incompatible with Windows.
+
+#### Vagrant Machine
+
+`vagrant up` and `vagrant ssh` should get you into a self-provisioned
+machine. Once you are inside, go into the project repository and run
+`fig up` or `fig up -d`. This should produce a properly working set
+of services for running Cisco Chef as a containerized application.
