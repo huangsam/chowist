@@ -3,6 +3,7 @@
 
 # Directories
 .vagrant/
+.yardoc/
 coverage/
 log/
 tmp/
