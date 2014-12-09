@@ -25,16 +25,19 @@ class ApplicationController < ActionController::Base
     # +rating+ - at least x parameter,
     # +category+ - matches x parameter
     def places
+        # generate MongoDB URI
         mongohq_url = ENV['MONGOHQ_URL']
-        mongo_host = ENV['CISCOCHEF_DB_1_PORT_27017_TCP_ADDR'] || ENV['MONGO_PORT_27017_TCP_ADDR'] || ENV['MONGO_HOST'] || '127.0.0.1'
-        mongo_port = ENV['CISCOCHEF_DB_1_PORT_27017_TCP_PORT'] || ENV['MONGO_PORT_27017_TCP_PORT'] || ENV['MONGO_PORT'] || '27017'
+        mongo_host = ENV['CISCOCHEF_DB_1_PORT_27017_TCP_ADDR'] || ENV['MONGO_HOST'] || '127.0.0.1'
+        mongo_port = ENV['CISCOCHEF_DB_1_PORT_27017_TCP_PORT'] || ENV['MONGO_PORT'] || '27017'
+        uri = mongohq_url || 'mongodb://' + mongo_host + ':' + mongo_port + '/ciscochef'
 
-        url = mongohq_url || 'mongodb://' + mongo_host + ':' + mongo_port + '/ciscochef'
-        db = URI.parse(url)
+        # connect to MongoDB
+        db = URI.parse(uri)
         db_name = db.path.gsub(/^\//, '')
         dbc = Mongo::Connection.new(db.host, db.port).db(db_name)
         dbc.authenticate(db.user, db.password) unless (db.user.nil? || db.user.nil?)
 
+        # params holds query parameters
         time = params[:time]
         max = params[:max]
         min = params[:min]
@@ -43,6 +46,7 @@ class ApplicationController < ActionController::Base
 
         query = {}
 
+        # add filter criteria
         if time then query["minutes"] = { "$lte" => time.to_i } end
         if max then query["maxparty"] = { "$lte" => max.to_i } end
         if min then query["minparty"] = { "$gte" => min.to_i } end

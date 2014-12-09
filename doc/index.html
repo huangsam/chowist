@@ -72,62 +72,79 @@ href="https://coveralls.io/r/huangsam/ciscochef?branch=master"><img
 src="https://coveralls.io/repos/huangsam/ciscochef/badge.png?branch=master"></a></p>
 
 <p>This is a <a href="http://ciscochef.herokuapp.com/">web application</a>
-that shows a dynamically created map of places that my Cisco coworkers and
-I have deemed worthy of eating at around the San Jose campus. It&#39;s
-responsive, meaning that it will look great on computers, smartphones and
-tablets. This map will benefit not only employees at Cisco, but also people
-around the Bay Area.</p>
+that shows a dynamically created map of places that Cisco coworkers have
+deemed worthy of eating at around the San Jose campus. It&#39;s responsive,
+meaning that it will look great on computers, smartphones and tablets. This
+map will benefit not only employees at Cisco, but also people around the
+Bay Area.</p>
 
 <p><a href="https://github.com/huangsam/ciscochef/wiki">Click here</a> to
 check out the project wiki!</p>
 
 <h3 id="label-Ruby+version">Ruby version</h3>
 
-<p>So far, I have tested the app on both Ruby 1.9.3, 2.0.0 and 2.1.0
-successfully. Your mileage may vary when using otherwise.</p>
+<p>So far, the app has been tested on Ruby 1.9.3, 2.0.0 and 2.1.0
+successfully. Your mileage may vary when using other versions.</p>
 
 <h3 id="label-System+dependencies">System dependencies</h3>
 
 <p><a href="http://railsinstaller.com/">RailsInstaller</a> is a good place to
-start if you&#39;re missing something.</p>
+start for Windows users. Mac owners should be fine skipping down to the
+Deployment Instructions section.</p>
 
 <h3 id="label-Configuration">Configuration</h3>
 
-<p>Configuration to deal with Heroku&#39;s MongoHQ platform is the following:
-<code>url = ENV['MONGOHQ_URL'] ||
-&#39;mongodb://127.0.0.1:27017/ciscochef&#39;</code></p>
+<p>These are the configuration that are used to connect to the database:</p>
+<ul><li>
+<p><code>MONGOHQ_URL</code> - MongoHQ add-on from Heroku, standalone variable</p>
+</li><li>
+<p><code>MONGO_HOST</code> - Manually injected Mongo IP Address, used with its
+port counterpart</p>
+</li><li>
+<p><code>MONGO_PORT</code> - Manually injected Mongo Port Number</p>
+</li><li>
+<p><code>CISCOCHEF_DB_1_PORT_27017_TCP_ADDR</code> - Fig Mongo IP Address,
+used with its port counterpart</p>
+</li><li>
+<p><code>CISCOCHEF_DB_1_PORT_27017_TCP_PORT</code> - FIg Mongo Port Number</p>
+</li></ul>
 
-<p>Since I did not deploy a Mongo ORM like <code>mongoid</code> yet, the
-implication is that you will need to execute <code>mongoimport --db
-ciscochef --collection places --file test.json --jsonArray</code> in an
-existing mongo server process on your computer. To learn more about
-MongoDB, <a href="http://docs.mongodb.org/manual/">click here</a> for
-documentation.</p>
+<p>A Mongo ORM like <code>mongoid</code> has not been deployed yet, so please
+run <code>mongoimport --db ciscochef --collection places --file test.json
+--jsonArray</code> in an existing mongo server process on your computer.</p>
 
 <h3 id="label-How+to+run+the+test+suite">How to run the test suite</h3>
 
 <p><code>bundle exec rspec spec</code> should have a complete test suite that
 runs successfully on the environment of your choice, given that you have
-already done the necessary import of JSON data.</p>
+finished the data import from above.</p>
 
 <h3 id="label-Deployment+instructions">Deployment instructions</h3>
 
+<h4 id="label-Local+Machine">Local Machine</h4>
+
 <p><code>bundle install</code> should get all the necessary dependencies. Do
 not include <code>Gemfile.lock</code> when you push on Windows - it will
-cause Travis CI to fail as mentioned <a
-href="http://stackoverflow.com/questions/3642085/make-bundler-use-different-gems-for-different-platforms">here</a>.</p>
+cause Travis CI to fail.</p>
 
 <p><code>rails s</code> should do the trick - defaulting the port over to
-3000. If you need a different port, then do <code>rails s -p ${PORT}. If
-you want to use {foreman}[https://github.com/ddollar/foreman]</code>, feel
-free to do <code>foreman start</code> instead. This most closely reflects
-the production environment on Heroku. One note for Windows users: make sure
-to use only foreman version 0.61, since anything above that particular
-version is incompatible with Windows.</p>
+3000. If you need a different port, then do <code>rails s -p
+${PORT}</code>. Feel free to do <code>foreman start</code> instead, which
+closely reflects the production environment on Heroku. Windows users should
+use foreman v0.61, since anything above that version is
+Windows-incompatible.</p>
+
+<h4 id="label-Vagrant+Machine">Vagrant Machine</h4>
+
+<p><code>vagrant up</code> and <code>vagrant ssh</code> should get you into a
+self-provisioned machine. Once you are inside, go into the project
+repository and run <code>fig up</code> or <code>fig up -d</code>. Fig will
+produce a properly working set of services for running Cisco Chef as a
+containerized application.</p>
 </div></div>
 
     <div id="footer">
-  Generated on Tue Dec  9 05:36:38 2014 by
+  Generated on Tue Dec  9 13:44:23 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.0.0).
 </div>

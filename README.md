@@ -4,8 +4,8 @@ ciscochef
 [![Build Status](https://travis-ci.org/huangsam/ciscochef.png?branch=master)](https://travis-ci.org/huangsam/ciscochef) [![Dependency Status](https://gemnasium.com/huangsam/ciscochef.png)](https://gemnasium.com/huangsam/ciscochef) [![Coverage Status](https://coveralls.io/repos/huangsam/ciscochef/badge.png?branch=master)](https://coveralls.io/r/huangsam/ciscochef?branch=master)
 
 This is a [web application](http://ciscochef.herokuapp.com/) that
-shows a dynamically created map of places that my Cisco coworkers
-and I have deemed worthy of eating at around the San Jose campus.
+shows a dynamically created map of places that Cisco coworkers
+have deemed worthy of eating at around the San Jose campus.
 It's responsive, meaning that it will look great on computers,
 smartphones and tablets. This map will benefit not only employees
 at Cisco, but also people around the Bay Area.
@@ -15,31 +15,34 @@ out the project wiki!
 
 ### Ruby version
 
-So far, I have tested the app on both Ruby 1.9.3, 2.0.0 and 2.1.0
-successfully. Your mileage may vary when using otherwise.
+So far, the app has been tested on Ruby 1.9.3, 2.0.0 and 2.1.0
+successfully. Your mileage may vary when using other versions.
 
 ### System dependencies
 
 [RailsInstaller](http://railsinstaller.com/) is a good place to start
-if you're missing something.
+for Windows users. Mac owners should be fine skipping down to the
+Deployment Instructions section.
 
 ### Configuration
 
-Configuration to deal with Heroku's MongoHQ platform is the following:
-`url = ENV['MONGOHQ_URL'] || 'mongodb://127.0.0.1:27017/ciscochef'`
+These are the configuration that are used to connect to the database:
 
-Since I did not deploy a Mongo ORM like `mongoid` yet, the implication
-is that you will need to execute
+- `MONGOHQ_URL` - MongoHQ add-on from Heroku, standalone variable
+- `MONGO_HOST` - Manually injected Mongo IP Address, used with its port counterpart
+- `MONGO_PORT` - Manually injected Mongo Port Number
+- `CISCOCHEF_DB_1_PORT_27017_TCP_ADDR` - Fig Mongo IP Address, used with its port counterpart
+- `CISCOCHEF_DB_1_PORT_27017_TCP_PORT` - FIg Mongo Port Number
+
+A Mongo ORM like `mongoid` has not been deployed yet, so please run
 `mongoimport --db ciscochef --collection places --file test.json --jsonArray`
-in an existing mongo server process on your computer. To
-learn more about MongoDB, [click here](http://docs.mongodb.org/manual/) for
-documentation.
+in an existing mongo server process on your computer.
 
 ### How to run the test suite
 
-`bundle exec rspec spec` should have a complete test suite that
-runs successfully on the environment of your choice, given
-that you have already done the necessary import of JSON data.
+`bundle exec rspec spec` should have a complete test suite that runs
+successfully on the environment of your choice, given that you have
+finished the data import from above.
 
 ### Deployment instructions
 
@@ -47,20 +50,17 @@ that you have already done the necessary import of JSON data.
 
 `bundle install` should get all the necessary dependencies. Do not
 include `Gemfile.lock` when you push on Windows - it will cause Travis CI
-to fail as mentioned
-[here](http://stackoverflow.com/questions/3642085/make-bundler-use-different-gems-for-different-platforms).
+to fail.
 
 `rails s` should do the trick - defaulting the port over to 3000. If you
-need a different port, then do `rails s -p ${PORT}`. If you want to use
-[foreman](https://github.com/ddollar/foreman), feel free to do
-`foreman start` instead. This most closely reflects the production
-environment on Heroku. One note for Windows users: make sure to use only
-foreman version 0.61, since anything above that particular version
-is incompatible with Windows.
+need a different port, then do `rails s -p ${PORT}`. Feel free to do
+`foreman start` instead, which closely reflects the production
+environment on Heroku. Windows users should use foreman v0.61,
+since anything above that version is Windows-incompatible.
 
 #### Vagrant Machine
 
 `vagrant up` and `vagrant ssh` should get you into a self-provisioned
 machine. Once you are inside, go into the project repository and run
-`fig up` or `fig up -d`. This should produce a properly working set
+`fig up` or `fig up -d`. Fig will produce a properly working set
 of services for running Cisco Chef as a containerized application.
