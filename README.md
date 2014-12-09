@@ -29,9 +29,9 @@ Deployment Instructions section.
 These are the configuration that are used to connect to the database:
 
 - `MONGOHQ_URL` - MongoHQ add-on from Heroku, standalone variable
-- `MONGO_HOST` - Manually injected Mongo IP Address, used with its port counterpart
+- `MONGO_HOST` - Manually injected Mongo IP Address (use w/ port)
 - `MONGO_PORT` - Manually injected Mongo Port Number
-- `CISCOCHEF_DB_1_PORT_27017_TCP_ADDR` - Fig Mongo IP Address, used with its port counterpart
+- `CISCOCHEF_DB_1_PORT_27017_TCP_ADDR` - Fig Mongo IP Address (use w/ port)
 - `CISCOCHEF_DB_1_PORT_27017_TCP_PORT` - FIg Mongo Port Number
 
 A Mongo ORM like `mongoid` has not been deployed yet, so please run
