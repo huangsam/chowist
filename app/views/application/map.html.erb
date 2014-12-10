@@ -29,7 +29,7 @@
         var mapOptions = {
           zoom: 12,
           center: new google.maps.LatLng(37.39, -121.927768)
-        }
+        };
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         $.ajax({
           type: 'GET',
@@ -46,9 +46,9 @@
                 '</ul>'+
                 '<p>'+place.snippet_text+'<a href="http://www.yelp.com/biz/'+place.yelp+
                 '"><img src="img/Yelp.png" alt="Yelp it!" title="Yelp it!"></a>'+'</p>'+
-                '</div>'
-              var point = new google.maps.LatLng(place.lat,place.long)
-              var marker = createMarker(point,contentString)
+                '</div>';
+              var point = new google.maps.LatLng(place.lat,place.long);
+              var marker = createMarker(point,contentString);
             });
           }
         });
