@@ -57,5 +57,6 @@ class ApplicationController < ActionController::Base
     query['minparty'] = { '$gte' => min.to_i } unless min.nil?
     query['rating'] = { '$gte' => rating.to_f } unless rating.nil?
     query['categories'] = { '$in' => [category] } unless category.nil?
+    query
   end
 end
