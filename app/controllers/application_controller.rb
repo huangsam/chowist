@@ -52,10 +52,10 @@ class ApplicationController < ActionController::Base
   # creates database query
   def create_query(time, min, max, rating, category)
     query = {}
-    time && query['minutes'] = { '$lte' => time.to_i }
-    max && query['maxparty'] = { '$lte' => max.to_i }
-    min && query['minparty'] = { '$gte' => min.to_i }
-    rating && query['rating'] = { '$gte' => rating.to_f }
-    category && query['categories'] = { '$in' => [category] }
+    query['minutes'] = { '$lte' => time.to_i } unless time.nil?
+    query['maxparty'] = { '$lte' => max.to_i } unless max.nil?
+    query['minparty'] = { '$gte' => min.to_i } unless min.nil?
+    query['rating'] = { '$gte' => rating.to_f } unless rating.nil?
+    query['categories'] = { '$in' => [category] } unless category.nil?
   end
 end

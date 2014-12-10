@@ -24,6 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision 'docker' do |d|
     d.pull_images 'ubuntu:14.04'
     d.pull_images 'mongo:2.6.5'
+    d.pull_images 'rails:onbuild'
   end
 
   # Setup sudo-less Docker and pip artifacts
