@@ -4,6 +4,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Geocoding service</title>
+    <link rel="stylesheet" href="css/foundation-icons.css">
     <style>
       html, body, #map-canvas {
       height: 100%;
@@ -19,6 +20,16 @@
       background-color: #fff;
       padding: 5px;
       border: 1px solid #999;
+      }
+      .size-yelp { font-size: 14px; }
+      a.yelp:link {
+      color: red;
+      }
+      a.yelp:visited {
+      color: red;
+      }
+      a.yelp:active {
+      color: red;
       }
     </style>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -45,7 +56,8 @@
                 '<li>Time: <strong>'+place.minutes+'</strong> minutes</li>'+
                 '</ul>'+
                 '<p>'+place.snippet_text+'<a href="http://www.yelp.com/biz/'+place.yelp+
-                '"><img src="img/Yelp.png" alt="Yelp it!" title="Yelp it!"></a>'+'</p>'+
+                '" color="red" class="yelp" title="Yelp it!">'+
+                '<i class="step fi-social-yelp size-yelp"></i></a>'+'</p>'+
                 '</div>';
               var point = new google.maps.LatLng(place.lat,place.long);
               var marker = createMarker(point,contentString);
@@ -53,11 +65,11 @@
           }
         });
       }
-      
+
       var infowindow = new google.maps.InfoWindow({
         maxWidth: 285
       });
-      
+
       function createMarker(latlng, html) {
         var contentString = html;
         var marker = new google.maps.Marker({
@@ -65,16 +77,15 @@
           map: map,
           zIndex: Math.round(latlng.lat()*-100000)<<5
         });
-      
+
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(contentString); 
+          infowindow.setContent(contentString);
           infowindow.open(map,marker);
         });
       }
-      
-      
+
       google.maps.event.addDomListener(window, 'load', initialize);
-      
+
     </script>
   </head>
   <body>
