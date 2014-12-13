@@ -35,13 +35,25 @@
     <script src="js/vendor/jquery.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOIFjvlaAiWC1LBw72qVNx4S1f2GCF_lA&sensor=false"></script>
     <script>
+      // Google Map variables
       var map;
+      var map_center;
+
       function initialize() {
         var mapOptions = {
-          zoom: 12,
+          zoom: 11,
           center: new google.maps.LatLng(37.39, -121.927768)
         };
+
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        map_center = map.getCenter();
+
+        // update map center upon window resize
+        google.maps.event.addDomListener(window, 'resize', function() {
+          map.setCenter(map_center);
+        });
+
+        // load all places
         $.ajax({
           type: 'GET',
           url: '/api/places',
@@ -75,12 +87,17 @@
         var marker = new google.maps.Marker({
           position: latlng,
           map: map,
-          zIndex: Math.round(latlng.lat()*-100000)<<5
+          title: 'Click Me!'
         });
 
+        // update map center upon marker click
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(contentString);
           infowindow.open(map,marker);
+          map_center = marker.getPosition();
+
+          // scale for infowindow size
+          map_center.k += .05;
         });
       }
 
