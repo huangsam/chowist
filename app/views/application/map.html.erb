@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Geocoding service</title>
+    <title>Google Maps</title>
     <link rel="stylesheet" href="css/foundation-icons.css">
     <style>
       html, body, #map-canvas {
@@ -35,20 +35,21 @@
     <script src="js/vendor/jquery.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOIFjvlaAiWC1LBw72qVNx4S1f2GCF_lA&sensor=false"></script>
     <script>
-      // Google Map variables
+      // Google Maps variables
       var map;
       var map_center;
 
+      // initialize Google Maps
       function initialize() {
         var mapOptions = {
           zoom: 11,
-          center: new google.maps.LatLng(37.39, -121.902768)
+          center: new google.maps.LatLng(37.37, -121.927768)
         };
 
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         map_center = map.getCenter();
 
-        // update map center upon window resize
+        // recalibrate map upon window resize
         google.maps.event.addDomListener(window, 'resize', function() {
           map.setCenter(map_center);
         });
@@ -102,7 +103,6 @@
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
-
     </script>
   </head>
   <body>
