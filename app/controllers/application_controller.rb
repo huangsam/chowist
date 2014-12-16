@@ -44,8 +44,12 @@ class ApplicationController < ActionController::Base
   # creates database URI
   def create_uri
     mongohq_url = ENV['MONGOHQ_URL']
-    mongo_host = ENV['CISCOCHEF_DB_1_PORT_27017_TCP_ADDR'] || '127.0.0.1'
-    mongo_port = ENV['CISCOCHEF_DB_1_PORT_27017_TCP_PORT'] || '27017'
+    mongo_host = ENV['CISCOCHEF_DB_1_PORT_27017_TCP_ADDR'] ||
+      ENV['MONGO_HOST'] ||
+      '127.0.0.1'
+    mongo_port = ENV['CISCOCHEF_DB_1_PORT_27017_TCP_PORT'] ||
+      ENV['MONGO_PORT'] ||
+      '27017'
     mongohq_url || "mongodb://#{mongo_host}:#{mongo_port}/ciscochef"
   end
 
