@@ -70,7 +70,7 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     eventmachine (1.0.7)
-    execjs (2.3.0)
+    execjs (2.4.0)
     ffi (1.9.6)
     ffi (1.9.6-x86-mingw32)
     globalid (0.3.3)
@@ -79,7 +79,7 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.2.9)
+    jbuilder (2.2.11)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.3)
