@@ -4,7 +4,7 @@ gem 'rails', '~>4.2.0'
 
 group :development, :test do
   gem 'coveralls', require: false
-  gem 'rspec-rails', '~>3.2.0'
+  gem 'rspec-rails', '~>3.3.0'
   gem 'rack-test'
   gem 'rubocop', require: false
 end
