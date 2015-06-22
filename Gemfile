@@ -22,7 +22,7 @@ gem 'uglifier', '~>2.7.0'
 gem 'coffee-rails', '~>4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~>2.2.0'
+gem 'jbuilder', '~>2.3.0'
 
 gem 'haml'
 gem 'json'
