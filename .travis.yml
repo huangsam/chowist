@@ -12,3 +12,4 @@ before_script:
     - mongoimport --db ciscochef --collection places --file test.json --jsonArray
 script:
     - bundle exec rspec spec
+sudo: false
