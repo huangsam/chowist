@@ -26,7 +26,7 @@ gem 'jbuilder', '~>2.3.0'
 
 gem 'haml'
 gem 'json'
-gem 'mongo', '~>2.0.0'
+gem 'mongo'
 gem 'bson_ext'
 
 gem 'thin'
