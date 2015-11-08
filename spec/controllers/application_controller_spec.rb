@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe ApplicationController do
   it 'should work for root' do
@@ -13,7 +13,7 @@ describe ApplicationController do
 
   it 'should work for places' do
     visit '/api/places'
-    expect(page).not_to have_title('Cisco Chef')
+    expect(page).not_to have_content('Cisco Chef')
   end
 
   it 'should create a mongodb uri' do
