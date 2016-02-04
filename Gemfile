@@ -5,7 +5,7 @@ gem 'rails', '~>4.2.0'
 
 group :development, :test do
   gem 'coveralls', require: false
-  gem 'rspec-rails', '~>3.3.0'
+  gem 'rspec-rails', '~>3.4.0'
   gem 'rack-test'
   gem 'rubocop', require: false
 end
@@ -23,7 +23,7 @@ gem 'uglifier', '~>2.7.0'
 gem 'coffee-rails', '~>4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~>2.3.0'
+gem 'jbuilder'
 
 gem 'haml'
 gem 'json'
