@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
                             params[:rating], params[:category])
 
     # query database and render results
-    coll = dbc.collection('places')
+    coll = dbc[:places]
     cursor = coll.find(db_query)
     render json: cursor.to_a
   end
