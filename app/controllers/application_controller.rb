@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     uri = create_uri
     db = URI.parse(uri)
     db_name = db.path.gsub(/^\//, '')
-    dbc = Mongo::Connection.new(db.host, db.port).db(db_name)
+    dbc = Mongo::Client.new([db.host + db.port], :database => db_name)
     dbc.authenticate(db.user, db.password) unless db.user.nil? || db.user.nil?
 
     db_query = create_query(params[:time], params[:min], params[:max],
