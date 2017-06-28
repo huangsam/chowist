@@ -1,0 +1,8 @@
+title: Cisco Chef
+description: Pick a restaurant already!
+google_analytics: UA-47367815-1
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
