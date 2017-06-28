@@ -1,9 +1,0 @@
-# Mac OSX
-.DS_Store
-
-# Directories
-.vagrant/
-.yardoc/
-coverage/
-log/
-tmp/
