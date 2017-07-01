@@ -1,7 +1,7 @@
 chowist
 =========
 
-Shows great places selected by great chowists in the Bay Area.
+Great places chosen by great chowists.
 
 ## Database Setup
 
