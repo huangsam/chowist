@@ -1,11 +1,11 @@
-ciscochef
+chowist
 =========
 
-This is an application that shares places that fellow colleagues have deemed worthy of eating around San Jose.
+Shares places that fellow colleagues have deemed worthy of eating around the Bay Area.
 
-[Click here](https://github.com/huangsam/ciscochef/wiki) to check
+[Click here](https://github.com/huangsam/chowist/wiki) to check
 out the project wiki!
 
 ## Database Setup
 
-`mongoimport --db ciscochef --collection places --file test.json --jsonArray`
+`mongoimport --db chowist --collection places --file test.json --jsonArray`
