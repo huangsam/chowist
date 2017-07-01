@@ -1,10 +1,7 @@
 chowist
 =========
 
-Shares places that fellow colleagues have deemed worthy of eating around the Bay Area.
-
-[Click here](https://github.com/huangsam/chowist/wiki) to check
-out the project wiki!
+Shows great places selected by great chowists in the Bay Area.
 
 ## Database Setup
 
