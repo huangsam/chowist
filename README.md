@@ -1,7 +1,7 @@
 chowist
 =========
 
-Great places chosen by great chowists.
+Great places are chosen by great chowists.
 
 ## Database Setup
 
