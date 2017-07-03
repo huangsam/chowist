@@ -1,14 +1,14 @@
 // Run `mongo chowist placesExist.js --quiet`
 
 const placesExist = () => {
-  let existFlag = false
+  let existFlag = false;
   db.getCollectionNames().forEach((name) => {
     if (name == 'places') {
-      existFlag = true
+      existFlag = true;
     }
-  })
-  return existFlag
-}
+  });
+  return existFlag;
+};
 
-let result = placesExist()
-print(result)
+let result = placesExist();
+print(result);
