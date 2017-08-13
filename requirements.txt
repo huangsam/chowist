@@ -1,0 +1,6 @@
+# Appication packages
+Django==1.11.4
+
+# Testing packages
+autopep8
+Flake8
