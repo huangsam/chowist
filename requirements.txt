@@ -1,6 +1,9 @@
 # Appication packages
-Django==1.11.4
+django
+djangorestframework
+markdown
+django-filter
 
 # Testing packages
 autopep8
-Flake8
+flake8
