@@ -8,6 +8,7 @@ dist: trusty
 sudo: false
 install: "pip install -r requirements.txt"
 script:
+  - "flake8"
   - "python manage.py check"
   - "python manage.py migrate"
   - "python manage.py test"
