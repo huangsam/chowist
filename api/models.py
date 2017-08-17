@@ -1,3 +1,17 @@
 from django.db import models
 
-# Create your models here.
+
+class Location(models.Model):
+    pass
+
+
+class Category(models.Model):
+    pass
+
+
+class Restaurant(models.Model):
+    pass
+
+
+class Rating(models.Model):
+    pass
