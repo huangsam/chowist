@@ -4,4 +4,7 @@ python:
   - "3.5"
   - "3.6"
 install: "pip install -r requirements.txt"
-script: "python manage.py test"
+script:
+  - "python manage.py check"
+  - "python manage.py migrate"
+  - "python manage.py test"
