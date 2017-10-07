@@ -1,6 +1,6 @@
 # Appication packages
-django==1.11.6
-djangorestframework==3.6.4
+django
+djangorestframework==3.7.0
 markdown==2.6.9
 django-filter==1.0.4
 
