@@ -1,6 +1,6 @@
 # Appication packages
 django
-djangorestframework==3.7.0
+djangorestframework==3.7.1
 markdown==2.6.9
 django-filter==1.0.4
 
