@@ -9,7 +9,6 @@ install:
   - "pip install --pre -r requirements.txt"
   - "pip install -r test-requirements.txt"
 script:
-  - "flake8"
   - "python manage.py check"
   - "python manage.py migrate"
   - "python manage.py test"
