@@ -11,7 +11,7 @@ This is an application that replicates core features of [Yelp](https://www.yelp.
 - Profile page for customization upon user login
 - Ratings as aggregate views and detail views
 
-## Getting Started
+## Getting started
 
 Install the dependencies:
 
@@ -38,3 +38,10 @@ You can also consider running Gunicorn workers:
     gunicorn -w 4 chowist.wsgi
 
 Just remember to host the static files somewhere like [Nginx](http://nginx.org/).
+
+## How to contribute
+
+Feel free to create pull requests to the following assets:
+
+- Refine applications listed in `chowist.settings.INSTALLED_APPS`
+- Add any restaurants you find into `data/places.json`
