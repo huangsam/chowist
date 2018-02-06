@@ -103,3 +103,4 @@ ENV/
 *.sqlite3
 *.db
 .DS_Store
+static/
