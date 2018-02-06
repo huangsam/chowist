@@ -16,6 +16,10 @@ class Restaurant(models.Model):
     class Meta:
         db_table = 'restaurant'
 
+    def __str__(self):
+        return '{id}: {name} @ {address}'.format(
+            id=self.id, name=self.name, address=self.address)
+
 
 class Rating(models.Model):
     snippet = models.CharField(max_length=255)
@@ -32,3 +36,7 @@ class Rating(models.Model):
 
     class Meta:
         db_table = 'rating'
+
+    def __str__(self):
+        return '{id}: {address} w/ {stars} stars'.format(
+            id=self.id, address=self.place.yelp_link, stars=self.stars)
