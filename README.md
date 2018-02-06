@@ -4,7 +4,7 @@
 
 Great places are chosen by great chowists.
 
-This is an application that aims to replicate some features of **Yelp** while adding a little more bells and whistles. A couple of features/ideas that are in the process of being created:
+This is an application that replicates core features of [Yelp](https://www.yelp.com/), and adds a couple more bells and whistles. A couple features/ideas that are in the process of being created:
 
 - Chat sessions between users
 - Homepage for marketing purposes
@@ -25,12 +25,16 @@ Load sample data into the database:
 
     python manage.py loadsample data/places.json
 
+### Development server
+
 Start up the Django development server:
 
     python manage.py runserver
+
+### Gunicorn workers
 
 You can also consider running Gunicorn workers:
 
     gunicorn -w 4 chowist.wsgi
 
-Just remember to host the static files somewhere like `Nginx`.
+Just remember to host the static files somewhere like [Nginx](http://nginx.org/).
