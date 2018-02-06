@@ -5,13 +5,13 @@ from django.conf import settings
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, null=True)
     address = models.CharField(max_length=255)
     latitude = models.DecimalField(max_digits=17, decimal_places=15)
     longitude = models.DecimalField(max_digits=18, decimal_places=15)
     min_party = models.IntegerField()
     max_party = models.IntegerField()
     yelp_link = models.CharField(max_length=255)
-    notes = models.CharField(max_length=255)
 
     class Meta:
         db_table = 'restaurant'
