@@ -22,13 +22,16 @@ urlpatterns = [
 
 apps = [
     {'entry': '', 'name': 'portal'},
-    {'entry': 'ratings/', 'name': 'ratings'}
+    {'entry': 'ratings/', 'name': 'ratings'},
 ]
 
-for app in apps:
+
+def get_app_url(app):
     app_entry = app['entry']
     app_name = app['name']
     app_urls = app_name + '.urls'
-    app_tuple = (app_urls, app_name)
-    urlpatterns.append(
-        path(app_entry, include((app_urls, app_name), namespace=app_name)))
+    return path(app_entry, include((app_urls, app_name), namespace=app_name))
+
+
+for app in apps:
+    urlpatterns.append(get_app_url(app))
