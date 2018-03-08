@@ -6,7 +6,6 @@ Great places are chosen by great chowists.
 
 This is an application that replicates core features of [Yelp](https://www.yelp.com/), and adds a couple more bells and whistles. A couple features/ideas that are in the process of being created:
 
-- Chat sessions between users
 - Homepage for marketing purposes
 - Profile page for customization upon user login
 - Ratings as aggregate views and detail views
