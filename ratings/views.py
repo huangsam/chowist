@@ -3,5 +3,5 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
-def home(request):
-    return render(request, template_name='ratings/home.html')
+class RatingsView(TemplateView):
+    template_name = 'ratings/home.html'

@@ -5,5 +5,5 @@ from ratings import views
 # Insert your urls here.
 
 urlpatterns = [
-    path('', views.home, name='home')
+    path('', views.RatingsView.as_view(), name='home')
 ]
