@@ -1,0 +1,300 @@
+[{
+    "model": "places.restaurant",
+    "pk": 1,
+    "fields": {
+        "name": "Banana Leaf",
+        "description": null,
+        "address": "182 Ranch Dr Milpitas, CA 95035",
+        "latitude": "37.428405500000000",
+        "longitude": "-121.920238400000000",
+        "min_party": 3,
+        "max_party": 8,
+        "yelp_link": "banana-leaf-restaurant-milpitas"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 2,
+    "fields": {
+        "name": "Tasty Indian Pizza",
+        "description": null,
+        "address": "528 Lawrence Expy Sunnyvale, CA 94085",
+        "latitude": "37.382874000000000",
+        "longitude": "-121.995084000000000",
+        "min_party": 2,
+        "max_party": 4,
+        "yelp_link": "tasty-indian-pizza-sunnyvale"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 3,
+    "fields": {
+        "name": "Thai Orchid Thai Cuisine",
+        "description": null,
+        "address": "2591 N 1st St San Jose, CA 95131",
+        "latitude": "37.385773000000000",
+        "longitude": "-121.927768000000000",
+        "min_party": 2,
+        "max_party": 4,
+        "yelp_link": "thai-orchid-thai-cuisine-san-jose"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 4,
+    "fields": {
+        "name": "Chili Garden",
+        "description": null,
+        "address": "210 Barber Ct Milpitas, CA 95035",
+        "latitude": "37.423813000000000",
+        "longitude": "-121.919155000000000",
+        "min_party": 2,
+        "max_party": 4,
+        "yelp_link": "chili-garden-restaurant-milpitas"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 5,
+    "fields": {
+        "name": "Sizzling Stone",
+        "description": null,
+        "address": "510 Barber Ln Milpitas, CA 95035",
+        "latitude": "37.420390000000000",
+        "longitude": "-121.917119000000000",
+        "min_party": 3,
+        "max_party": 6,
+        "yelp_link": "sizzling-stone-milpitas"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 6,
+    "fields": {
+        "name": "Smoke Eaters",
+        "description": null,
+        "address": "3175 Mission College Blvd Santa Clara, CA 95054",
+        "latitude": "37.388735000000000",
+        "longitude": "-121.985540000000000",
+        "min_party": 3,
+        "max_party": 8,
+        "yelp_link": "smokeeaters-santa-clara-2"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 7,
+    "fields": {
+        "name": "El Taco de Oro Restaurant",
+        "description": null,
+        "address": "5220 N 1st St Alviso, CA 95002",
+        "latitude": "37.426120000000000",
+        "longitude": "-121.974498000000000",
+        "min_party": 2,
+        "max_party": 4,
+        "yelp_link": "el-taco-de-oro-restaurant-and-taqueria-alviso"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 8,
+    "fields": {
+        "name": "Dish Dash",
+        "description": null,
+        "address": "190 S Murphy Ave Sunnyvale, CA 94086",
+        "latitude": "37.376192000000000",
+        "longitude": "-122.030170000000000",
+        "min_party": 6,
+        "max_party": 10,
+        "yelp_link": "dishdash-sunnyvale"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 9,
+    "fields": {
+        "name": "Smoking Pig",
+        "description": null,
+        "address": "1144 N 4th St San Jose, CA 95112",
+        "latitude": "37.358758000000000",
+        "longitude": "-121.902704000000000",
+        "min_party": 4,
+        "max_party": 10,
+        "yelp_link": "smoking-pig-bbq-san-jose"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 10,
+    "fields": {
+        "name": "Five Guys",
+        "description": null,
+        "address": "4180 N First St San Jose, CA 95112",
+        "latitude": "37.416107000000000",
+        "longitude": "-121.954944000000000",
+        "min_party": 2,
+        "max_party": 5,
+        "yelp_link": "five-guys-burgers-and-fries-san-jose-6"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 11,
+    "fields": {
+        "name": "Gobi Mongolian BBQ",
+        "description": null,
+        "address": "1135 Tasman Dr Sunnyvale, CA 94089",
+        "latitude": "37.403799000000000",
+        "longitude": "-121.994674000000000",
+        "min_party": 2,
+        "max_party": 5,
+        "yelp_link": "gobi-mongolian-bbq-sunnyvale"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 12,
+    "fields": {
+        "name": "Minas Korean BBQ",
+        "description": null,
+        "address": "3730 N 1st St San Jose, CA 95134",
+        "latitude": "37.410648000000000",
+        "longitude": "-121.945591000000000",
+        "min_party": 2,
+        "max_party": 4,
+        "yelp_link": "minas-korean-bbq-san-jose"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 13,
+    "fields": {
+        "name": "Pho Kim Long",
+        "description": null,
+        "address": "2082 N Capitol Ave San Jose, CA 95132",
+        "latitude": "37.407058000000000",
+        "longitude": "-121.886768000000000",
+        "min_party": 4,
+        "max_party": 10,
+        "yelp_link": "pho-kim-long-restaurant-san-jose"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 14,
+    "fields": {
+        "name": "Faultline Brewery",
+        "description": null,
+        "address": "1235 Oakmead Pkwy Sunnyvale, CA 94085",
+        "latitude": "37.387643000000000",
+        "longitude": "-121.992672000000000",
+        "min_party": 2,
+        "max_party": 6,
+        "yelp_link": "faultline-brewing-company-sunnyvale"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 15,
+    "fields": {
+        "name": "Holyland Restaurant & Catering",
+        "description": null,
+        "address": "807 Aldo Ave #105 Santa Clara, CA 95054",
+        "latitude": "37.384526000000000",
+        "longitude": "-121.948726000000000",
+        "min_party": 1,
+        "max_party": 20,
+        "yelp_link": "holyland-restaurant-and-catering-santa-clara"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 16,
+    "fields": {
+        "name": "Wahoo's Fish Taco",
+        "description": null,
+        "address": "691 Tasman Dr Ste Q Sunnyvale, CA 94089",
+        "latitude": "37.402632000000000",
+        "longitude": "-122.008212000000000",
+        "min_party": 1,
+        "max_party": 8,
+        "yelp_link": "wahoos-fish-taco-sunnyvale-2"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 17,
+    "fields": {
+        "name": "Pedros Restaurant & Cantina",
+        "description": null,
+        "address": "3935 Freedom Cir Santa Clara, CA 95054",
+        "latitude": "37.384989000000000",
+        "longitude": "-121.970840000000000",
+        "min_party": 4,
+        "max_party": 10,
+        "yelp_link": "pedros-restaurant-and-cantina-santa-clara-2"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 18,
+    "fields": {
+        "name": "Eat Viet",
+        "description": null,
+        "address": "3730 N 1st St Ste 110 North San Jose San Jose, CA 95134",
+        "latitude": "37.410648000000000",
+        "longitude": "-121.945591000000000",
+        "min_party": 1,
+        "max_party": 4,
+        "yelp_link": "eat-viet-san-jose"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 19,
+    "fields": {
+        "name": "QQ Noodle",
+        "description": null,
+        "address": "416 Barber Ln Milpitas, CA 95035",
+        "latitude": "37.422284400000000",
+        "longitude": "-121.918243000000000",
+        "min_party": 1,
+        "max_party": 8,
+        "yelp_link": "qq-noodle-milpitas"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 20,
+    "fields": {
+        "name": "Mayflower Restaurant",
+        "description": null,
+        "address": "428 Barber Ln Milpitas, CA 95035",
+        "latitude": "37.421222700000000",
+        "longitude": "-121.916060200000000",
+        "min_party": 2,
+        "max_party": 8,
+        "yelp_link": "mayflower-restaurant-milpitas"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 21,
+    "fields": {
+        "name": "Extreme Pita",
+        "description": null,
+        "address": "3730 N 1st St Ste 145 North San Jose San Jose, CA 95134",
+        "latitude": "37.410648000000000",
+        "longitude": "-121.945591000000000",
+        "min_party": 1,
+        "max_party": 4,
+        "yelp_link": "extreme-pita-san-jose"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 22,
+    "fields": {
+        "name": "Panera Bread",
+        "description": null,
+        "address": "4180 N. First Street North San Jose San Jose, CA 95134",
+        "latitude": "37.416107100000000",
+        "longitude": "-121.954943500000000",
+        "min_party": 1,
+        "max_party": 8,
+        "yelp_link": "panera-bread-san-jose-6"
+    }
+}, {
+    "model": "places.restaurant",
+    "pk": 23,
+    "fields": {
+        "name": "Shiva's Indian Restaurant",
+        "description": null,
+        "address": "800 California St Ste 100 Mountain View, CA 94041",
+        "latitude": "37.391629000000000",
+        "longitude": "-122.080765000000000",
+        "min_party": 6,
+        "max_party": 8,
+        "yelp_link": "shivas-indian-restaurant-mountain-view-2"
+    }
+}]
