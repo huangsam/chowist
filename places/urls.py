@@ -1,6 +1,6 @@
 from django.urls import path
 
-from ratings import views
+from places import views
 
 # Insert your urls here.
 

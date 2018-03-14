@@ -1,12 +1,12 @@
-{% extends 'ratings/base.html' %}
+{% extends 'places/base.html' %}
 
 {% block meta %}
-<title>Ratings</title>
+<title>Restaurants</title>
 {% endblock %}
 
 {% block content %}
 <div class="container lead-container pb-1">
-  <h1>All Restaurants</h1>
+  <h1>Restaurants</h1>
   <p>The restaurants listed so far:</p>
   <ul>
   {% for restaurant in object_list %}

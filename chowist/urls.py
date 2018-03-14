@@ -22,7 +22,7 @@ urlpatterns = [
 
 apps = [
     {'entry': '', 'name': 'portal'},
-    {'entry': 'ratings/', 'name': 'ratings'},
+    {'entry': 'places/', 'name': 'places'},
 ]
 
 

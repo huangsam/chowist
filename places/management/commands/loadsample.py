@@ -4,7 +4,7 @@ import os
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 
-from ratings.models import Restaurant, Rating
+from places.models import Restaurant, Rating
 
 
 class Command(BaseCommand):
