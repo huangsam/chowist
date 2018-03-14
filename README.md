@@ -16,7 +16,7 @@ Run the following commands:
 
     pip install -r requirements.txt
     python manage.py migrate
-    python manage.py loadsample data/places.json
+    python manage.py loaddata places/data.json
 
 Finally, start up the Django development server:
 
@@ -34,4 +34,4 @@ Feel free to create pull requests to the following assets:
 
 - Update Django application logic
 - Update media content (CSS/JPG/SVG/etc.)
-- Add restaurants into `data/places.json`
+- Add restaurants into `places/data.json`
