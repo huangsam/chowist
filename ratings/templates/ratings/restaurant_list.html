@@ -1,0 +1,19 @@
+{% extends 'ratings/base.html' %}
+
+{% block meta %}
+<title>Ratings</title>
+{% endblock %}
+
+{% block content %}
+<div class="container lead-container pb-1">
+  <h1>All Restaurants</h1>
+  <p>The restaurants listed so far:</p>
+  <ul>
+  {% for restaurant in object_list %}
+    <li>{{ restaurant.name }}</li>
+  {% empty %}
+    <li>No restaurants yet.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}

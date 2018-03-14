@@ -5,5 +5,6 @@ from ratings import views
 # Insert your urls here.
 
 urlpatterns = [
-    path('', views.RatingsView.as_view(), name='home')
+    path('', views.HomeView.as_view(), name='home'),
+    path('restaurants/', views.RestaurantListView.as_view(), name='restaurant_list'),
 ]
