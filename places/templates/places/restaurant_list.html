@@ -10,7 +10,7 @@
   <p>The restaurants listed so far:</p>
   <ul>
   {% for restaurant in object_list %}
-    <li>{{ restaurant.name }} (<a href="{{ restaurant.yelp_link }}">Yelp link</a>)</li>
+    <li>{{ restaurant.name }} (<a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}">Yelp link</a>)</li>
   {% empty %}
     <li>No restaurants yet.</li>
   {% endfor %}
