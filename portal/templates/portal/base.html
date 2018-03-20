@@ -25,12 +25,15 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'places:home' %}">Places</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'portal:login' %}">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'portal:logout' %}">Logout</a>
-          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'portal:logout' %}">Logout</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'portal:login' %}">Login</a>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
