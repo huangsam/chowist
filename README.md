@@ -1,14 +1,10 @@
-# chowist
-
-[![Build Status](https://travis-ci.org/huangsam/chowist.svg?branch=master)](https://travis-ci.org/huangsam/chowist)
-
-Great places are chosen by great chowists.
+# chowist [![Build Status](https://travis-ci.org/huangsam/chowist.svg?branch=master)](https://travis-ci.org/huangsam/chowist) Great places are chosen by great chowists.
 
 This is an application that replicates core features of [Yelp](https://www.yelp.com/), and adds a couple more bells and whistles. A couple features/ideas that are in the process of being created:
 
 - Homepage for marketing purposes
 - Profile settings upon user login
-- Ratings as list and detail views
+- Places as list and detail views
 
 ## Getting started
 
