@@ -8,7 +8,7 @@ This is an application that replicates core features of [Yelp](https://www.yelp.
 
 - Homepage for marketing purposes
 - Profile settings upon user login
-- Ratings as list and detail views
+- Places as list and detail views
 
 ## Getting started
 
