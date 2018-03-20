@@ -1,0 +1,27 @@
+{% load base_extras %}
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="{% url 'portal:home' %}">Chowist</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link {% nav_active request 'portal:home' %}" href="{% url 'portal:home' %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% nav_active request 'places:home' %}" href="{% url 'places:home' %}">Places</a>
+      </li>
+      {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link {% nav_active request 'portal:logout' %}" href="{% url 'portal:logout' %}">Logout</a>
+        </li>
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link {% nav_active request 'portal:login' %}" href="{% url 'portal:login' %}">Login</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
