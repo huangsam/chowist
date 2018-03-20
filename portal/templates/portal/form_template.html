@@ -5,5 +5,6 @@
   </div>
   <label>{{ field.label_tag }}</label>
   <div>{{ field }}</div>
+  <p class="small text-muted mt-2">{{ field.help_text|safe }}</p>
 </div>
 {% endfor %}
