@@ -13,7 +13,7 @@ class HomeView(TemplateView):
 
 class RestaurantListView(ListView):
     model = Restaurant
-    context_object_name = 'restaurants'
+    context_object_name = 'restaurant_list'
 
 
 class RestaurantDetailView(DetailView):
