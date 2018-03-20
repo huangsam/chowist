@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'core/base.html' %}
 
 {% block meta %}
 <title>Chowist | Login</title>
@@ -15,7 +15,7 @@
     <div class="col">
         <form class="form-horizontal" action="" method="post">
           {% csrf_token %}
-          {% include 'form_template.html' %}
+          {% include 'core/form_template.html' %}
           <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>
