@@ -1,0 +1,24 @@
+{% extends 'portal/base.html' %}
+
+{% block meta %}
+<title>Chowist | Login</title>
+{% endblock %}
+
+{% block content %}
+<div class="container lead-container">
+  <div class="row mb-3">
+    <div class="col">
+      <h1>Login</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <form class="form-horizontal" action="" method="post">
+          {% csrf_token %}
+          {% include 'portal/form_template.html' %}
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
