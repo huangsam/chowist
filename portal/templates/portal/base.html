@@ -19,11 +19,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'portal:home' %}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'places:home' %}">Places</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'portal:login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'portal:logout' %}">Logout</a>
           </li>
         </ul>
       </div>

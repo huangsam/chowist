@@ -7,7 +7,7 @@ from portal import views
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
-    path('login/', auth_views.login, name='login'),
-    path('logout/', auth_views.logout, name='logout'),
+    path('login/', auth_views.login, {'template_name': 'registration/login.html'}, name='login'),
+    path('logout/', auth_views.logout, {'template_name': 'registration/logout.html'}, name='logout'),
     path('register/', views.UserFormView.as_view(), name='register'),
 ]

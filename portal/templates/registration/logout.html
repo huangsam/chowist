@@ -13,11 +13,8 @@
   </div>
   <div class="row">
     <div class="col">
-        <form class="form-horizontal" action="" method="post">
-          {% csrf_token %}
-          {% include 'portal/form_template.html' %}
-          <button type="submit" class="btn btn-primary">Logout</button>
-        </form>
+      <p>Logged out successfully!</p>
+      <a class="btn btn-primary" href="{% url 'portal:home' %}">Go home</a>
     </div>
   </div>
 </div>
