@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 
 from places.models import Restaurant
 
@@ -11,4 +12,8 @@ class HomeView(TemplateView):
 
 
 class RestaurantListView(ListView):
+    model = Restaurant
+
+
+class RestaurantDetailView(DetailView):
     model = Restaurant

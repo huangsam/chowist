@@ -1,0 +1,19 @@
+{% extends 'places/base.html' %}
+
+{% block meta %}
+<title>Restaurant Detail</title>
+{% endblock %}
+
+{% block content %}
+<div class="container lead-container pb-3">
+  <h1>{{ object.name }}</h1>
+  <p>Here are some details about the restaurant</p>
+  <ul>
+    <li>Description: {{ object.description }}</li>
+    <li>Address: {{ object.address }}</li>
+    <li>Minimum Party: {{ object.min_party }}</li>
+    <li>Maximum Party: {{ object.max_party }}</li>
+  </ul>
+  <p><a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}">Click here</a> to see the Yelp link.</p>
+</div>
+{% endblock %}
