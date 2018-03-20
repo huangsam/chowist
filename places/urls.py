@@ -7,5 +7,5 @@ from places import views
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('restaurants/', views.RestaurantListView.as_view(), name='restaurant-list'),
-    path('restaurants/<int:pk>', views.RestaurantDetailView.as_view(), name='restaurant-detail')
+    path('restaurants/<int:pk>', views.RestaurantDetailView.as_view(), name='restaurant-detail'),
 ]
