@@ -9,13 +9,14 @@ class HomeViewTestCase(TestCase):
     """HomeView test suite"""
 
     expected_url = '/places/'
+    reverse_name = 'places:home'
 
     def test_desired_location(self):
         resp = self.client.get(self.expected_url)
         self.assertEqual(resp.status_code, 200)
 
     def test_desired_name(self):
-        reverse_url = reverse('places:home')
+        reverse_url = reverse(self.reverse_name)
         self.assertEquals(reverse_url, self.expected_url)
 
 
@@ -23,6 +24,7 @@ class RestaurantListViewTestCase(TestCase):
     """RestaurantListView test suite"""
 
     expected_url = '/places/restaurants/'
+    reverse_name = 'places:restaurant-list'
     restaurant_count = 25
 
     @classmethod
@@ -39,7 +41,7 @@ class RestaurantListViewTestCase(TestCase):
         self.assertEqual(resp.status_code, 200)
 
     def test_desired_name(self):
-        reverse_url = reverse('places:restaurant-list')
+        reverse_url = reverse(self.reverse_name)
         self.assertEquals(reverse_url, self.expected_url)
 
     def test_desired_data(self):
