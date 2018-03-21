@@ -6,58 +6,58 @@ from django.urls import reverse
 class HomeViewTestCase(TestCase):
     """HomeView test suite"""
 
-    expected_url = '/'
-    reverse_name = 'portal:home'
+    desired_url = '/'
+    desired_name = 'portal:home'
 
     def test_desired_location(self):
-        resp = self.client.get(self.expected_url)
+        resp = self.client.get(self.desired_url)
         self.assertEqual(resp.status_code, 200)
 
     def test_desired_name(self):
-        reverse_url = reverse(self.reverse_name)
-        self.assertEquals(reverse_url, self.expected_url)
+        reverse_url = reverse(self.desired_name)
+        self.assertEquals(reverse_url, self.desired_url)
 
 
 class LoginViewTestCase(TestCase):
     """LoginView test suite"""
 
-    expected_url = '/login/'
-    reverse_name = 'portal:login'
+    desired_url = '/login/'
+    desired_name = 'portal:login'
 
     def test_desired_location(self):
-        resp = self.client.get(self.expected_url)
+        resp = self.client.get(self.desired_url)
         self.assertEqual(resp.status_code, 200)
 
     def test_desired_name(self):
-        reverse_url = reverse(self.reverse_name)
-        self.assertEquals(reverse_url, self.expected_url)
+        reverse_url = reverse(self.desired_name)
+        self.assertEquals(reverse_url, self.desired_url)
 
 
 class LogoutViewTestCase(TestCase):
     """LogoutView test suite"""
 
-    expected_url = '/logout/'
-    reverse_name = 'portal:logout'
+    desired_url = '/logout/'
+    desired_name = 'portal:logout'
 
     def test_desired_location(self):
-        resp = self.client.get(self.expected_url)
+        resp = self.client.get(self.desired_url)
         self.assertEqual(resp.status_code, 200)
 
     def test_desired_name(self):
-        reverse_url = reverse(self.reverse_name)
-        self.assertEquals(reverse_url, self.expected_url)
+        reverse_url = reverse(self.desired_name)
+        self.assertEquals(reverse_url, self.desired_url)
 
 
 class UserFormViewTestCase(TestCase):
     """UserFormView test suite"""
 
-    expected_url = '/register/'
-    reverse_name = 'portal:register'
+    desired_url = '/register/'
+    desired_name = 'portal:register'
 
     def test_desired_location(self):
-        resp = self.client.get(self.expected_url)
+        resp = self.client.get(self.desired_url)
         self.assertEqual(resp.status_code, 200)
 
     def test_desired_name(self):
-        reverse_url = reverse(self.reverse_name)
-        self.assertEquals(reverse_url, self.expected_url)
+        reverse_url = reverse(self.desired_name)
+        self.assertEquals(reverse_url, self.desired_url)
