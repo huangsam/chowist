@@ -77,3 +77,15 @@ class RatingTestCase(TestCase):
         rating = Rating.objects.get(pk=2)
         self.assertEquals(rating.place.name, 'Plutos')
         self.assertEquals(rating.stars, 1)
+
+    def test_rating_filter(self):
+        ratings = Rating.objects.filter(stars=1)
+        self.assertEquals(len(ratings), 1)
+
+    def test_rating_exception(self):
+        self.assertRaises(Rating.DoesNotExist, Rating.objects.get, stars=0)
+        self.assertRaises(Rating.DoesNotExist, Rating.objects.get, stars=6)
+
+    def test_rating_empty(self):
+        ratings = Rating.objects.filter(stars=0)
+        self.assertEquals(len(ratings), 0)
