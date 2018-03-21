@@ -54,6 +54,11 @@ class RestaurantDetailViewTestCase(TestCase):
     """RestaurantDetailView test suite"""
 
     desired_name = 'places:restaurant-detail'
+    desired_id = 1
+    desired_url = '/places/restaurants/{rid}'.format(rid=desired_id)
+
+    undesired_id = 2
+    undesired_url = '/places/restaurants/{rid}'.format(rid=undesired_id)
 
     @classmethod
     def setUpTestData(cls):
@@ -62,12 +67,6 @@ class RestaurantDetailViewTestCase(TestCase):
             latitude=0.00, longitude=0.00,
             min_party=3, max_party=8,
             yelp_link='/chick-fil-a-venus')
-
-    def setUp(self):
-        self.desired_id = 1
-        self.undesired_id = 2
-        self.desired_url = '/places/restaurants/{rid}'.format(rid=self.desired_id)
-        self.undesired_url = '/places/restaurants/{rid}'.format(rid=self.undesired_id)
 
     def test_desired_location(self):
         resp = self.client.get(self.desired_url)
