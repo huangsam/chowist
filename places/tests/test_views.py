@@ -53,8 +53,6 @@ class RestaurantListViewTestCase(TestCase):
 class RestaurantDetailViewTestCase(TestCase):
     """RestaurantDetailView test suite"""
 
-    restaurant_id = 1
-    expected_url = '/places/restaurants/{rid}'.format(rid=restaurant_id)
     reverse_name = 'places:restaurant-detail'
 
     @classmethod
@@ -65,19 +63,34 @@ class RestaurantDetailViewTestCase(TestCase):
             min_party=3, max_party=8,
             yelp_link='/chick-fil-a-venus')
 
+    def setUp(self):
+        self.good_id = 1
+        self.bad_id = 2
+        self.good_url = '/places/restaurants/{rid}'.format(rid=self.good_id)
+        self.bad_url = '/places/restaurants/{rid}'.format(rid=self.bad_id)
+
     def test_desired_location(self):
-        resp = self.client.get(self.expected_url)
+        resp = self.client.get(self.good_url)
         self.assertEqual(resp.status_code, 200)
 
     def test_desired_name(self):
-        reverse_url = reverse(self.reverse_name, args=(self.restaurant_id,))
-        self.assertEquals(reverse_url, self.expected_url)
+        reverse_url = reverse(self.reverse_name, args=(self.good_id,))
+        self.assertEquals(reverse_url, self.good_url)
 
     def test_desired_data(self):
-        resp = self.client.get(self.expected_url)
+        resp = self.client.get(self.good_url)
         self.assertEqual(resp.status_code, 200)
         restaurant = resp.context['restaurant']
         self.assertTrue(type(restaurant) == Restaurant)
         self.assertEqual(restaurant.name, 'Chick Fil A')
         self.assertEqual(restaurant.min_party, 3)
         self.assertEqual(restaurant.max_party, 8)
+
+    def test_bad_location(self):
+        resp = self.client.get(self.bad_url)
+        self.assertNotEqual(resp.status_code, 200)
+        self.assertEqual(resp.status_code, 404)
+
+    def test_bad_name(self):
+        reverse_url = reverse(self.reverse_name, args=(self.bad_id,))
+        self.assertEquals(reverse_url, self.bad_url)
