@@ -52,11 +52,12 @@ class UserFormViewTestCase(TestCase):
     """UserFormView test suite"""
 
     expected_url = '/register/'
+    reverse_name = 'portal:register'
 
     def test_desired_location(self):
         resp = self.client.get(self.expected_url)
         self.assertEqual(resp.status_code, 200)
 
     def test_desired_name(self):
-        reverse_url = reverse('portal:register')
+        reverse_url = reverse(self.reverse_name)
         self.assertEquals(reverse_url, self.expected_url)
