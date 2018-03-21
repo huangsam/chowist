@@ -4,6 +4,8 @@ from places.models import Restaurant, Rating
 # Create your tests here.
 
 class RestaurantTestCase(TestCase):
+    """Restaurant test suite"""
+
     def setUp(self):
         Restaurant.objects.create(
             name='Five Guys', address='Earth',
@@ -36,6 +38,8 @@ class RestaurantTestCase(TestCase):
 
 
 class RatingTestCase(TestCase):
+    """Rating test suite"""
+
     ratings = [
         ('This place is excellent', 5),
         ('This place sucks', 1),
