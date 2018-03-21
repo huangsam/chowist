@@ -31,10 +31,10 @@ class RestaurantListViewTestCase(TestCase):
     def setUpTestData(cls):
         for i in range(cls.restaurant_count):
             Restaurant.objects.create(
-                name='Five Guys {rid}'.format(rid=i), address='Bogus {rid}'.format(rid=i),
+                name='Chipotle {rid}'.format(rid=i), address='Bogus {rid}'.format(rid=i),
                 latitude=0.00, longitude=0.00,
                 min_party=1, max_party=6,
-                yelp_link='/five-guys-earth-{rid}'.format(rid=i))
+                yelp_link='/chipotle-bogus-{rid}'.format(rid=i))
 
     def test_desired_location(self):
         resp = self.client.get(self.expected_url)
@@ -48,3 +48,32 @@ class RestaurantListViewTestCase(TestCase):
         resp = self.client.get(self.expected_url)
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(len(resp.context['restaurant_list']), self.restaurant_count)
+
+
+class RestaurantDetailViewTestCase(TestCase):
+    """RestaurantDetailView test suite"""
+
+    expected_url = '/places/restaurants/1'
+    reverse_name = 'places:restaurant-detail'
+    restaurant_count = 25
+
+    @classmethod
+    def setUpTestData(cls):
+        Restaurant.objects.create(
+            name='Chick Fil A', address='Venus',
+            latitude=0.00, longitude=0.00,
+            min_party=3, max_party=8,
+            yelp_link='/chick-fil-a-venus')
+
+    def test_desired_location(self):
+        resp = self.client.get(self.expected_url)
+        self.assertEqual(resp.status_code, 200)
+
+    def test_desired_data(self):
+        resp = self.client.get(self.expected_url)
+        self.assertEqual(resp.status_code, 200)
+        restaurant = resp.context['restaurant']
+        self.assertTrue(type(restaurant) == Restaurant)
+        self.assertEqual(restaurant.name, 'Chick Fil A')
+        self.assertEqual(restaurant.min_party, 3)
+        self.assertEqual(restaurant.max_party, 8)
