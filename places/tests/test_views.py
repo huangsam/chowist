@@ -53,9 +53,9 @@ class RestaurantListViewTestCase(TestCase):
 class RestaurantDetailViewTestCase(TestCase):
     """RestaurantDetailView test suite"""
 
-    expected_url = '/places/restaurants/1'
+    restaurant_id = 1
+    expected_url = '/places/restaurants/{rid}'.format(rid=restaurant_id)
     reverse_name = 'places:restaurant-detail'
-    restaurant_count = 25
 
     @classmethod
     def setUpTestData(cls):
@@ -68,6 +68,10 @@ class RestaurantDetailViewTestCase(TestCase):
     def test_desired_location(self):
         resp = self.client.get(self.expected_url)
         self.assertEqual(resp.status_code, 200)
+
+    def test_desired_name(self):
+        reverse_url = reverse(self.reverse_name, args=(self.restaurant_id,))
+        self.assertEquals(reverse_url, self.expected_url)
 
     def test_desired_data(self):
         resp = self.client.get(self.expected_url)
