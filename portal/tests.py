@@ -8,7 +8,7 @@ class UserFormTestCase(TestCase):
 
     def test_userform_invalid(self):
         form = UserForm()
-        self.assertEquals(form.is_valid(), False)
+        self.assertFalse(form.is_valid())
 
     def test_userform_valid(self):
         form_data = {
@@ -17,4 +17,4 @@ class UserFormTestCase(TestCase):
             'password': 's3cret123'
         }
         form = UserForm(form_data)
-        self.assertEquals(form.is_valid(), True)
+        self.assertTrue(form.is_valid())
