@@ -11,6 +11,9 @@ class Profile(models.Model):
     address = models.CharField(max_length=255, unique=True)
     birth_date = models.DateField(null=True, blank=True)
 
+    def __str__(self):
+        return '{user}: {email}'.format(user=self.user.username, email=self.user.email)
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
