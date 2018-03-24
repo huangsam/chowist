@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block meta %}
+<title>Chowist | Not Found</title>
+{% endblock %}
+
+{% block content %}
+<div class="container lead-container">
+  <h1>Not Found</h1>
+  <p class="lead">Sorry but we couldn't find the page you wanted.</p>
+  <p><a href="{% url 'portal:home' %}">Click here</a> to come back to the home page.</p>
+</div>
+{% endblock %}
