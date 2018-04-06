@@ -61,3 +61,18 @@ class UserFormViewTestCase(TestCase):
     def test_desired_name(self):
         reverse_url = reverse(self.desired_name)
         self.assertEquals(reverse_url, self.desired_url)
+
+
+class ProfileFormViewTestCase(TestCase):
+    """ProfileFormView test suite"""
+
+    desired_url = '/profile/'
+    desired_name = 'portal:profile'
+
+    def test_desired_location(self):
+        resp = self.client.get(self.desired_url)
+        self.assertEqual(resp.status_code, 302)
+
+    def test_desired_name(self):
+        reverse_url = reverse(self.desired_name)
+        self.assertEquals(reverse_url, self.desired_url)
