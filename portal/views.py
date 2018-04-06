@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
 
-from portal.forms import UserForm
+from portal.forms import UserForm, ProfileForm
 
 # Create your views here.
 
@@ -37,7 +37,13 @@ class UserFormView(View):
 
 
 class ProfileView(LoginRequiredMixin, View):
+    form_class = ProfileForm
     template_name = 'portal/profile.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        form = self.form_class(None)
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        return render(request, self.template_name, {'form': form})

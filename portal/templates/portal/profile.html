@@ -8,12 +8,16 @@
 <div class="container lead-container">
   <div class="row mb-3">
     <div class="col">
-      <h1>Work in progress</h1>
+      <h1>Profile</h1>
     </div>
   </div>
-  <div class="row">
+  <div class="row pb-3">
     <div class="col">
-      <p>More work will be done.</p>
+        <form class="form-horizontal" action="" method="post">
+          {% csrf_token %}
+          {% include 'core/form_template.html' %}
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
   </div>
 </div>
