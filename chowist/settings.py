@@ -135,3 +135,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_URL = 'portal:login'
 LOGIN_REDIRECT_URL = 'portal:home'
+LOGOUT_REDIRECT_URL = 'portal:home'
