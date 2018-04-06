@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
 
 from portal.forms import UserForm
@@ -33,3 +34,10 @@ class UserFormView(View):
                     login(request, user)
                     return redirect('portal:home')
         return render(request, self.template_name, {'form': form})
+
+
+class ProfileView(LoginRequiredMixin, View):
+    template_name = 'portal/profile.html'
+
+    def get(self, request):
+        return render(request, self.template_name)

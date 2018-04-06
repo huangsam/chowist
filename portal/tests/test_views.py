@@ -21,7 +21,7 @@ class HomeViewTestCase(TestCase):
 class LoginViewTestCase(TestCase):
     """LoginView test suite"""
 
-    desired_url = '/login/'
+    desired_url = '/accounts/login/'
     desired_name = 'portal:login'
 
     def test_desired_location(self):
@@ -36,7 +36,7 @@ class LoginViewTestCase(TestCase):
 class LogoutViewTestCase(TestCase):
     """LogoutView test suite"""
 
-    desired_url = '/logout/'
+    desired_url = '/accounts/logout/'
     desired_name = 'portal:logout'
 
     def test_desired_location(self):
