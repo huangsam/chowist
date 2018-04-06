@@ -16,22 +16,28 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# Default app
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+# Custom apps
 apps = [
     {'entry': '', 'name': 'portal'},
     {'entry': 'places/', 'name': 'places'},
 ]
 
 
-def get_app_url(app):
+def get_app_path(app):
+    """Get application path"""
     app_entry = app['entry']
     app_name = app['name']
     app_urls = app_name + '.urls'
-    return path(app_entry, include((app_urls, app_name), namespace=app_name))
+    return path(
+        app_entry,
+        include((app_urls, app_name), namespace=app_name)
+    )
 
 
 for app in apps:
-    urlpatterns.append(get_app_url(app))
+    urlpatterns.append(get_app_path(app))
