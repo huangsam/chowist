@@ -13,7 +13,7 @@
     <p>
       <a class="btn btn-primary btn-lg" href="https://huangsam.github.io/chowist/" role="button">Learn More</a>
       {% if user.is_authenticated is False %}
-        <a class="btn btn-secondary btn-lg" href="{% url 'portal:register' %}" role="button">Register</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'portal:signup' %}" role="button">Sign Up</a>
       {% endif %}
     </p>
   </div>

@@ -14,7 +14,7 @@ class HomeView(TemplateView):
 
 class UserFormView(View):
     form_class = UserForm
-    template_name = 'portal/registration_form.html'
+    template_name = 'portal/signup.html'
 
     def get(self, request):
         form = self.form_class(None)

@@ -51,8 +51,8 @@ class LogoutViewTestCase(TestCase):
 class UserFormViewTestCase(TestCase):
     """UserFormView test suite"""
 
-    desired_url = '/register/'
-    desired_name = 'portal:register'
+    desired_url = '/signup/'
+    desired_name = 'portal:signup'
 
     def test_desired_location(self):
         resp = self.client.get(self.desired_url)
