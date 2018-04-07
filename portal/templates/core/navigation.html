@@ -15,6 +15,9 @@
       </li>
       {% if user.is_authenticated %}
         <li class="nav-item">
+          <a class="nav-link {% nav_active request 'portal:profile' %}" href="{% url 'portal:profile' %}">Profile</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link {% nav_active request 'portal:logout' %}" href="{% url 'portal:logout' %}">Logout</a>
         </li>
       {% else %}
