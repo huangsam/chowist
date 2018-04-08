@@ -193,5 +193,15 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': False,
         },
+        'places': {
+            'handlers': ['console', 'mail_admins'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': True,
+        },
+        'portal': {
+            'handlers': ['console', 'mail_admins'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': True,
+        },
     },
 }
