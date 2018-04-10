@@ -99,6 +99,7 @@ ENV/
 .mypy_cache/
 
 # Project specific
+*.log.*
 *.log
 *.sqlite3
 *.db
