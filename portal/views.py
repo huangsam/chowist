@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate, login
@@ -5,6 +7,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
 
 from portal.forms import UserForm, ProfileForm
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -31,6 +35,7 @@ class UserFormView(View):
             user = authenticate(username=username, password=password)
             if user is not None:
                 if user.is_active:
+                    logger.info('User {usr} registered to the system'.format(usr=username))
                     login(request, user)
                     return redirect('portal:home')
         return render(request, self.template_name, {'form': form})
