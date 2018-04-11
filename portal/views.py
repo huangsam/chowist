@@ -1,12 +1,12 @@
 import logging
 
-from django.shortcuts import render, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView, View
 from django.views.generic.edit import FormView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
 
-from portal.forms import UserForm, ProfileForm
+from portal.forms import ProfileForm, UserForm
 from portal.models import Profile
 
 logger = logging.getLogger(__name__)
