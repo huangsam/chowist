@@ -5,24 +5,16 @@
 {% endblock %}
 
 {% block content %}
-<div class="container lead-container">
-  <div class="row mb-3">
-    <div class="col">
-      <h1>Profile</h1>
-    </div>
-  </div>
-  <div class="row pb-3">
-    <div class="col">
-      <p>Here are some details about the current user:</p>
-      <ul>
-        <li>Username: {{ profile.user.username }}</li>
-        <li>Email: {{ profile.user.email }}</li>
-        <li>Bio: {{ profile.bio }}</li>
-        <li>Address: {{ profile.address }}</li>
-        <li>Birth: {{ profile.birth_date }}</li>
-      </ul>
-        <p><a class="btn btn-primary disabled" href="#" role="button">Edit</a></p>
-    </div>
-  </div>
+<div class="container lead-container pb-3">
+  <h1>Profile</h1>
+  <p>Here are some details about the current user:</p>
+  <ul>
+    <li>Username: {{ profile.user.username }}</li>
+    <li>Email: {{ profile.user.email }}</li>
+    <li>Bio: {{ profile.bio }}</li>
+    <li>Address: {{ profile.address }}</li>
+    <li>Birth: {{ profile.birth_date }}</li>
+  </ul>
+  <p><a class="btn btn-primary disabled" href="#" role="button">Edit</a></p>
 </div>
 {% endblock %}
