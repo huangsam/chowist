@@ -13,11 +13,14 @@
   </div>
   <div class="row pb-3">
     <div class="col">
-        <p>User: {{ profile.user.username }}</p>
-        <p>Email: {{ profile.user.email }}</p>
-        <p>Bio: {{ profile.bio }}</p>
-        <p>Address: {{ profile.address }}</p>
-        <p>Birth: {{ profile.birth_date }}</p>
+      <p>Here are some details about the current user:</p>
+      <ul>
+        <li>Username: {{ profile.user.username }}</li>
+        <li>Email: {{ profile.user.email }}</li>
+        <li>Bio: {{ profile.bio }}</li>
+        <li>Address: {{ profile.address }}</li>
+        <li>Birth: {{ profile.birth_date }}</li>
+      </ul>
         <p><a class="btn btn-primary disabled" href="#" role="button">Edit</a></p>
     </div>
   </div>
