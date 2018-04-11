@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block meta %}
+<title>Chowist | Restaurant Update</title>
+{% endblock %}
+
+{% block content %}
+<div class="container lead-container">
+  <div class="row mb-3">
+    <div class="col">
+      <h1>Restaurant Update</h1>
+    </div>
+  </div>
+  <div class="row pb-3">
+    <div class="col">
+        <form class="form-horizontal" action="" method="post">
+          {% csrf_token %}
+          {% include 'core/form_template.html' %}
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

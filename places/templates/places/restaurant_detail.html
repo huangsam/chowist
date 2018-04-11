@@ -15,5 +15,6 @@
     <li>Maximum Party: {{ restaurant.max_party }}</li>
   </ul>
   <p><a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}">Click here</a> to see the Yelp link.</p>
+  <a class="btn btn-primary" href="{% url 'places:restaurant-update' restaurant.id %}">Update</a>
 </div>
 {% endblock %}
