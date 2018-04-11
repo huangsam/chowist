@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from portal.forms import UserForm, ProfileForm
+from portal.forms import UserForm
 
 # Create your tests here.
 
@@ -19,13 +19,3 @@ class UserFormTestCase(TestCase):
         }
         form = UserForm(form_data)
         self.assertTrue(form.is_valid())
-
-
-class ProfileFormTestCase(TestCase):
-    """ProfileForm test suite"""
-
-    def test_profileform_invalid(self):
-        pass
-
-    def test_profileform_valid(self):
-        pass

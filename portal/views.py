@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView, View
 from django.views.generic.edit import FormView
 
-from portal.forms import ProfileForm, UserForm
+from portal.forms import UserForm
 from portal.models import Profile
 
 logger = logging.getLogger(__name__)
