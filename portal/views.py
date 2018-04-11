@@ -1,10 +1,10 @@
 import logging
 
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
 from django.views.generic.edit import FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import View
+from django.urls import reverse_lazy
 
 from portal.forms import UserForm, ProfileForm
 from portal.models import Profile
@@ -18,9 +18,9 @@ class HomeView(TemplateView):
 
 
 class UserFormView(FormView):
-    form_class = UserForm
     template_name = 'portal/signup.html'
-    success_url = '/'
+    form_class = UserForm
+    success_url = reverse_lazy('portal:home')
 
     def form_valid(self, form):
         user = form.save(commit=False)
