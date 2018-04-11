@@ -13,11 +13,12 @@
   </div>
   <div class="row pb-3">
     <div class="col">
-        <form class="form-horizontal" action="" method="post">
-          {% csrf_token %}
-          {% include 'core/form_template.html' %}
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        <p>User: {{ profile.user.username }}</p>
+        <p>Email: {{ profile.user.email }}</p>
+        <p>Bio: {{ profile.bio }}</p>
+        <p>Address: {{ profile.address }}</p>
+        <p>Birth: {{ profile.birth_date }}</p>
+        <p><a class="btn btn-primary disabled" href="#" role="button">Edit</a></p>
     </div>
   </div>
 </div>

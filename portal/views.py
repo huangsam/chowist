@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
 
 from portal.forms import UserForm, ProfileForm
+from portal.models import Profile
 
 logger = logging.getLogger(__name__)
 
@@ -38,17 +39,18 @@ class UserFormView(View):
                     logger.info('User {usr} registered to the system'.format(usr=username))
                     login(request, user)
                     return redirect('portal:home')
+                else:
+                    logger.warn('User {usr} is inactive'.format(usr=username))
+            else:
+                logger.warn('User {usr} was not created properly'.format(usr=username))
+        else:
+            logger.warn('Invalid signup form data')
         return render(request, self.template_name, {'form': form})
 
 
 class ProfileView(LoginRequiredMixin, View):
-    form_class = ProfileForm
     template_name = 'portal/profile.html'
 
     def get(self, request):
-        form = self.form_class(None)
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request):
-        form = self.form_class(request.POST)
-        return render(request, self.template_name, {'form': form})
+        profile = Profile.objects.get(user=request.user)
+        return render(request, self.template_name, {'profile': profile})
