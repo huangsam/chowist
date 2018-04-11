@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
@@ -21,7 +22,7 @@ class RestaurantDetailView(DetailView):
     context_object_name = 'restaurant'
 
 
-class RestaurantUpdateView(UpdateView):
+class RestaurantUpdateView(LoginRequiredMixin, UpdateView):
     model = Restaurant
     fields = ['name', 'description', 'address', 'min_party', 'max_party', 'yelp_link']
     template_name_suffix = '_update'

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
 
@@ -112,8 +113,10 @@ class RestaurantUpdateViewTestCase(TestCase):
             latitude=0.00, longitude=0.00,
             min_party=3, max_party=8,
             yelp_link='/chick-fil-a-venus')
+        User.objects.create_user('john', 'john@example.org', 'secret123')
 
     def test_desired_location(self):
+        self.client.login(username='john', password='secret123')
         resp = self.client.get(self.desired_url)
         self.assertEqual(resp.status_code, 200)
 
@@ -122,6 +125,7 @@ class RestaurantUpdateViewTestCase(TestCase):
         self.assertEquals(reverse_url, self.desired_url)
 
     def test_undesired_location(self):
+        self.client.login(username='john', password='secret123')
         resp = self.client.get(self.undesired_url)
         self.assertNotEqual(resp.status_code, 200)
         self.assertEqual(resp.status_code, 404)
