@@ -11,7 +11,6 @@ from portal.models import Profile
 
 logger = logging.getLogger(__name__)
 
-# Create your views here.
 
 class HomeView(TemplateView):
     template_name = 'portal/home.html'

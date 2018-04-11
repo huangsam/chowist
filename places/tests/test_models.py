@@ -2,7 +2,6 @@ from django.test import TestCase
 
 from places.models import Restaurant, Rating
 
-# Create your tests here.
 
 class RestaurantTestCase(TestCase):
     """Restaurant test suite"""

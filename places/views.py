@@ -6,7 +6,6 @@ from django.views.generic.list import ListView
 
 from places.models import Restaurant
 
-# Create your views here.
 
 class HomeView(TemplateView):
     template_name = 'places/home.html'

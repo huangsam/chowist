@@ -2,7 +2,6 @@ from django.test import TestCase
 
 from portal.forms import UserForm
 
-# Create your tests here.
 
 class UserFormTestCase(TestCase):
     """UserForm test suite"""

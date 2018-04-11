@@ -4,7 +4,6 @@ from django.urls import reverse
 
 from places.models import Restaurant
 
-# Create your tests here.
 
 class HomeViewTestCase(TestCase):
     """HomeView test suite"""
