@@ -55,10 +55,10 @@ class RestaurantDetailViewTestCase(TestCase):
 
     desired_name = 'places:restaurant-detail'
     desired_id = 1
-    desired_url = '/places/restaurants/{rid}'.format(rid=desired_id)
+    desired_url = '/places/restaurants/{rid}/'.format(rid=desired_id)
 
     undesired_id = 2
-    undesired_url = '/places/restaurants/{rid}'.format(rid=undesired_id)
+    undesired_url = '/places/restaurants/{rid}/'.format(rid=undesired_id)
 
     @classmethod
     def setUpTestData(cls):
@@ -84,6 +84,42 @@ class RestaurantDetailViewTestCase(TestCase):
         self.assertEqual(restaurant.name, 'Chick Fil A')
         self.assertEqual(restaurant.min_party, 3)
         self.assertEqual(restaurant.max_party, 8)
+
+    def test_undesired_location(self):
+        resp = self.client.get(self.undesired_url)
+        self.assertNotEqual(resp.status_code, 200)
+        self.assertEqual(resp.status_code, 404)
+
+    def test_undesired_name(self):
+        reverse_url = reverse(self.desired_name, args=(self.undesired_id,))
+        self.assertEquals(reverse_url, self.undesired_url)
+
+
+class RestaurantUpdateViewTestCase(TestCase):
+    """RestaurantUpdateView test suite"""
+
+    desired_name = 'places:restaurant-update'
+    desired_id = 1
+    desired_url = '/places/restaurants/{rid}/update/'.format(rid=desired_id)
+
+    undesired_id = 2
+    undesired_url = '/places/restaurants/{rid}/update/'.format(rid=undesired_id)
+
+    @classmethod
+    def setUpTestData(cls):
+        Restaurant.objects.create(
+            name='Chick Fil A', address='Venus',
+            latitude=0.00, longitude=0.00,
+            min_party=3, max_party=8,
+            yelp_link='/chick-fil-a-venus')
+
+    def test_desired_location(self):
+        resp = self.client.get(self.desired_url)
+        self.assertEqual(resp.status_code, 200)
+
+    def test_desired_name(self):
+        reverse_url = reverse(self.desired_name, args=(self.desired_id,))
+        self.assertEquals(reverse_url, self.desired_url)
 
     def test_undesired_location(self):
         resp = self.client.get(self.undesired_url)
