@@ -11,6 +11,9 @@ class Profile(models.Model):
     address = models.CharField(max_length=255, blank=True)
     birth_date = models.DateField(null=True)
 
+    class Meta:
+        db_table = 'profile'
+
     def __str__(self):
         return '{user}: {email}'.format(user=self.user.username, email=self.user.email)
 
