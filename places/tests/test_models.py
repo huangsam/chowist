@@ -89,3 +89,10 @@ class RatingTestCase(TestCase):
     def test_rating_empty(self):
         ratings = Rating.objects.filter(stars=0)
         self.assertEquals(len(ratings), 0)
+
+    def test_restaurant_ratings(self):
+        restaurant = Restaurant.objects.get(name='Plutos')
+        ratings = restaurant.ratings.all().prefetch_related('place')
+        self.assertTrue(len(ratings) == len(self.ratings))
+        for rating in ratings:
+            self.assertEquals(rating.place.name, 'Plutos')
