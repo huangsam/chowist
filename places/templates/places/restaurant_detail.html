@@ -14,6 +14,14 @@
     <li>Minimum Party: {{ restaurant.min_party }}</li>
     <li>Maximum Party: {{ restaurant.max_party }}</li>
   </ul>
+  <p>Ratings for this restaurant:</p>
+  <ul>
+    {% for rating in restaurant.ratings.all %}
+      <li>{{ rating.author }}, {{ rating.stars }} - {{ rating.snippet }}</li>
+    {% empty %}
+      <li>No ratings yet.</li>
+    {% endfor %}
+  </ul>
   <p><a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}">Click here</a> to see the Yelp link.</p>
   {% if user.is_authenticated %}
     <a class="btn btn-primary" href="{% url 'places:restaurant-update' restaurant.id %}">Update</a>
