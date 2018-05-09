@@ -74,9 +74,11 @@ class RatingTestCase(TestCase):
         rating = Rating.objects.get(pk=1)
         self.assertEquals(rating.place.name, 'Plutos')
         self.assertEquals(rating.stars, 5)
+        self.assertEquals(rating.author, None)
         rating = Rating.objects.get(pk=2)
         self.assertEquals(rating.place.name, 'Plutos')
         self.assertEquals(rating.stars, 1)
+        self.assertEquals(rating.author, None)
 
     def test_rating_filter(self):
         ratings = Rating.objects.filter(stars=1)
