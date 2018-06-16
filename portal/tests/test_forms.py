@@ -3,7 +3,7 @@ from django.test import TestCase
 from portal.forms import UserForm
 
 
-class UserFormTestCase(TestCase):
+class TestUserForm(TestCase):
     """UserForm test suite"""
 
     def test_userform_invalid(self):

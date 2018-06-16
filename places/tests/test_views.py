@@ -5,7 +5,7 @@ from django.urls import reverse
 from places.models import Restaurant
 
 
-class HomeViewTestCase(TestCase):
+class TestHomeView(TestCase):
     """HomeView test suite"""
 
     desired_url = '/places/'
@@ -20,7 +20,7 @@ class HomeViewTestCase(TestCase):
         self.assertEquals(reverse_url, self.desired_url)
 
 
-class RestaurantListViewTestCase(TestCase):
+class TestRestaurantListView(TestCase):
     """RestaurantListView test suite"""
 
     desired_url = '/places/restaurants/'
@@ -50,7 +50,7 @@ class RestaurantListViewTestCase(TestCase):
         self.assertEqual(len(resp.context['restaurant_list']), self.desired_restaurant_count)
 
 
-class RestaurantDetailViewTestCase(TestCase):
+class TestRestaurantDetailView(TestCase):
     """RestaurantDetailView test suite"""
 
     desired_name = 'places:restaurant-detail'
@@ -95,7 +95,7 @@ class RestaurantDetailViewTestCase(TestCase):
         self.assertEquals(reverse_url, self.undesired_url)
 
 
-class RestaurantUpdateViewTestCase(TestCase):
+class TestRestaurantUpdateView(TestCase):
     """RestaurantUpdateView test suite"""
 
     desired_name = 'places:restaurant-update'

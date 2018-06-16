@@ -3,7 +3,7 @@ from django.test import TestCase
 from places.models import Restaurant, Rating
 
 
-class RestaurantTestCase(TestCase):
+class TestRestaurant(TestCase):
     """Restaurant test suite"""
 
     def setUp(self):
@@ -41,7 +41,7 @@ class RestaurantTestCase(TestCase):
         self.assertEquals(len(restaurants), 0)
 
 
-class RatingTestCase(TestCase):
+class TestRating(TestCase):
     """Rating test suite"""
 
     ratings = [

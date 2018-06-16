@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 
-class HomeViewTestCase(TestCase):
+class TestHomeView(TestCase):
     """HomeView test suite"""
 
     desired_url = '/'
@@ -18,7 +18,7 @@ class HomeViewTestCase(TestCase):
         self.assertEquals(reverse_url, self.desired_url)
 
 
-class UserFormViewTestCase(TestCase):
+class TestUserFormView(TestCase):
     """UserFormView test suite"""
 
     desired_url = '/signup/'
@@ -33,7 +33,7 @@ class UserFormViewTestCase(TestCase):
         self.assertEquals(reverse_url, self.desired_url)
 
 
-class ProfileFormViewTestCase(TestCase):
+class TestProfileFormView(TestCase):
     """ProfileFormView test suite"""
 
     desired_url = '/profile/'
