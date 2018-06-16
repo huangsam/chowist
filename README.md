@@ -14,7 +14,7 @@ This is an application that replicates core features of [Yelp](https://www.yelp.
 
 Here are some things to be aware of in development and production.
 
-### Development setup
+### Local setup
 
 Run the following commands:
 
@@ -25,8 +25,6 @@ Finally, start up the Django development server:
 
     python manage.py runserver
 
-#### Test data for development
-
 For development, you might want test data to validate the app's functionality:
 
     python manage.py loaddata restaurant user
@@ -34,6 +32,12 @@ For development, you might want test data to validate the app's functionality:
 This loads restaurants and an `admin` user with password `admin`. The `admin` user allows you to enter the Django dashboard and view users/groups/data in a consolidated view.
 
 **Note:** `DJANGO_SECRET` must be set to `dummy` for the `admin` user to work.
+
+#### Dockerized setup
+
+To finish the complete local setup with Docker:
+
+    docker-compose -f compose/dev.yml -p chowist up --build -d
 
 ### Production setup
 
