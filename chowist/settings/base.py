@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(CUR_PATH)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u!srfxl%l#do9((pmstpl!z@=0533wln4j7t*u!x(wx@h6%$-0'
+SECRET_KEY = os.getenv('DJANGO_SECRET', 'dummy')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -152,7 +152,7 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
@@ -162,7 +162,7 @@ LOGGING = {
             'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': os.path.join('logs', 'audit.log'),
             'when': 'h',
-            'backupCount': 24,
+            'backupCount': 6,
             'utc': True,
             'formatter': 'verbose',
         },
@@ -177,11 +177,6 @@ LOGGING = {
             'handlers': ['console', 'file_audit'],
             'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
             'propagate': True,
-        },
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': False,
         },
         'places': {
             'handlers': ['console', 'mail_admins'],

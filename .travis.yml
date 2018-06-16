@@ -9,5 +9,4 @@ install:
   - "pip install -r requirements/all.txt"
 script:
   - "python manage.py check"
-  - "python manage.py migrate"
   - "python manage.py test"
