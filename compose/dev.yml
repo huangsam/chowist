@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: 'postgres:10.4-alpine'
+    volumes:
+      - '/var/lib/postgresql/data'
+    restart: always
+  app:
+    image: 'chowist:dev'
+    build:
+      context: '..'
+      dockerfile: './build/django.Dockerfile'
+    env_file: 'envs/django.env'
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+    restart: always
