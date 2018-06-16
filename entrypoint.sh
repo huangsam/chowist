@@ -1,4 +1,5 @@
 #!/bin/sh
+set -euxo pipefail
 
 # Apply db migrations against database
 python manage.py migrate
