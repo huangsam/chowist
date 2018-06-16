@@ -12,17 +12,36 @@ This is an application that replicates core features of [Yelp](https://www.yelp.
 
 ## Getting started
 
+Here are some things to be aware of in development and production.
+
+### Local setup
+
 Run the following commands:
 
     pip install -r requirements.txt
     python manage.py migrate
-    python manage.py loaddata places/restaurant.json
 
 Finally, start up the Django development server:
 
     python manage.py runserver
 
-Or a set of Gunicorn servers:
+For development, you might want test data to validate the app's functionality:
+
+    python manage.py loaddata restaurant user
+
+This loads restaurants and an `admin` user with password `admin`. The `admin` user allows you to enter the Django dashboard and view users/groups/data in a consolidated view.
+
+**Note:** `DJANGO_SECRET` must be set to `dummy` for the `admin` user to work.
+
+#### Dockerized setup
+
+To finish the complete local setup with Docker:
+
+    docker-compose -f compose/dev.yml -p chowist up --build -d
+
+### Production setup
+
+For production, you might want to use `gunicorn` for running the server:
 
     gunicorn -w 4 chowist.wsgi
 
@@ -33,5 +52,5 @@ When using Gunicorn, remember to host the static files from a web server.
 Feel free to create pull requests to the following assets:
 
 - Update Django application logic
-- Update media content (CSS/JPG/SVG/etc.)
-- Add restaurants into `places/restaurant.json`
+- Update media content (`JPG`, `SVG`, etc.)
+- Add restaurants into `restaurant.json`
