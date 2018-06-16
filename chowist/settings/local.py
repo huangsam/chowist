@@ -1,6 +1,6 @@
 import os
 
-from chowist.settings.base import *
+from chowist.settings.base import *  # noqa
 
 
 # Password validation
