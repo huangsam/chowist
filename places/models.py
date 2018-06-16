@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.urls import reverse
 
 
 class Restaurant(models.Model):
@@ -14,6 +15,9 @@ class Restaurant(models.Model):
 
     class Meta:
         db_table = 'restaurant'
+
+    def get_absolute_url(self):
+        return reverse('places:restaurant-detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return '{id}: {name} @ {address}'.format(
