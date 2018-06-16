@@ -1,4 +1,5 @@
 #!/bin/bash
+
 JQUERY='jquery-3.3.1.slim.min.js'
 curl -L "https://code.jquery.com/$JQUERY" -o "./js/$JQUERY"
 
