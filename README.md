@@ -18,6 +18,10 @@ Run the following commands:
     python manage.py migrate
     python manage.py loaddata places/restaurant.json
 
+If you want an admin to access the dashboard:
+
+    python manage.py createsuperuser
+
 Finally, start up the Django development server:
 
     python manage.py runserver
