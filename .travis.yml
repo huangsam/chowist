@@ -6,8 +6,7 @@ python:
 dist: trusty
 sudo: false
 install:
-  - "pip install -r requirements.txt"
-  - "pip install -r test-requirements.txt"
+  - "pip install -r requirements/all.txt"
 script:
   - "python manage.py check"
   - "python manage.py migrate"
