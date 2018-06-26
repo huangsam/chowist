@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+"psycopg2" = "==2.7.4"
+gunicorn = "==19.8.1"
+Django = "==2.0.6"
+
+[dev-packages]
+"flake8" = "*"
+
+[requires]
+python_version = "3.6"
