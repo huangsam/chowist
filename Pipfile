@@ -10,3 +10,5 @@ Django = "==2.0.6"
 
 [dev-packages]
 "flake8" = "*"
+
+[requires]
