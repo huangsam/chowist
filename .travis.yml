@@ -3,10 +3,11 @@ cache: pip
 python:
   - "3.5"
   - "3.6"
+  - "3.7"
 dist: trusty
 sudo: false
 install:
-  - "pip install -r requirements/all.txt"
+  - "pipenv install --system"
 script:
   - "python manage.py check"
   - "python manage.py test"
