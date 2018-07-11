@@ -6,8 +6,9 @@ RUN apk add --no-cache --update \
     gcc \
     python3-dev \
     musl-dev
-ADD requirements requirements
-RUN pip install -r requirements/all.txt
+ADD Pipfile ./Pipfile
+ADD Pipfile.lock ./Pipfile.lock
+RUN pip install pipenv && pipenv install --system
 ADD . ./
 EXPOSE 8000
 CMD sh entrypoint.sh
