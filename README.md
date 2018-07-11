@@ -16,9 +16,13 @@ Here are some things to be aware of in development and production.
 
 ### Local setup
 
-Run the following commands:
+Install dependencies and create a `virtualenv` instance:
 
-    pip install -r requirements.txt
+    pipenv install
+    pipenv shell
+
+Then run database migration:
+
     python manage.py migrate
 
 Finally, start up the Django development server:
