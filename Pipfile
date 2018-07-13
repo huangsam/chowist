@@ -9,5 +9,6 @@ gunicorn = "==19.8.1"
 Django = "==2.0.7"
 
 [dev-packages]
+"flake8" = "*"
 
 [requires]
