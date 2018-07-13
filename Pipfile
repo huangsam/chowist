@@ -4,9 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-"psycopg2" = "==2.7.5"
-gunicorn = "==19.8.1"
 Django = "==2.0.7"
+gunicorn = "==19.8.1"
+"psycopg2" = "==2.7.5"
 
 [dev-packages]
 "flake8" = "*"
