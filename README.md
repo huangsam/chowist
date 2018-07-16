@@ -35,7 +35,7 @@ For development, you might want test data to validate the app's functionality:
 
 This loads restaurants and an `admin` user with password `admin`. The `admin` user allows you to enter the Django dashboard and view users/groups/data in a consolidated view.
 
-**Note:** `DJANGO_SECRET` must be set to `dummy` for the `admin` user to work.
+**Note:** `DJANGO_SECRET` must be set to `dummy` for the `admin` user to work. Otherwise, you will need to create a new superuser with `python manage.py createsuperuser`.
 
 #### Dockerized setup
 
