@@ -30,7 +30,14 @@ apps = [
 
 
 def get_app_path(app):
-    """Get application path"""
+    """Get application path for urlpatterns.
+
+    Args:
+        app: Application instance.
+
+    Returns:
+        Application path instance.
+    """
     app_entry = app['entry']
     app_name = app['name']
     app_urls = app_name + '.urls'
