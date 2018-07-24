@@ -1,6 +1,6 @@
 # chowist
 
-[![Build Status](https://travis-ci.org/huangsam/chowist.svg?branch=master)](https://travis-ci.org/huangsam/chowist)
+[![Build Status](https://travis-ci.com/huangsam/chowist.svg?branch=master)](https://travis-ci.com/huangsam/chowist)
 
 Great places are chosen by great chowists.
 
