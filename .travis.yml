@@ -6,7 +6,7 @@ python:
 dist: trusty
 sudo: false
 env:
-  - PIP_NO_BINARY=:all:
+  - PIP_NO_BINARY=psycopg2
 install:
   - pip install pipenv
   - pipenv install --system
