@@ -71,13 +71,9 @@ class TestRating(TestCase):
         self.assertEquals(len(ratings), len(self.ratings))
 
     def test_rating_get(self):
-        rating = Rating.objects.get(pk=1)
+        rating = Rating.objects.get(snippet='This place is excellent')
         self.assertEquals(rating.place.name, 'Plutos')
         self.assertEquals(rating.stars, 5)
-        self.assertEquals(rating.author, None)
-        rating = Rating.objects.get(pk=2)
-        self.assertEquals(rating.place.name, 'Plutos')
-        self.assertEquals(rating.stars, 1)
         self.assertEquals(rating.author, None)
 
     def test_rating_filter(self):
