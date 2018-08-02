@@ -1,5 +1,6 @@
 FROM python:3.7-alpine
 ENV PYTHONUNBUFFERED 1
+ENV PIP_NO_BINARY psycopg2
 WORKDIR /app
 RUN apk add --no-cache --update \
     postgresql-dev \
