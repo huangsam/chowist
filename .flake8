@@ -1,5 +1,8 @@
 [flake8]
 ignore = E501
 exclude =
-    .git, __pycache__, settings, migrations,
+    .git,
+    __pycache__,
+    settings,
+    migrations,
     manage.py
