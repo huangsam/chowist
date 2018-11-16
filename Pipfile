@@ -12,3 +12,4 @@ gunicorn = "==19.9.0"
 "flake8" = "*"
 
 [requires]
+python_version = "3"
