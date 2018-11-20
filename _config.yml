@@ -2,7 +2,7 @@ title: Chowist
 description: Great places are chosen by great chowists
 google_analytics: UA-47367815-1
 show_downloads: true
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 
 gems:
   - jekyll-mentions
