@@ -3,3 +3,4 @@ logs/
 places/
 portal/
 .DS_Store
+db.sqlite3
