@@ -1,48 +1,23 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Unit test / coverage reports
+build/
+dist/
+*.eggs/
+*.egg-info/
 htmlcov/
 .tox/
 .coverage
 .coverage.*
 .cache
-nosetests.xml
 coverage.xml
 *.cover
-.hypothesis/
-
-# Translations
-*.mo
-*.pot
-
-# Sphinx documentation
-docs/_build/
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-
-# Django stuff
 *.log.*
 *.log
 *.sqlite3
 *.db
 
-# Other stuff
-.DS_Store
+node_modules/
 static/
+.DS_Store
