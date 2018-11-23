@@ -1,0 +1,38 @@
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: 'circleci/python:3.7.0'
+        environment:
+          DJANGO_SETTINGS_MODULE: 'chowist.settings.test'
+          PIP_NO_BINARY: 'psycopg2'
+      - image: 'circleci/postgres:10.6'
+        environment:
+          POSTGRES_USER: 'circleci'
+          POSTGRES_DB: 'circle_test'
+
+    working_directory: ~/chowist
+
+    steps:
+      - checkout
+
+      - run:
+          name: Set folder permissions
+          command: |
+            sudo chown -R circleci:circleci /usr/local/bin
+            sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
+
+      - run:
+          name: Install dependencies
+          command: |
+            pipenv install --system
+
+      - run:
+          name: Run tests
+          command: |
+            python manage.py check
+            python manage.py test
