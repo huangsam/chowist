@@ -4,8 +4,14 @@ __pycache__/
 *.so
 build/
 dist/
+eggs/
+.eggs/
 *.eggs/
 *.egg-info/
+lib/
+lib64/
+sdist/
+wheels/
 htmlcov/
 .tox/
 .coverage
@@ -21,8 +27,3 @@ coverage.xml
 node_modules/
 static/
 .DS_Store
-
-chowist/
-logs/
-places/
-portal/
