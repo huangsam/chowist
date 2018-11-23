@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "markdownlint": "^0.11.0"
+  },
+  "dependencies": {
+    "remark-cli": "^6.0.1",
+    "remark-lint": "^6.0.4",
+    "remark-preset-lint-consistent": "^2.0.2"
+  },
+  "scripts": {
+    "lint-md": "remark index.md"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-consistent"
+    ]
+  }
+}
