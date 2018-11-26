@@ -37,7 +37,7 @@ This loads restaurants and an `admin` user with password `admin`. The `admin` us
 
 **Note:** `DJANGO_SECRET` must be set to `dummy` for the `admin` user to work. Otherwise, you will need to create a new superuser with `python manage.py createsuperuser`.
 
-#### Dockerized setup
+### Dockerized setup
 
 To finish the complete local setup with Docker:
 
