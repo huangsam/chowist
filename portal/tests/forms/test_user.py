@@ -12,9 +12,9 @@ class TestUserForm(TestCase):
 
     def test_userform_valid(self):
         form_data = {
-            'username': 'johndoe',
-            'email': 'johndoe@example.org',
-            'password': 's3cret123'
+            "username": "johndoe",
+            "email": "johndoe@example.org",
+            "password": "s3cret123",
         }
         form = UserForm(form_data)
         self.assertTrue(form.is_valid())

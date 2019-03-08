@@ -8,23 +8,31 @@ class TestRestaurant(TestCase):
 
     def setUp(self):
         Restaurant.objects.create(
-            name='Five Guys', address='Earth',
-            latitude=0.00, longitude=0.00,
-            min_party=1, max_party=6,
-            yelp_link='/five-guys-earth')
+            name="Five Guys",
+            address="Earth",
+            latitude=0.00,
+            longitude=0.00,
+            min_party=1,
+            max_party=6,
+            yelp_link="/five-guys-earth",
+        )
         Restaurant.objects.create(
-            name='In N Out', address='Mars',
-            latitude=0.00, longitude=0.00,
-            min_party=1, max_party=4,
-            yelp_link='/in-n-out-mars')
+            name="In N Out",
+            address="Mars",
+            latitude=0.00,
+            longitude=0.00,
+            min_party=1,
+            max_party=4,
+            yelp_link="/in-n-out-mars",
+        )
 
     def test_restaurants_all(self):
         restaurants = Restaurant.objects.all()
         self.assertEquals(len(restaurants), 2)
 
     def test_restaurant_get(self):
-        restaurant_one = Restaurant.objects.get(name='Five Guys')
-        restaurant_two = Restaurant.objects.get(name='In N Out')
+        restaurant_one = Restaurant.objects.get(name="Five Guys")
+        restaurant_two = Restaurant.objects.get(name="In N Out")
         self.assertEquals(restaurant_one.max_party, 6)
         self.assertEquals(restaurant_two.max_party, 4)
 
@@ -34,7 +42,7 @@ class TestRestaurant(TestCase):
         self.assertEquals(len(restaurants), 1)
 
     def test_restaurant_exception(self):
-        self.assertRaises(Restaurant.DoesNotExist, Restaurant.objects.get, name='Bogus')
+        self.assertRaises(Restaurant.DoesNotExist, Restaurant.objects.get, name="Bogus")
 
     def test_restaurant_empty(self):
         restaurants = Restaurant.objects.filter(max_party__gt=10)

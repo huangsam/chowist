@@ -5,8 +5,8 @@ from django.urls import reverse
 class TestUserFormView(TestCase):
     """UserFormView test suite"""
 
-    desired_url = '/signup/'
-    desired_name = 'portal:signup'
+    desired_url = "/signup/"
+    desired_name = "portal:signup"
 
     def test_desired_location(self):
         resp = self.client.get(self.desired_url)

@@ -5,12 +5,12 @@ from chowist.settings.base import *  # noqa
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'circle_test',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-        'USERNAME': 'circleci',
-        'PASSWORD': '',
-    },
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "circle_test",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+        "USERNAME": "circleci",
+        "PASSWORD": "",
+    }
 }

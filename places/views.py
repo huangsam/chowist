@@ -8,20 +8,20 @@ from places.models import Restaurant
 
 
 class HomeView(TemplateView):
-    template_name = 'places/home.html'
+    template_name = "places/home.html"
 
 
 class RestaurantListView(ListView):
     model = Restaurant
-    context_object_name = 'restaurant_list'
+    context_object_name = "restaurant_list"
 
 
 class RestaurantDetailView(DetailView):
     model = Restaurant
-    context_object_name = 'restaurant'
+    context_object_name = "restaurant"
 
 
 class RestaurantUpdateView(LoginRequiredMixin, UpdateView):
     model = Restaurant
-    fields = ['name', 'description', 'address', 'min_party', 'max_party', 'yelp_link']
-    template_name_suffix = '_update'
+    fields = ["name", "description", "address", "min_party", "max_party", "yelp_link"]
+    template_name_suffix = "_update"

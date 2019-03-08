@@ -18,15 +18,12 @@ from django.urls import path, include
 
 # Default app
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path("admin/", admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]
 
 # Custom apps
-apps = [
-    {'entry': '', 'name': 'portal'},
-    {'entry': 'places/', 'name': 'places'},
-]
+apps = [{"entry": "", "name": "portal"}, {"entry": "places/", "name": "places"}]
 
 
 def get_app_path(app):
@@ -38,13 +35,10 @@ def get_app_path(app):
     Returns:
         Application path instance.
     """
-    app_entry = app['entry']
-    app_name = app['name']
-    app_urls = app_name + '.urls'
-    return path(
-        app_entry,
-        include((app_urls, app_name), namespace=app_name)
-    )
+    app_entry = app["entry"]
+    app_name = app["name"]
+    app_urls = app_name + ".urls"
+    return path(app_entry, include((app_urls, app_name), namespace=app_name))
 
 
 for app in apps:

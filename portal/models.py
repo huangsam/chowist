@@ -11,10 +11,10 @@ class Profile(models.Model):
     birth_date = models.DateField(null=True)
 
     class Meta:
-        db_table = 'profile'
+        db_table = "profile"
 
     def __str__(self):
-        return '{user}: {email}'.format(user=self.user.username, email=self.user.email)
+        return "{user}: {email}".format(user=self.user.username, email=self.user.email)
 
 
 @receiver(post_save, sender=User)

@@ -10,6 +10,6 @@ def nav_active(request, url):
     reverse_url = reverse(url)
     if reverse_url in current_url:
         # Handle sub-path and root-path
-        if reverse_url != '/' or current_url == '/':
-            return 'active'
-    return ''
+        if reverse_url != "/" or current_url == "/":
+            return "active"
+    return ""

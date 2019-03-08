@@ -9,43 +9,62 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-    ]
+    dependencies = [migrations.swappable_dependency(settings.AUTH_USER_MODEL)]
 
     operations = [
         migrations.CreateModel(
-            name='Rating',
+            name="Rating",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('snippet', models.CharField(max_length=255)),
-                ('stars', models.IntegerField()),
-                ('author', models.ForeignKey(null=True, on_delete=django.db.models.deletion.PROTECT, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("snippet", models.CharField(max_length=255)),
+                ("stars", models.IntegerField()),
+                (
+                    "author",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
-            options={
-                'db_table': 'rating',
-            },
+            options={"db_table": "rating"},
         ),
         migrations.CreateModel(
-            name='Restaurant',
+            name="Restaurant",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('description', models.CharField(max_length=255, null=True)),
-                ('address', models.CharField(max_length=255, unique=True)),
-                ('latitude', models.DecimalField(decimal_places=15, max_digits=17)),
-                ('longitude', models.DecimalField(decimal_places=15, max_digits=18)),
-                ('min_party', models.IntegerField()),
-                ('max_party', models.IntegerField()),
-                ('yelp_link', models.CharField(max_length=255, unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                ("description", models.CharField(max_length=255, null=True)),
+                ("address", models.CharField(max_length=255, unique=True)),
+                ("latitude", models.DecimalField(decimal_places=15, max_digits=17)),
+                ("longitude", models.DecimalField(decimal_places=15, max_digits=18)),
+                ("min_party", models.IntegerField()),
+                ("max_party", models.IntegerField()),
+                ("yelp_link", models.CharField(max_length=255, unique=True)),
             ],
-            options={
-                'db_table': 'restaurant',
-            },
+            options={"db_table": "restaurant"},
         ),
         migrations.AddField(
-            model_name='rating',
-            name='place',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='places.Restaurant'),
+            model_name="rating",
+            name="place",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="places.Restaurant"
+            ),
         ),
     ]

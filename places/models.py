@@ -14,34 +14,34 @@ class Restaurant(models.Model):
     yelp_link = models.CharField(max_length=255, unique=True)
 
     class Meta:
-        db_table = 'restaurant'
+        db_table = "restaurant"
 
     def get_absolute_url(self):
-        return reverse('places:restaurant-detail', kwargs={'pk': self.pk})
+        return reverse("places:restaurant-detail", kwargs={"pk": self.pk})
 
     def __str__(self):
-        return '{id}: {name} @ {address}'.format(
-            id=self.id, name=self.name, address=self.address)
+        return "{id}: {name} @ {address}".format(
+            id=self.id, name=self.name, address=self.address
+        )
 
 
 class Rating(models.Model):
     snippet = models.CharField(max_length=255)
     stars = models.IntegerField()
     place = models.ForeignKey(
-        'Restaurant',
-        on_delete=models.CASCADE,
-        related_name='ratings',
+        "Restaurant", on_delete=models.CASCADE, related_name="ratings"
     )
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.PROTECT,
         null=True,
-        related_name='author',
+        related_name="author",
     )
 
     class Meta:
-        db_table = 'rating'
+        db_table = "rating"
 
     def __str__(self):
-        return '{id}: {address} w/ {stars} stars'.format(
-            id=self.id, address=self.place.yelp_link, stars=self.stars)
+        return "{id}: {address} w/ {stars} stars".format(
+            id=self.id, address=self.place.yelp_link, stars=self.stars
+        )

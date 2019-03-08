@@ -5,8 +5,8 @@ from django.urls import reverse
 class TestHomeView(TestCase):
     """HomeView test suite"""
 
-    desired_url = '/'
-    desired_name = 'portal:home'
+    desired_url = "/"
+    desired_name = "portal:home"
 
     def test_desired_location(self):
         resp = self.client.get(self.desired_url)
