@@ -9,7 +9,6 @@ jobs:
       - image: 'circleci/python:3.7.2'
         environment:
           DJANGO_SETTINGS_MODULE: 'chowist.settings.test'
-          PIP_NO_BINARY: 'psycopg2'
       - image: 'circleci/postgres:10.7'
         environment:
           POSTGRES_USER: 'circleci'
