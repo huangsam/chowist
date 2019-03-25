@@ -29,6 +29,8 @@ apps = [{"entry": "", "name": "portal"}, {"entry": "places/", "name": "places"}]
 def get_app_path(app):
     """Get application path for urlpatterns.
 
+    https://docs.djangoproject.com/en/2.0/ref/urls/#include
+
     Args:
         app: Application instance.
 
