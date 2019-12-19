@@ -1,7 +1,7 @@
 """chowist URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.0/topics/http/urls/
+    https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -29,7 +29,7 @@ apps = [{"entry": "", "name": "portal"}, {"entry": "places/", "name": "places"}]
 def get_app_path(app):
     """Get application path for urlpatterns.
 
-    https://docs.djangoproject.com/en/2.0/ref/urls/#include
+    https://docs.djangoproject.com/en/3.0/ref/urls/#include
 
     Args:
         app: Application instance.
