@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: 'circleci/python:3.7.5'
+      - image: 'circleci/python:3.7.6'
         environment:
           DJANGO_SETTINGS_MODULE: 'chowist.settings.test'
       - image: 'circleci/postgres:10.11'
@@ -28,7 +28,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            pipenv install --system
+            pip install -r requirements.txt
 
       - run:
           name: Run tests
