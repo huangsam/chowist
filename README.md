@@ -18,8 +18,9 @@ Here are some things to be aware of in development and production.
 
 Install dependencies and create a `virtualenv` instance:
 
-    pipenv install
-    pipenv shell
+    virtualenv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
 
 Then run database migration:
 
