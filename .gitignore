@@ -23,8 +23,7 @@ coverage.xml
 *.log
 *.sqlite3
 *.db
-
 node_modules/
 static/
-
+venv/
 .DS_Store
