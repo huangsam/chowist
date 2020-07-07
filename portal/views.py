@@ -16,8 +16,8 @@ class HomeView(TemplateView):
     template_name = "portal/home.html"
 
 
-class UserFormView(FormView):
-    template_name = "portal/signup.html"
+class ProfileSignupView(FormView):
+    template_name = "portal/profile_signup.html"
     form_class = UserForm
     success_url = reverse_lazy("portal:home")
 
@@ -31,8 +31,8 @@ class UserFormView(FormView):
         return super().form_valid(form)
 
 
-class ProfileView(LoginRequiredMixin, View):
-    template_name = "portal/profile.html"
+class ProfileDetailView(LoginRequiredMixin, View):
+    template_name = "portal/profile_detail.html"
 
     def get(self, request):
         profile = Profile.objects.get(user=request.user)
