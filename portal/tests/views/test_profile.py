@@ -3,8 +3,8 @@ from django.test import TestCase
 from django.urls import reverse
 
 
-class TestProfileFormView(TestCase):
-    """ProfileFormView test suite"""
+class TestProfileDetailView(TestCase):
+    """ProfileDetailView test suite"""
 
     desired_url = "/profile/"
     desired_name = "portal:profile"
