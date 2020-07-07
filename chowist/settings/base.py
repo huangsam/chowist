@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "crispy_forms",
     "portal",
     "places",
 ]
@@ -174,3 +175,9 @@ LOGGING = {
         },
     },
 }
+
+
+# Crispy forms
+# https://django-crispy-forms.readthedocs.io/en/latest/install.html
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
