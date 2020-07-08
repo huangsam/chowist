@@ -2,6 +2,8 @@ from django.urls import path
 
 from portal import views
 
+app_name = "portal"
+
 urlpatterns = [
     path("", views.HomeView.as_view(), name="home"),
     path("signup/", views.ProfileSignupView.as_view(), name="signup"),

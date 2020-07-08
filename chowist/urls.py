@@ -17,26 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-def get_app_path(route, package):
-    """Get application path for urlpatterns.
-
-    https://docs.djangoproject.com/en/3.0/ref/urls/#include
-
-    Args:
-        route: Literal path.
-        package: Python package name.
-
-    Returns:
-        Application path instance.
-    """
-    url_module = f"{package}.urls"
-    return path(route, include((url_module, package), namespace=package))
-
-
 # Default app
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
-    get_app_path("", "portal"),
-    get_app_path("places/", "places"),
+    path("", include("portal.urls")),
+    path("places/", include("places.urls")),
 ]
