@@ -12,6 +12,7 @@ jobs:
       - image: 'circleci/postgres:10.11'
         environment:
           POSTGRES_USER: 'circleci'
+          POSTGRES_PASSWORD: 'circleci'
           POSTGRES_DB: 'circle_test'
 
     working_directory: ~/chowist
