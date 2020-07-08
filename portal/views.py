@@ -40,8 +40,8 @@ class ProfileDetailView(LoginRequiredMixin, View):
         return render(request, self.template_name, {"profile": profile})
 
 
-class ProfileEditView(LoginRequiredMixin, View):
-    template_name = "portal/profile_edit.html"
+class ProfileUpdateView(LoginRequiredMixin, View):
+    template_name = "portal/profile_update.html"
 
     def get(self, request):
         profile = Profile.objects.get(user=request.user)
