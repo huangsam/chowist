@@ -30,23 +30,30 @@ Finally, start up the Django development server:
 
     python manage.py runserver
 
-For development, you might want test data to validate the app's functionality:
+### Local data
 
-    python manage.py loaddata restaurant user
+For development, you can load sample restaurants users:
 
-This loads restaurants and an `admin` user with password `admin`. The `admin` user allows you to enter the Django dashboard and view users/groups/data in a consolidated view.
+    python manage.py loaddata restaurant
+    python manage.py loaddata users
 
-**Note:** `DJANGO_SECRET` must be set to `dummy` for the `admin` user to work. Otherwise, you will need to create a new superuser with `python manage.py createsuperuser`.
+Here are the loaded users for reference:
 
-### Dockerized setup
+- `admin` with password `admin` (Super user)
+- `john` with password `john` (Normal user)
+- `jane` with password `jane` (Normal user)
 
-To finish the complete local setup with Docker:
+**Note:** `DJANGO_SECRET` must be set to `dummy` for proper user authentication.
+
+### Docker setup
+
+Complete local setup with Docker by running a single command:
 
     docker-compose -f compose/dev.yml -p chowist up --build -d
 
 ### Production setup
 
-For production, you might want to use `gunicorn` for running the server:
+For production, you will want to use `gunicorn` for running the server:
 
     gunicorn -w 4 chowist.wsgi
 
@@ -56,6 +63,6 @@ When using Gunicorn, remember to host the static files from a web server.
 
 Feel free to create pull requests to the following assets:
 
-- Update Django application logic
-- Update media content (`JPG`, `SVG`, etc.)
-- Add restaurants into `restaurant.json`
+- Enhance Django application logic
+- Add media content (`JPG`, `SVG`, etc.)
+- Add restaurants into `restaurant` fixture
