@@ -16,32 +16,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# Default app
-urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("accounts/", include("django.contrib.auth.urls")),
-]
 
-# Custom apps
-apps = [{"entry": "", "name": "portal"}, {"entry": "places/", "name": "places"}]
-
-
-def get_app_path(app):
+def get_app_path(route, package):
     """Get application path for urlpatterns.
 
     https://docs.djangoproject.com/en/3.0/ref/urls/#include
 
     Args:
-        app: Application instance.
+        route: Literal path.
+        package: Python package name.
 
     Returns:
         Application path instance.
     """
-    app_entry = app["entry"]
-    app_name = app["name"]
-    app_urls = app_name + ".urls"
-    return path(app_entry, include((app_urls, app_name), namespace=app_name))
+    url_module = f"{package}.urls"
+    return path(route, include((url_module, package), namespace=package))
 
 
-for app in apps:
-    urlpatterns.append(get_app_path(app))
+# Default app
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),
+    get_app_path("", "portal"),
+    get_app_path("places/", "places"),
+]
