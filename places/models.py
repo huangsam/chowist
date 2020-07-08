@@ -26,13 +26,9 @@ class Restaurant(models.Model):
 class Rating(models.Model):
     snippet = models.CharField(max_length=255)
     stars = models.IntegerField()
-    place = models.ForeignKey(
-        "Restaurant", models.CASCADE, related_name="ratings"
-    )
+    place = models.ForeignKey("Restaurant", models.CASCADE, related_name="ratings")
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        models.CASCADE,
-        related_name="author",
+        settings.AUTH_USER_MODEL, models.CASCADE, related_name="author",
     )
 
     class Meta:
