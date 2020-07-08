@@ -90,12 +90,12 @@ class TestRestaurantUpdateView(TestCase):
             max_party=8,
             yelp_link="chick-fil-a-venus",
         )
-        User.objects.create_user("john", "john@example.org", "secret123")
+        User.objects.create_user("john", "john@localhost", "john")
 
     def get_url(self, restaurant_id):
         return reverse("places:restaurant-update", args=(restaurant_id,))
 
     def test_desired_location(self):
-        self.client.login(username="john", password="secret123")
+        self.client.login(username="john", password="john")
         resp = self.client.get(self.get_url(self.restaurant.id))
         self.assertEqual(resp.status_code, 200)

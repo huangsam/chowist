@@ -26,7 +26,7 @@ class TestRating(TestCase):
             yelp_link="/plutos-jupiter",
         )
 
-        cls.user = User.objects.create_user("john", "john@example.org", "secret123")
+        cls.user = User.objects.create_user("john", "john@localhost", "john")
         for snippet, stars in cls.ratings:
             Rating.objects.create(
                 snippet=snippet, stars=stars, place=restaurant, author=cls.user
