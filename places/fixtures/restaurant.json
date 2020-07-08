@@ -297,4 +297,17 @@
 		"max_party": 8,
 		"yelp_link": "shivas-indian-restaurant-mountain-view-2"
 	}
+}, {
+	"model": "places.restaurant",
+	"pk": 24,
+	"fields": {
+		"name": "Golden Garlic",
+		"description": null,
+		"address": "3082 Landess Ave, San Jose, CA 95132",
+		"latitude": "37.415329000000000",
+		"longitude": "-121.875840000000000",
+		"min_party": 2,
+		"max_party": 12,
+		"yelp_link": "golden-garlic-san-jose"
+	}
 }]
