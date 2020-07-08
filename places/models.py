@@ -19,8 +19,11 @@ class Restaurant(models.Model):
     def get_absolute_url(self):
         return reverse("places:restaurant-detail", kwargs={"pk": self.pk})
 
+    def __repr__(self):
+        return f"<Restaurant id={self.id} name='{self.name}'>"
+
     def __str__(self):
-        return f"{self.id}: {self.name} @ {self.address}"
+        return f"Restaurant {self.name} located at {self.address}"
 
 
 class Rating(models.Model):
@@ -34,5 +37,8 @@ class Rating(models.Model):
     class Meta:
         db_table = "rating"
 
+    def __repr__(self):
+        return f"<Rating id={self.id} stars={self.stars}"
+
     def __str__(self):
-        return f"{self.id}: {self.place.yelp_link} w/ {self.stars} stars"
+        return f"Rating of {self.stars} stars for {self.place.name} by {self.author.username}"

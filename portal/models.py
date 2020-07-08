@@ -13,8 +13,11 @@ class Profile(models.Model):
     class Meta:
         db_table = "profile"
 
+    def __repr__(self):
+        return f"<Profile id={self.id} username={self.user.username}>"
+
     def __str__(self):
-        return f"{self.user.username}: {self.user.email}"
+        return f"Profile for user {self.user.username} w/ email: {self.user.email or 'N/A'}"
 
 
 @receiver(post_save, sender=User)
