@@ -61,7 +61,7 @@ When using Gunicorn, remember to host the static files from a web server.
 
 ## How to contribute
 
-Feel free to create pull requests to the following assets:
+Feel free to create pull requests for the following assets:
 
 - Enhance Django application logic
 - Add media content (`JPG`, `SVG`, etc.)
