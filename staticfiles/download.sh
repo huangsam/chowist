@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Download jQuery
-JQUERY='jquery-3.5.1.slim.min.js'
-curl -L "https://code.jquery.com/$JQUERY" -o "./js/$JQUERY"
+JQUERY_VERSION='3.5.1'
+JQUERY="jquery-$JQUERY_VERSION.slim.min.js"
+curl -L "https://code.jquery.com/$JQUERY" -o './jquery.slim.min.js'
 
 # Download Bootstrap CSS and JS
 BS_VERSION='4.5.0'
