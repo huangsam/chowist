@@ -27,3 +27,4 @@ node_modules/
 static/
 venv/
 .DS_Store
+.idea/
