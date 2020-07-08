@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.test import TestCase
 
 from places.models import Restaurant, Rating
@@ -13,7 +14,8 @@ class TestRating(TestCase):
         ("This place is merely okay", 3),
     ]
 
-    def setUp(self):
+    @classmethod
+    def setUpTestData(cls):
         restaurant = Restaurant.objects.create(
             name="Plutos",
             address="Jupiter",
@@ -24,9 +26,10 @@ class TestRating(TestCase):
             yelp_link="/plutos-jupiter",
         )
 
-        for snippet, stars in self.ratings:
+        cls.user = User.objects.create_user("john", "john@example.org", "secret123")
+        for snippet, stars in cls.ratings:
             Rating.objects.create(
-                snippet=snippet, stars=stars, place=restaurant, author=None
+                snippet=snippet, stars=stars, place=restaurant, author=cls.user
             )
 
     def test_rating_all(self):
@@ -37,7 +40,7 @@ class TestRating(TestCase):
         rating = Rating.objects.get(snippet="This place is excellent")
         self.assertEquals(rating.place.name, "Plutos")
         self.assertEquals(rating.stars, 5)
-        self.assertEquals(rating.author, None)
+        self.assertEquals(rating.author, self.user)
 
     def test_rating_filter(self):
         ratings = Rating.objects.filter(stars=1)

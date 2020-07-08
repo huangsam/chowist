@@ -27,12 +27,11 @@ class Rating(models.Model):
     snippet = models.CharField(max_length=255)
     stars = models.IntegerField()
     place = models.ForeignKey(
-        "Restaurant", on_delete=models.CASCADE, related_name="ratings"
+        "Restaurant", models.CASCADE, related_name="ratings"
     )
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.PROTECT,
-        null=True,
+        models.CASCADE,
         related_name="author",
     )
 
