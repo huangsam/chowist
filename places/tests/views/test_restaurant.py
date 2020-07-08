@@ -16,13 +16,13 @@ class TestRestaurantListView(TestCase):
     def setUpTestData(cls):
         for i in range(cls.desired_restaurant_count):
             Restaurant.objects.create(
-                name="Chipotle {rid}".format(rid=i),
-                address="Bogus {rid}".format(rid=i),
+                name=f"Chipotle {i}",
+                address=f"Bogus {i}",
                 latitude=0.00,
                 longitude=0.00,
                 min_party=1,
                 max_party=6,
-                yelp_link="/chipotle-bogus-{rid}".format(rid=i),
+                yelp_link=f"chipotle-bogus-{i}",
             )
 
     def test_desired_location(self):
@@ -41,7 +41,7 @@ class TestRestaurantListView(TestCase):
         )
         for restaurant in resp.context["restaurant_list"]:
             assert restaurant.name.startswith("Chipotle")
-            assert restaurant.yelp_link.startswith("/chipotle-bogus-")
+            assert restaurant.yelp_link.startswith("chipotle-bogus-")
 
 
 class TestRestaurantDetailView(TestCase):
@@ -56,7 +56,7 @@ class TestRestaurantDetailView(TestCase):
             longitude=0.00,
             min_party=3,
             max_party=8,
-            yelp_link="/chick-fil-a-venus",
+            yelp_link="chick-fil-a-venus",
         )
 
     def get_url(self, restaurant_id):
@@ -88,7 +88,7 @@ class TestRestaurantUpdateView(TestCase):
             longitude=0.00,
             min_party=3,
             max_party=8,
-            yelp_link="/chick-fil-a-venus",
+            yelp_link="chick-fil-a-venus",
         )
         User.objects.create_user("john", "john@example.org", "secret123")
 

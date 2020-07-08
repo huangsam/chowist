@@ -14,7 +14,7 @@ class Profile(models.Model):
         db_table = "profile"
 
     def __str__(self):
-        return "{user}: {email}".format(user=self.user.username, email=self.user.email)
+        return f"{self.user.username}: {self.user.email}"
 
 
 @receiver(post_save, sender=User)

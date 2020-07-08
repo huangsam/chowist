@@ -20,9 +20,7 @@ class Restaurant(models.Model):
         return reverse("places:restaurant-detail", kwargs={"pk": self.pk})
 
     def __str__(self):
-        return "{id}: {name} @ {address}".format(
-            id=self.id, name=self.name, address=self.address
-        )
+        return f"{self.id}: {self.name} @ {self.address}"
 
 
 class Rating(models.Model):
@@ -42,6 +40,4 @@ class Rating(models.Model):
         db_table = "rating"
 
     def __str__(self):
-        return "{id}: {address} w/ {stars} stars".format(
-            id=self.id, address=self.place.yelp_link, stars=self.stars
-        )
+        return f"{self.id}: {self.place.yelp_link} w/ {self.stars} stars"
