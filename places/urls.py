@@ -17,4 +17,9 @@ urlpatterns = [
         views.RestaurantUpdateView.as_view(),
         name="restaurant-update",
     ),
+    path(
+        "restaurants/random/",
+        views.RestaurantRandomView.as_view(),
+        name="restaurant-random",
+    ),
 ]

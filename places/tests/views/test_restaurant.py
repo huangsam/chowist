@@ -101,3 +101,28 @@ class TestRestaurantUpdateView(TestCase):
         self.client.login(username="john", password="john")
         resp = self.client.get(self.get_url(self.restaurant.id))
         self.assertEqual(resp.status_code, 200)
+
+
+class TestRestaurantRandomView(TestCase):
+    """RestaurantRandomView test suite"""
+
+    UserModel = get_user_model()
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.restaurant = Restaurant.objects.create(
+            name="Chick Fil A",
+            address="Venus",
+            latitude=0.00,
+            longitude=0.00,
+            min_party=3,
+            max_party=8,
+            yelp_link="chick-fil-a-venus",
+        )
+
+    def get_url(self):
+        return reverse("places:restaurant-random")
+
+    def test_desired_location(self):
+        resp = self.client.get(self.get_url())
+        self.assertEqual(resp.status_code, 302)
