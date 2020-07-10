@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block meta %}
+<title>Chowist | Logged Out</title>
+{% endblock %}
+
+{% block content %}
+<div class="container lead-container">
+  <div class="row mb-3">
+    <div class="col">
+      <h1>Logged Out</h1>
+    </div>
+  </div>
+  <div class="row pb-3">
+    <div class="col">
+        <p>Thanks for trying out the application!</p>
+        <p>Please come back again.</p>
+        <a class="btn btn-primary" href="{% url 'portal:home' %}">Return</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
