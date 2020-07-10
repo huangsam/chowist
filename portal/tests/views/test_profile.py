@@ -16,13 +16,32 @@ class TestProfileDetailView(TestCase):
         self.client.login(username="john", password="john")
         resp = self.client.get(self.desired_url)
         self.assertEqual(resp.status_code, 200)
-        self.client.logout()
-        resp = self.client.get(self.desired_url)
-        self.assertEqual(resp.status_code, 302)
 
     def test_desired_location_redirect(self):
         resp = self.client.get(self.desired_url)
         self.assertEqual(resp.status_code, 302)
+
+    def test_desired_name(self):
+        reverse_url = reverse(self.desired_name)
+        self.assertEquals(reverse_url, self.desired_url)
+
+
+class TestProfileUpdateView(TestProfileDetailView):
+    """ProfileUpdateView test suite"""
+
+    desired_url = "/profile/update/"
+    desired_name = "portal:profile_update"
+
+
+class TestProfileSignupView(TestCase):
+    """ProfileSignupView test suite"""
+
+    desired_url = "/signup/"
+    desired_name = "portal:signup"
+
+    def test_desired_location(self):
+        resp = self.client.get(self.desired_url)
+        self.assertEqual(resp.status_code, 200)
 
     def test_desired_name(self):
         reverse_url = reverse(self.desired_name)
