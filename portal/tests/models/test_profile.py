@@ -23,3 +23,10 @@ class TestProfile(TestCase):
         user = self.UserModel.objects.get(username="john")
         profile = Profile.objects.get(user=user)
         self.assertIsNotNone(profile)
+
+    def test_profile_exception(self):
+        self.assertRaises(Profile.DoesNotExist, Profile.objects.get, bio="Bogus")
+
+    def test_profile_empty(self):
+        profiles = Profile.objects.filter(bio__exact="Bogus")
+        self.assertEquals(len(profiles), 0)
