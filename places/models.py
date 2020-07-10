@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
 
@@ -30,9 +30,7 @@ class Rating(models.Model):
     snippet = models.CharField(max_length=255)
     stars = models.IntegerField()
     place = models.ForeignKey("Restaurant", models.CASCADE, related_name="ratings")
-    author = models.ForeignKey(
-        settings.AUTH_USER_MODEL, models.CASCADE, related_name="author",
-    )
+    author = models.ForeignKey(get_user_model(), models.CASCADE, related_name="author")
 
     class Meta:
         db_table = "rating"
