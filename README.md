@@ -4,10 +4,12 @@
 
 Great places are chosen by great chowists.
 
-This is an application that replicates core features of [Yelp](https://www.yelp.com/), and adds a couple more bells and whistles. A couple features/ideas that are in the process of being created:
+This is an application that replicates core features of [Yelp](https://www.yelp.com/), and adds a couple more bells and whistles.
+
+Here are some key features:
 
 - Homepage for marketing purposes
-- Profile settings upon user login
+- Profile for customized experience
 - Places as list and detail views
 
 ## Getting started
