@@ -60,7 +60,7 @@ class TestRestaurantDetailView(TestCase):
         )
 
     def get_url(self, restaurant_id):
-        return reverse("places:restaurant-detail", args=(restaurant_id,))
+        return reverse("places:restaurant-detail", args=[restaurant_id])
 
     def test_desired_location(self):
         resp = self.client.get(self.get_url(self.restaurant.id))

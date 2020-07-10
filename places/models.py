@@ -34,6 +34,7 @@ class Rating(models.Model):
 
     class Meta:
         db_table = "rating"
+        unique_together = ["place", "author"]
 
     def __repr__(self):
         return f"<Rating id={self.id} stars={self.stars}"

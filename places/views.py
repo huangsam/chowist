@@ -32,5 +32,5 @@ class RestaurantUpdateView(LoginRequiredMixin, UpdateView):
 class RestaurantRandomView(View):
     def get(self, request):
         restaurant = Restaurant.objects.order_by("?").first()
-        target_url = reverse("places:restaurant-detail", args=(restaurant.id,))
+        target_url = reverse("places:restaurant-detail", args=[restaurant.id])
         return HttpResponseRedirect(target_url)
