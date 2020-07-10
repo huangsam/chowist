@@ -37,7 +37,7 @@ class Rating(models.Model):
         unique_together = ["place", "author"]
 
     def __repr__(self):
-        return f"<Rating id={self.id} stars={self.stars}"
+        return f"<Rating id={self.id} stars={self.stars}>"
 
     def __str__(self):
         return f"Rating of {self.stars} stars for {self.place.name} by {self.author.username}"
