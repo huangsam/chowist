@@ -114,7 +114,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # Authentication
 # https://docs.djangoproject.com/en/3.0/topics/auth/default/
 
-LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "portal:home"
 
 
