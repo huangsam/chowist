@@ -7,13 +7,6 @@ from places.models import Restaurant, Rating
 class TestRating(TestCase):
     """Rating test suite"""
 
-    ratings = [
-        ("This place is excellent", 5),
-        ("This place sucks", 1),
-        ("You should check this place out", 5),
-        ("This place is merely okay", 3),
-    ]
-
     UserModel = get_user_model()
 
     @classmethod
@@ -29,14 +22,11 @@ class TestRating(TestCase):
         )
 
         cls.user = cls.UserModel.objects.create_user("john", "john@localhost", "john")
-        for snippet, stars in cls.ratings:
-            Rating.objects.create(
-                snippet=snippet, stars=stars, place=restaurant, author=cls.user
-            )
+        Rating.objects.create(snippet="This place is excellent", stars=5, place=restaurant, author=cls.user)
 
     def test_rating_all(self):
         ratings = Rating.objects.all()
-        self.assertEquals(len(ratings), len(self.ratings))
+        self.assertEquals(len(ratings), 1)
 
     def test_rating_get(self):
         rating = Rating.objects.get(snippet="This place is excellent")
@@ -45,7 +35,7 @@ class TestRating(TestCase):
         self.assertEquals(rating.author, self.user)
 
     def test_rating_filter(self):
-        ratings = Rating.objects.filter(stars=1)
+        ratings = Rating.objects.filter(stars=5)
         self.assertEquals(len(ratings), 1)
 
     def test_rating_exception(self):
@@ -58,7 +48,5 @@ class TestRating(TestCase):
 
     def test_restaurant_ratings(self):
         restaurant = Restaurant.objects.get(name="Plutos")
-        ratings = restaurant.ratings.all().prefetch_related("place")
-        self.assertTrue(len(ratings) == len(self.ratings))
-        for rating in ratings:
-            self.assertEquals(rating.place.name, "Plutos")
+        rating = restaurant.ratings.first()
+        self.assertEquals(rating.place.name, "Plutos")
