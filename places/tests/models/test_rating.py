@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 
 from places.models import Restaurant, Rating
@@ -14,6 +14,8 @@ class TestRating(TestCase):
         ("This place is merely okay", 3),
     ]
 
+    UserModel = get_user_model()
+
     @classmethod
     def setUpTestData(cls):
         restaurant = Restaurant.objects.create(
@@ -26,7 +28,7 @@ class TestRating(TestCase):
             yelp_link="/plutos-jupiter",
         )
 
-        cls.user = User.objects.create_user("john", "john@localhost", "john")
+        cls.user = cls.UserModel.objects.create_user("john", "john@localhost", "john")
         for snippet, stars in cls.ratings:
             Rating.objects.create(
                 snippet=snippet, stars=stars, place=restaurant, author=cls.user

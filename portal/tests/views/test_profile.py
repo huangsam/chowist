@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
@@ -9,8 +9,10 @@ class TestProfileDetailView(TestCase):
     desired_url = "/profile/"
     desired_name = "portal:profile"
 
+    UserModel = get_user_model()
+
     def setUp(self):
-        User.objects.create_user("john", "john@localhost", "john")
+        self.UserModel.objects.create_user("john", "john@localhost", "john")
 
     def test_desired_location(self):
         self.client.login(username="john", password="john")

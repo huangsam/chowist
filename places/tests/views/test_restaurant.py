@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
@@ -79,6 +79,8 @@ class TestRestaurantDetailView(TestCase):
 class TestRestaurantUpdateView(TestCase):
     """RestaurantUpdateView test suite"""
 
+    UserModel = get_user_model()
+
     @classmethod
     def setUpTestData(cls):
         cls.restaurant = Restaurant.objects.create(
@@ -90,7 +92,7 @@ class TestRestaurantUpdateView(TestCase):
             max_party=8,
             yelp_link="chick-fil-a-venus",
         )
-        User.objects.create_user("john", "john@localhost", "john")
+        cls.UserModel.objects.create_user("john", "john@localhost", "john")
 
     def get_url(self, restaurant_id):
         return reverse("places:restaurant-update", args=(restaurant_id,))
