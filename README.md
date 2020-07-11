@@ -36,16 +36,13 @@ Finally, start up the Django development server:
 
 For local development, you can load some data:
 
-    python manage.py loaddata restaurant
-    python manage.py loaddata user
+    python manage.py loaddemo .demo/places.json
 
 Here are the loaded users for reference:
 
 - `admin` with password `admin` (Super user)
 - `john` with password `john` (Normal user)
 - `jane` with password `jane` (Normal user)
-
-**Note:** `DJANGO_SECRET` was set as `dummy` for proper user authentication.
 
 ### Docker setup
 

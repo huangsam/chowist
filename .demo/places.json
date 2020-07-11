@@ -12,8 +12,6 @@
     "minutes":60,
     "minparty":3,
     "maxparty":8,
-    "rating":3.5,
-    "snippet_text":"Banana leaf is one of my all time favorite malaysian restaurant in the area. I've been here countless times, the service and quality of the food is always...",
     "yelp":"banana-leaf-restaurant-milpitas"
   },
   {
@@ -27,8 +25,6 @@
     "minutes":30,
     "minparty":2,
     "maxparty":4,
-    "rating":4,
-    "snippet_text":"I've tried Indian pizza in other states, but this was my first Cali Indian pizza experience. We got a large 1/2 Pukar Paneer 1/2 Veer Zara, which turned out...",
     "yelp":"tasty-indian-pizza-sunnyvale"
   },
   {
@@ -42,8 +38,6 @@
     "minutes":45,
     "minparty":2,
     "maxparty":4,
-    "rating":3,
-    "snippet_text":"Craving thai food and this was the closest place. Nearly empty when I went to meet a friend at 6:30 pm on a Tuesday. We had to grab our own menus because...",
     "yelp":"thai-orchid-thai-cuisine-san-jose"
   },
   {
@@ -57,8 +51,6 @@
     "minutes":45,
     "minparty":2,
     "maxparty":4,
-    "rating":3.5,
-    "snippet_text":"After eating here a few times, my mouth waters whenever I think of their Szechuan dishes! SETTING - 3 Stars-Typical Chinese restaurant setting (has the...",
     "yelp":"chili-garden-restaurant-milpitas"
   },
   {
@@ -74,8 +66,6 @@
     "minutes":45,
     "minparty":3,
     "maxparty":6,
-    "rating":3.5,
-    "snippet_text":"Clean, people were fast and friendly and the food was about what I expected. Ordered the Bi-Bim-Bop and it was fun to tell them what I wanted, but wished...",
     "yelp":"sizzling-stone-milpitas"
   },
   {
@@ -89,8 +79,6 @@
     "minutes":60,
     "minparty":3,
     "maxparty":8,
-    "rating":3,
-    "snippet_text":"It was a cool experience... heard about it thru the great vine. The hot wings were delicious, but DO NOT ORDER THE SALADS. It was pretty bland. I would...",
     "yelp":"smokeeaters-santa-clara-2"
   },
   {
@@ -104,8 +92,6 @@
     "minutes":30,
     "minparty":2,
     "maxparty":4,
-    "rating":3.5,
-    "snippet_text":"I keep forgetting about this please but it's cheap, delicious, and authentic! I always get there wet burrito  w/ Asada, it's huge. The service is always...",
     "yelp":"el-taco-de-oro-restaurant-and-taqueria-alviso"
   },
   {
@@ -120,8 +106,6 @@
     "minutes":90,
     "minparty":6,
     "maxparty":10,
-    "rating":4.5,
-    "snippet_text":"This restaurant came to us as a recommendation from a coworker. She told us to make a reservation rather than walk in- smart move.We showed up for our...",
     "yelp":"dishdash-sunnyvale"
   },
   {
@@ -137,8 +121,6 @@
     "minutes":120,
     "minparty":4,
     "maxparty":10,
-    "rating":4,
-    "snippet_text":"I had heard this place was one of the best if not the best place for BBQ in the bay area. my friends and i were celebrating a birthday and decided to come...",
     "yelp":"smoking-pig-bbq-san-jose"
   },
   {
@@ -153,8 +135,6 @@
     "minutes":30,
     "minparty":2,
     "maxparty":5,
-    "rating":3.5,
-    "snippet_text":"This is a great Five Guys. The staff is always super friendly and I appreciate that. The burgers are a good reliable way to satisfy a burger craving. I am...",
     "yelp":"five-guys-burgers-and-fries-san-jose-6"
   },
   {
@@ -170,8 +150,6 @@
     "minutes":60,
     "minparty":2,
     "maxparty":5,
-    "rating":3.5,
-    "snippet_text":"If I could eat here at least 3x/week I would be super happy...when I was pregnant with the kid, J actually did let me here 3x/week....which would explain...",
     "yelp":"gobi-mongolian-bbq-sunnyvale"
   },
   {
@@ -185,8 +163,6 @@
     "minutes":45,
     "minparty":2,
     "maxparty":4,
-    "rating":4,
-    "snippet_text":"HIGHLY RECOMMEND! This is small size family owned restaurant where you could find homemade style Korean food. I took my wife and a 2 1/2 yr old son for...",
     "yelp":"minas-korean-bbq-san-jose"
   },
   {
@@ -200,8 +176,6 @@
     "minutes":60,
     "minparty":4,
     "maxparty":10,
-    "rating":4,
-    "snippet_text":"There are so many Vietnamese restaurants in San Jose but this place is one of the tastiest. I didn't write \"best\" because the waitresses here are...",
     "yelp":"pho-kim-long-restaurant-san-jose"
   },
   {
@@ -217,8 +191,6 @@
     "minparty":2,
     "maxparty":6,
     "minutes":150,
-    "rating":3,
-    "snippet_text":"Been here twice now and from what I can tell, the beer selection is fairly limited. About 6 beers of varying types. Most are decent but I like variety more...",
     "yelp":"faultline-brewing-company-sunnyvale"
   },
   {
@@ -234,8 +206,6 @@
     "minutes":60,
     "minparty":1,
     "maxparty":20,
-    "rating":5,
-    "snippet_text":"Buffet style, quick and tasty, but can be a bit dangerous if you have low self control :) ",
     "yelp":"holyland-restaurant-and-catering-santa-clara"
   },
   {
@@ -250,8 +220,6 @@
     "minutes":60,
     "minparty":1,
     "maxparty":8,
-    "rating":4,
-    "snippet_text":"The way I feel about this Wahoo's is the same way I feel about all Wahoo's: food is ok, beer prices are GREAT! To be honest, I only come here for...",
     "yelp":"wahoos-fish-taco-sunnyvale-2"
   },
   {
@@ -266,8 +234,6 @@
     "minutes":90,
     "minparty":4,
     "maxparty":10,
-    "rating":3.5,
-    "snippet_text":"This place is on POINT! First of all, the ambience in this place is exactly what you would desire from an authentic Mexican restaurant. Secondly, the...",
     "yelp":"pedros-restaurant-and-cantina-santa-clara-2"
   },
   {
@@ -282,8 +248,6 @@
     "minutes":15,
     "minparty":1,
     "maxparty":4,
-    "rating":4,
-    "snippet_text":"My husband and I were just passing by and saw this place next to this sushi place we wanted to try. Went to try this new place instead. Ever since I've...",
     "yelp":"eat-viet-san-jose"
   },
   {
@@ -297,8 +261,6 @@
     "minutes":60,
     "minparty":1,
     "maxparty":8,
-    "rating":3.5,
-    "snippet_text":"We tried a lot of dishes here (appetizers, noodle soups, dry noodles, cold noodles, rou burger) and this is what I keep coming back for: special hot oil...",
     "yelp":"qq-noodle-milpitas"
   },
   {
@@ -313,8 +275,6 @@
     "minutes":90,
     "minparty":2,
     "maxparty":8,
-    "rating":3,
-    "snippet_text":"We've been here for dim sum several times. It is fair. We usually get there early in the morning as soon as it opens up. So we avoid the crowd most of the...",
     "yelp":"mayflower-restaurant-milpitas"
   },
   {
@@ -329,8 +289,6 @@
     "minutes":30,
     "minparty":1,
     "maxparty":4,
-    "rating":4,
-    "snippet_text":"Great selection of pitas to choose from.  Be sure to show your Cisco badge for 10% discount.  $2 more for meal deal gives you choice of 2 things from following: drink, chips, 2 cookies, cup of soup.",
     "yelp":"extreme-pita-san-jose"
   },
   {
@@ -346,8 +304,6 @@
     "minutes":30,
     "minparty":1,
     "maxparty":8,
-    "rating":5,
-    "snippet_text":"My favorite is the half-sandwich and side soup or salad. Order a drink and you get a bakery selection (like a big cookie) for just 99c more.",
     "yelp":"panera-bread-san-jose-6"
   },
   {
@@ -361,8 +317,6 @@
     "minutes":90,
     "minparty":6,
     "maxparty":8,
-    "rating":3.5,
-    "snippet_text":"Stopped in here for dinner on a Friday night and was pleasantly surprised. Great drinks, food and service. \n\nWe started with the crab pattice which were...",
     "yelp":"shivas-indian-restaurant-mountain-view-2"
   }
 ]
