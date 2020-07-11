@@ -22,7 +22,12 @@ class TestRating(TestCase):
         )
 
         cls.user = cls.UserModel.objects.create_user("john", "john@localhost", "john")
-        Rating.objects.create(snippet="This place is excellent", stars=5, place=restaurant, author=cls.user)
+        Rating.objects.create(
+            snippet="This place is excellent",
+            stars=5,
+            place=restaurant,
+            author=cls.user,
+        )
 
     def test_rating_all(self):
         ratings = Rating.objects.all()
