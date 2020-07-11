@@ -22,4 +22,9 @@ urlpatterns = [
         views.RestaurantRandomView.as_view(),
         name="restaurant-random",
     ),
+    path(
+        "restaurants/<int:restaurant_id>/review/",
+        views.RestaurantReviewView.as_view(),
+        name="restaurant-review",
+    ),
 ]

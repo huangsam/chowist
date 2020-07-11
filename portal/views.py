@@ -53,8 +53,6 @@ class ProfileUpdateView(LoginRequiredMixin, View):
         if not form.is_valid():
             return render(request, self.template_name, {"form": form})
         profile = Profile.objects.get(user=request.user)
-        profile.bio = form.cleaned_data["bio"]
-        profile.address = form.cleaned_data["address"]
-        profile.birth_date = form.cleaned_data["birth_date"]
+        profile.__dict__.update(**form.cleaned_data)
         profile.save()
         return HttpResponseRedirect(reverse("portal:profile"))
