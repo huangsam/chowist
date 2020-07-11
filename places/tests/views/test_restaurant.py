@@ -3,6 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 from places.models import Restaurant
+from places.views import RestaurantListView
 
 
 class TestRestaurantListView(TestCase):
@@ -10,11 +11,11 @@ class TestRestaurantListView(TestCase):
 
     desired_url = "/places/restaurants/"
     desired_name = "places:restaurant-list"
-    desired_restaurant_count = 25
+    desired_restaurant_count = RestaurantListView.paginate_by
 
     @classmethod
     def setUpTestData(cls):
-        for i in range(cls.desired_restaurant_count):
+        for i in range(cls.desired_restaurant_count * 2):
             Restaurant.objects.create(
                 name=f"Chipotle {i}",
                 address=f"Bogus {i}",

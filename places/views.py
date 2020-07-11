@@ -16,6 +16,7 @@ class HomeView(TemplateView):
 class RestaurantListView(ListView):
     model = Restaurant
     ordering = ["name"]
+    paginate_by = 15
     context_object_name = "restaurant_list"
 
 
