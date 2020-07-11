@@ -9,7 +9,7 @@ from places.models import Category, Restaurant, Review
 
 
 class Command(BaseCommand):
-    help = "Load data for .demo purposes"
+    help = "Load demo data for places app"
     UserModel = get_user_model()
     admin_user = "admin"
     normal_users = ["john", "jane"]
