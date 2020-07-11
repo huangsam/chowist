@@ -37,7 +37,7 @@ Finally, start up the Django development server:
 For local development, you can load some data:
 
     python manage.py loaddata restaurant
-    python manage.py loaddata users
+    python manage.py loaddata user
 
 Here are the loaded users for reference:
 
