@@ -19,6 +19,7 @@
           {% csrf_token %}
           {{ form|crispy }}
           <button type="submit" class="btn btn-primary">Submit</button>
+          <a href="{% url 'places:restaurant-detail' restaurant.id %}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
   </div>

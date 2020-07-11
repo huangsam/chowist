@@ -32,7 +32,7 @@ class TestProfileUpdateView(TestProfileDetailView):
     """ProfileUpdateView test suite"""
 
     desired_url = "/profile/update/"
-    desired_name = "portal:profile_update"
+    desired_name = "portal:profile-update"
 
 
 class TestProfileSignupView(TestCase):
