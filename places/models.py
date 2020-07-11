@@ -26,18 +26,27 @@ class Restaurant(models.Model):
         return f"Restaurant {self.name} located at {self.address}"
 
 
-class Rating(models.Model):
-    snippet = models.CharField(max_length=255)
-    stars = models.IntegerField()
-    place = models.ForeignKey("Restaurant", models.CASCADE, related_name="ratings")
-    author = models.ForeignKey(get_user_model(), models.CASCADE, related_name="ratings")
+class Score(models.IntegerChoices):
+    TERRIBLE = 1
+    MEDIOCRE = 2
+    AVERAGE = 3
+    GOOD = 4
+    GREAT = 5
+
+
+class Review(models.Model):
+    title = models.CharField(max_length=255)
+    body = models.TextField()
+    score = models.IntegerField(choices=Score.choices)
+    place = models.ForeignKey("Restaurant", models.CASCADE, related_name="reviews")
+    author = models.ForeignKey(get_user_model(), models.CASCADE, related_name="reviews")
 
     class Meta:
-        db_table = "rating"
+        db_table = "review"
         unique_together = ["place", "author"]
 
     def __repr__(self):
-        return f"<Rating id={self.id} stars={self.stars}>"
+        return f"<Review id={self.id} score={self.score}>"
 
     def __str__(self):
-        return f"Rating of {self.stars} stars for {self.place.name} by {self.author.username}"
+        return f"Review of {self.score} for {self.place.name} by {self.author.username}"
