@@ -1,3 +1,5 @@
+import math
+
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
@@ -15,6 +17,16 @@ class Restaurant(models.Model):
 
     class Meta:
         db_table = "restaurant"
+
+    def average_rating(self):
+        ratings_count = 0
+        ratings_sum = 0
+        for review in self.reviews.all():
+            ratings_sum += review.rating
+            ratings_count += 1
+        if ratings_count == 0:
+            return math.nan
+        return ratings_sum / ratings_count
 
     def get_absolute_url(self):
         return reverse("places:restaurant-detail", kwargs={"pk": self.pk})
@@ -46,7 +58,7 @@ class Review(models.Model):
         unique_together = ["place", "author"]
 
     def __repr__(self):
-        return f"<Review id={self.id} score={self.score}>"
+        return f"<Review id={self.id} rating={self.rating}>"
 
     def __str__(self):
         return f"User {self.author.username} reviewed {self.place.name} with a rating of {self.rating}"

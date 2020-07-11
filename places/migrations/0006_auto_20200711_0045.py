@@ -56,7 +56,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={"db_table": "review", "unique_together": {("place", "author")},},
+            options={"db_table": "review", "unique_together": {("place", "author")}},
         ),
         migrations.DeleteModel(name="Rating",),
     ]

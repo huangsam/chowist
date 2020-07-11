@@ -56,3 +56,7 @@ class TestReview(TestCase):
         restaurant = Restaurant.objects.get(name="Plutos")
         review = restaurant.reviews.first()
         self.assertEquals(review.place.name, restaurant.name)
+
+    def test_restaurant_average_rating(self):
+        restaurant = Restaurant.objects.get(name="Plutos")
+        self.assertEquals(restaurant.average_rating(), 5.0)
