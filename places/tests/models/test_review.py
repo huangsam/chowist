@@ -25,7 +25,7 @@ class TestReview(TestCase):
         Review.objects.create(
             title="Amazing",
             body="This place is excellent",
-            score=5,
+            rating=5,
             place=restaurant,
             author=cls.user,
         )
@@ -37,19 +37,19 @@ class TestReview(TestCase):
     def test_review_get(self):
         review = Review.objects.get(title="Amazing")
         self.assertEquals(review.place.name, "Plutos")
-        self.assertEquals(review.score, 5)
+        self.assertEquals(review.rating, 5)
         self.assertEquals(review.author, self.user)
 
     def test_review_filter(self):
-        reviews = Review.objects.filter(score=5)
+        reviews = Review.objects.filter(rating=5)
         self.assertEquals(len(reviews), 1)
 
     def test_review_exception(self):
-        self.assertRaises(Review.DoesNotExist, Review.objects.get, score=0)
-        self.assertRaises(Review.DoesNotExist, Review.objects.get, score=6)
+        self.assertRaises(Review.DoesNotExist, Review.objects.get, rating=0)
+        self.assertRaises(Review.DoesNotExist, Review.objects.get, rating=6)
 
     def test_review_empty(self):
-        reviews = Review.objects.filter(score=0)
+        reviews = Review.objects.filter(rating=0)
         self.assertEquals(len(reviews), 0)
 
     def test_restaurant_reviews(self):

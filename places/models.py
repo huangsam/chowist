@@ -26,7 +26,7 @@ class Restaurant(models.Model):
         return f"Restaurant {self.name} located at {self.address}"
 
 
-class Score(models.IntegerChoices):
+class Rating(models.IntegerChoices):
     TERRIBLE = 1
     MEDIOCRE = 2
     AVERAGE = 3
@@ -37,7 +37,7 @@ class Score(models.IntegerChoices):
 class Review(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
-    score = models.IntegerField(choices=Score.choices)
+    rating = models.IntegerField(choices=Rating.choices)
     place = models.ForeignKey("Restaurant", models.CASCADE, related_name="reviews")
     author = models.ForeignKey(get_user_model(), models.CASCADE, related_name="reviews")
 
@@ -49,4 +49,4 @@ class Review(models.Model):
         return f"<Review id={self.id} score={self.score}>"
 
     def __str__(self):
-        return f"User {self.author.username} reviewed {self.place.name} with a score of {self.score}"
+        return f"User {self.author.username} reviewed {self.place.name} with a rating of {self.rating}"
