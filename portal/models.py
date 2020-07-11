@@ -16,7 +16,7 @@ class Profile(models.Model):
         db_table = "profile"
 
     def __repr__(self):
-        return f"<Profile id={self.id} username={self.user.username}>"
+        return f"<Profile id={self.id} username='{self.user.username}'>"
 
     def __str__(self):
         return f"Profile for user {self.user.username} w/ email: {self.user.email or 'N/A'}"
