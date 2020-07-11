@@ -49,4 +49,4 @@ class Review(models.Model):
         return f"<Review id={self.id} score={self.score}>"
 
     def __str__(self):
-        return f"Review of {self.score} for {self.place.name} by {self.author.username}"
+        return f"User {self.author.username} reviewed {self.place.name} with a score of {self.score}"

@@ -14,12 +14,12 @@
     <li>Minimum Party: {{ restaurant.min_party }}</li>
     <li>Maximum Party: {{ restaurant.max_party }}</li>
   </ul>
-  <p>Ratings for this restaurant:</p>
+  <p>Reviews for this restaurant:</p>
   <ul>
-    {% for rating in restaurant.ratings.all %}
-      <li>{{ rating.author }}, {{ rating.stars }} - {{ rating.snippet }}</li>
+    {% for review in restaurant.reviews.all %}
+      <li>{{ review }}</li>
     {% empty %}
-      <li>No ratings yet.</li>
+      <li>No reviews yet.</li>
     {% endfor %}
   </ul>
   <p><a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}">Click here</a> to see the Yelp link.</p>
