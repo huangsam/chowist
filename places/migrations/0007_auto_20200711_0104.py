@@ -6,13 +6,11 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('places', '0006_auto_20200711_0045'),
+        ("places", "0006_auto_20200711_0045"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='review',
-            old_name='score',
-            new_name='rating',
+            model_name="review", old_name="score", new_name="rating",
         ),
     ]

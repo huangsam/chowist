@@ -9,26 +9,54 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('places', '0005_auto_20200711_0027'),
+        ("places", "0005_auto_20200711_0027"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Review',
+            name="Review",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('body', models.TextField()),
-                ('score', models.IntegerField(choices=[(1, 'Terrible'), (2, 'Mediocre'), (3, 'Average'), (4, 'Good'), (5, 'Great')])),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reviews', to=settings.AUTH_USER_MODEL)),
-                ('place', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reviews', to='places.Restaurant')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=255)),
+                ("body", models.TextField()),
+                (
+                    "score",
+                    models.IntegerField(
+                        choices=[
+                            (1, "Terrible"),
+                            (2, "Mediocre"),
+                            (3, "Average"),
+                            (4, "Good"),
+                            (5, "Great"),
+                        ]
+                    ),
+                ),
+                (
+                    "author",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="reviews",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "place",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="reviews",
+                        to="places.Restaurant",
+                    ),
+                ),
             ],
-            options={
-                'db_table': 'review',
-                'unique_together': {('place', 'author')},
-            },
+            options={"db_table": "review", "unique_together": {("place", "author")},},
         ),
-        migrations.DeleteModel(
-            name='Rating',
-        ),
+        migrations.DeleteModel(name="Rating",),
     ]
