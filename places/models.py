@@ -62,3 +62,18 @@ class Review(models.Model):
 
     def __str__(self):
         return f"User {self.author.username} reviewed {self.place.name} with a rating of {self.rating}"
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+    places = models.ManyToManyField(Restaurant)
+
+    class Meta:
+        db_table = "category"
+        verbose_name_plural = "categories"
+
+    def __repr__(self):
+        return f"<Category id={self.id} name='{self.name}'>"
+
+    def __str__(self):
+        return f"Category with the name of {self.name}"
