@@ -15,6 +15,7 @@ class HomeView(TemplateView):
 
 class RestaurantListView(ListView):
     model = Restaurant
+    ordering = ["name"]
     context_object_name = "restaurant_list"
 
 
