@@ -24,7 +24,9 @@ class HomeView(View):
                 target_url = reverse("places:restaurant-list")
                 query_params = {k: v for k, v in form.cleaned_data.items() if v}
                 target_queries = urlencode(query_params)
-                return HttpResponseRedirect(f"{target_url}?{target_queries}")
+                if target_queries:
+                    target_url = f"{target_url}?{target_queries}"
+                return HttpResponseRedirect(target_url)
         else:
             form = RestaurantForm()
         return render(request, self.template_name, {"form": form})
