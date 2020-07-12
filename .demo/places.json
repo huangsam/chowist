@@ -1,6 +1,7 @@
 [
   {
     "name":"Banana Leaf",
+    "description": "Lively go-to for roti and other Malaysian fare, vegetarian menu and dinner deals included.",
     "address":"182 Ranch Dr Milpitas, CA 95035",
     "categories":[
       "Singaporean",
@@ -16,6 +17,7 @@
   },
   {
     "name":"Tasty Indian Pizza",
+    "description": "A go-to Indian Italian fusion cuisine with pizza, appetizers, and more.",
     "address":"528 Lawrence Expy Sunnyvale, CA 94085",
     "categories":[
       "Pizza"
@@ -29,6 +31,7 @@
   },
   {
     "name":"Thai Orchid Thai Cuisine",
+    "description": "Popular lunch place offering a familiar range of Thai favorites.",
     "address":"2591 N 1st St San Jose, CA 95131",
     "categories":[
       "Thai"
@@ -42,6 +45,7 @@
   },
   {
     "name":"Chili Garden",
+    "description": "Bustling Chinese restaurant with late hours serving dim sum and cold dishes.",
     "address":"210 Barber Ct Milpitas, CA 95035",
     "categories":[
       "Szechuan"
@@ -55,6 +59,7 @@
   },
   {
     "name":"Sizzling Stone",
+    "description": "Counter-service Korean spot mixing made-to-order stone-pot bibimbop.",
     "address":"510 Barber Ln Milpitas, CA 95035",
     "categories":[
       "Korean",
@@ -70,6 +75,7 @@
   },
   {
     "name":"Smoke Eaters",
+    "description": "Smoke Eaters serves the best beer and hot wings in the Silicon Valley.",
     "address":"3175 Mission College Blvd Santa Clara, CA 95054",
     "categories":[
       "American (New)"
@@ -83,6 +89,7 @@
   },
   {
     "name":"El Taco de Oro Restaurant",
+    "description": "Informal sit-down place for Mexican favorites like tacos, enchiladas and margaritas.",
     "address":"5220 N 1st St Alviso, CA 95002",
     "categories":[
       "Mexican"
@@ -96,6 +103,7 @@
   },
   {
     "name":"Dish Dash",
+    "description": "Serves, quality, sourced, and made-fresh-daily Middle Eastern fare.",
     "address":"190 S Murphy Ave Sunnyvale, CA 94086",
     "categories":[
       "Middle Eastern",
@@ -110,6 +118,7 @@
   },
   {
     "name":"Smoking Pig",
+    "description": "Specializes in long smoked meats, hand-crafted sides and mixed signature cocktails.",
     "address":"1144 N 4th St San Jose, CA 95112",
     "categories":[
       "Barbeque",
@@ -125,6 +134,7 @@
   },
   {
     "name":"Five Guys",
+    "description": "An American fast casual restaurant chain focused on hamburgers, hot dogs, and French fries.",
     "address":"4180 N First St San Jose, CA 95112",
     "categories":[
       "Burgers",
@@ -139,6 +149,7 @@
   },
   {
     "name":"Gobi Mongolian BBQ",
+    "description": "All you can eat - Mongolian style. Quick, delicious food at a reasonable price.",
     "address":"1135 Tasman Dr Sunnyvale, CA 94089",
     "categories":[
       "Food",
@@ -154,6 +165,7 @@
   },
   {
     "name":"Minas Korean BBQ",
+    "description": "Laid-back eatery serving a menu of Korean BBQ and other classic dishes.",
     "address":"3730 N 1st St San Jose, CA 95134",
     "categories":[
       "Korean"
@@ -167,6 +179,7 @@
   },
   {
     "name":"Pho Kim Long",
+    "description": "A no-frills Vietnamese spot for standard pho noodle soup.",
     "address":"2082 N Capitol Ave San Jose, CA 95132",
     "categories":[
       "Vietnamese"
@@ -180,6 +193,7 @@
   },
   {
     "name":"Faultline Brewery",
+    "description": "Brewpub earning fans with its house-brewed beer.",
     "address":"1235 Oakmead Pkwy Sunnyvale, CA 94085",
     "categories":[
       "American (New)",
@@ -195,6 +209,7 @@
   },
   {
     "name":"Holyland Restaurant \u0026 Catering",
+    "description": "Catering and cafe specializing in Mediterranean and Middle Eastern favorites.",
     "address":"807 Aldo Ave #105 Santa Clara, CA 95054",
     "categories":[
       "Middle Eastern",
@@ -210,6 +225,7 @@
   },
   {
     "name":"Wahoo's Fish Taco",
+    "description": "Restaurant chain that offers Mexican food mixed with Brazilian and Asian flavors.",
     "address":"691 Tasman Dr Ste Q Sunnyvale, CA 94089",
     "categories":[
       "Seafood",
@@ -224,6 +240,7 @@
   },
   {
     "name":"Pedros Restaurant \u0026 Cantina",
+    "description": "Colorful Mexican eatery with patios featuring a full bar serving a variety of margaritas.",
     "address":"3935 Freedom Cir Santa Clara, CA 95054",
     "categories":[
       "Mexican",
@@ -238,6 +255,7 @@
   },
   {
     "name":"Eat Viet",
+    "description": "Fresh and healthy Vietnamese fast food. Online ordering now available.",
     "address":"3730 N 1st St Ste 110 North San Jose San Jose, CA 95134",
     "categories":[
       "Vietnamese",
@@ -252,6 +270,7 @@
   },
   {
     "name":"QQ Noodle",
+    "description": "No-frills Asian kitchen serving vegetarian/meat plates and soups with handmade noodles.",
     "address":"416 Barber Ln Milpitas, CA 95035",
     "categories":[
       "Chinese"
@@ -265,6 +284,7 @@
   },
   {
     "name":"Mayflower Restaurant",
+    "description": "Cantonese specialties and dinners featuring fresh seafood, dim sum and regional favorites.",
     "address":"428 Barber Ln Milpitas, CA 95035",
     "categories":[
       "Dim Sum",
@@ -279,6 +299,7 @@
   },
   {
     "name":"Extreme Pita",
+    "description": "Sandwich chain offering health-minded pitas with fillings such as falafel & tuna.",
     "address":"3730 N 1st St Ste 145 North San Jose San Jose, CA 95134",
     "categories":[
       "Greek",
@@ -293,6 +314,7 @@
   },
   {
     "name":"Panera Bread",
+    "description": "American chain store of bakery-cafe fast casual restaurants.",
     "address":"4180 N. First Street North San Jose San Jose, CA 95134",
     "categories":[
       "Sandwiches",
@@ -308,6 +330,7 @@
   },
   {
     "name":"Shiva's Indian Restaurant",
+    "description": "Brings authentic North Indian cuisine in an ambiance made to leave a lasting impression.",
     "address":"800 California St Ste 100 Mountain View, CA 94041",
     "categories":[
       "Indian"

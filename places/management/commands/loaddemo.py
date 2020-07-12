@@ -41,6 +41,7 @@ class Command(BaseCommand):
         for item in content:
             restaurant = Restaurant.objects.create(
                 name=item["name"],
+                description=item["description"],
                 address=item["address"],
                 latitude=item["lat"],
                 longitude=item["long"],
