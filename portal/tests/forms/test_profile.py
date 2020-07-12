@@ -6,7 +6,7 @@ from portal.forms import ProfileForm
 class TestProfileForm(TestCase):
     """ProfileForm test suite"""
 
-    def test_profile_form_valid_as_empty(self):
+    def test_profile_form_invalid_as_empty(self):
         form = ProfileForm()
         self.assertFalse(form.is_valid())
 

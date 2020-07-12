@@ -12,7 +12,7 @@ class TestRestaurantForm(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_restaurant_form_valid_as_partial(self):
-        form_data = {"category": "Burgers"}
+        form_data = {"category": "Burgers", "name": ""}
         form = RestaurantForm(form_data)
         self.assertTrue(form.is_valid())
 

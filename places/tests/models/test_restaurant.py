@@ -31,10 +31,9 @@ class TestRestaurant(TestCase):
         self.assertEquals(len(restaurants), 2)
 
     def test_restaurant_get(self):
-        restaurant_one = Restaurant.objects.get(name="Five Guys")
-        restaurant_two = Restaurant.objects.get(name="In N Out")
-        self.assertEquals(restaurant_one.max_party, 6)
-        self.assertEquals(restaurant_two.max_party, 4)
+        restaurant = Restaurant.objects.get(name="Five Guys")
+        self.assertEquals(restaurant.min_party, 1)
+        self.assertEquals(restaurant.max_party, 6)
 
     def test_restaurant_filter(self):
         restaurants = Restaurant.objects.filter(max_party__gt=5)
