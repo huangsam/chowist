@@ -24,7 +24,7 @@ class TestProfile(TestCase):
         profile = Profile.objects.get(user=user)
         self.assertIsNotNone(profile)
 
-    def test_profile_exception(self):
+    def test_profile_missing(self):
         self.assertRaises(Profile.DoesNotExist, Profile.objects.get, bio="Bogus")
 
     def test_profile_empty(self):

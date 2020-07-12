@@ -44,9 +44,8 @@ class TestReview(TestCase):
         reviews = Review.objects.filter(rating=5)
         self.assertEquals(len(reviews), 1)
 
-    def test_review_exception(self):
+    def test_review_missing(self):
         self.assertRaises(Review.DoesNotExist, Review.objects.get, rating=0)
-        self.assertRaises(Review.DoesNotExist, Review.objects.get, rating=6)
 
     def test_review_empty(self):
         reviews = Review.objects.filter(rating=0)

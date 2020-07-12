@@ -41,7 +41,7 @@ class TestRestaurant(TestCase):
         self.assertNotEquals(restaurants, None)
         self.assertEquals(len(restaurants), 1)
 
-    def test_restaurant_exception(self):
+    def test_restaurant_missing(self):
         self.assertRaises(Restaurant.DoesNotExist, Restaurant.objects.get, name="Bogus")
 
     def test_restaurant_empty(self):

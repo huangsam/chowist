@@ -38,7 +38,7 @@ class TestRestaurant(TestCase):
         category = Category.objects.get(name="Burgers")
         self.assertEquals(self.burger_category, category)
 
-    def test_category_exception(self):
+    def test_category_missing(self):
         self.assertRaises(Category.DoesNotExist, Category.objects.get, name="Bogus")
 
     def test_category_burger(self):
