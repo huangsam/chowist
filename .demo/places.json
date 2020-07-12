@@ -54,7 +54,8 @@
     "address": "210 Barber Ct Milpitas, CA 95035",
     "categories": [
       "Chinese",
-      "Sichuan"
+      "Sichuan",
+      "Dim Sum"
     ],
     "lat": 37.423813,
     "long": -121.919155,
@@ -69,8 +70,8 @@
     "address": "510 Barber Ln Milpitas, CA 95035",
     "categories": [
       "Korean",
-      "Fast Food",
-      "Asian Fusion"
+      "Asian Fusion",
+      "Fast Food"
     ],
     "lat": 37.42039,
     "long": -121.917119,
@@ -84,7 +85,8 @@
     "description": "Smoke Eaters serves the best beer and hot wings in the Silicon Valley.",
     "address": "3175 Mission College Blvd Santa Clara, CA 95054",
     "categories": [
-      "American"
+      "American",
+      "Bars"
     ],
     "lat": 37.388735,
     "long": -121.98554,
@@ -98,7 +100,8 @@
     "description": "Informal sit-down place for Mexican favorites like tacos, enchiladas and margaritas.",
     "address": "5220 N 1st St Alviso, CA 95002",
     "categories": [
-      "Mexican"
+      "Mexican",
+      "Tacos"
     ],
     "lat": 37.42612,
     "long": -121.974498,
@@ -174,7 +177,8 @@
     "description": "Laid-back eatery serving a menu of Korean BBQ and other classic dishes.",
     "address": "3730 N 1st St San Jose, CA 95134",
     "categories": [
-      "Korean"
+      "Korean",
+      "Barbeque"
     ],
     "lat": 37.410648,
     "long": -121.945591,
@@ -204,8 +208,7 @@
     "address": "1235 Oakmead Pkwy Sunnyvale, CA 94085",
     "categories": [
       "American",
-      "Bars",
-      "Breweries"
+      "Bars"
     ],
     "lat": 37.387643,
     "long": -121.992672,
@@ -220,8 +223,7 @@
     "address": "807 Aldo Ave #105 Santa Clara, CA 95054",
     "categories": [
       "Middle Eastern",
-      "Mediterranean",
-      "Caterers"
+      "Mediterranean"
     ],
     "lat": 37.384526,
     "long": -121.948726,
@@ -236,7 +238,8 @@
     "address": "691 Tasman Dr Ste Q Sunnyvale, CA 94089",
     "categories": [
       "Seafood",
-      "Mexican"
+      "Mexican",
+      "Tacos"
     ],
     "lat": 37.402632,
     "long": -122.008212,
@@ -298,6 +301,8 @@
     "description": "Cantonese specialties and dinners featuring fresh seafood, dim sum and regional favorites.",
     "address": "428 Barber Ln Milpitas, CA 95035",
     "categories": [
+      "Chinese",
+      "Cantonese",
       "Dim Sum",
       "Seafood"
     ],
@@ -314,7 +319,8 @@
     "address": "3730 N 1st St Ste 145 North San Jose San Jose, CA 95134",
     "categories": [
       "Greek",
-      "Mediterranean"
+      "Mediterranean",
+      "Sandwiches"
     ],
     "lat": 37.41064799999999,
     "long": -121.945591,
@@ -328,9 +334,8 @@
     "description": "American chain store of bakery-cafe fast casual restaurants.",
     "address": "4180 N. First Street North San Jose San Jose, CA 95134",
     "categories": [
+      "American",
       "Sandwiches",
-      "Salad",
-      "Soup",
       "Fast Food"
     ],
     "lat": 37.4161071,
