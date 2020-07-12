@@ -31,6 +31,16 @@ class TestRestaurant(TestCase):
         cls.burger_category.places.add(r1, r2)
         cls.earthly_category.places.add(r1)
 
+    def test_category_all(self):
+        self.assertEquals(len(Category.objects.all()), 2)
+
+    def test_category_get(self):
+        category = Category.objects.get(name="Burgers")
+        self.assertEquals(self.burger_category, category)
+
+    def test_category_exception(self):
+        self.assertRaises(Category.DoesNotExist, Category.objects.get, name="Bogus")
+
     def test_category_burger(self):
         burger_places = self.burger_category.places.all()
         self.assertEquals(len(burger_places), 2)
