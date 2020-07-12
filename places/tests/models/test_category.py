@@ -38,3 +38,11 @@ class TestRestaurant(TestCase):
     def test_category_earthly(self):
         earthly_places = self.earthly_category.places.all()
         self.assertEquals(len(earthly_places), 1)
+
+    def test_restaurant_five_guys(self):
+        five_guys = Restaurant.objects.get(name="Five Guys")
+        self.assertEquals(len(five_guys.categories.all()), 2)
+
+    def test_restaurant_in_n_out(self):
+        in_n_out = Restaurant.objects.get(name="In N Out")
+        self.assertEquals(len(in_n_out.categories.all()), 1)

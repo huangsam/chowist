@@ -66,7 +66,7 @@ class Review(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
-    places = models.ManyToManyField(Restaurant)
+    places = models.ManyToManyField(Restaurant, related_name="categories")
 
     class Meta:
         db_table = "category"
