@@ -1,5 +1,7 @@
 {% extends 'core/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block meta %}
 <title>Chowist | Places</title>
 {% endblock %}
@@ -8,8 +10,13 @@
 <div class="container lead-container pb-3">
   <h1>Places</h1>
   <p class="lead">Find the places you love.</p>
-  <p>There are many restaurants in the Bay Area that you can choose from. However, We have curated the list down to 10-100 results so that you can find the restaurant that best suits your preference.</p>
-  <p><a href="{% url 'places:restaurant-list' %}">Click here</a> for an aggregate view. Each restaurant should also have an associated detailed view.</p>
-  <p><a href="{% url 'places:restaurant-random' %}">Click here</a> for us to pick a random restaurant and redirect you to its detailed view.</p>
+  <p>There are <a href="{% url 'places:restaurant-list' %}">many restaurants</a> that you can choose from.</p>
+  <p>If you are still undecided, please fill out the form below:</p>
+  <form class="form-horizontal" action="" method="get">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{% url 'places:restaurant-random' %}" class="btn btn-secondary">Random</a>
+  </form>
 </div>
 {% endblock %}

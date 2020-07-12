@@ -1,19 +1,33 @@
+from urllib.parse import urlencode
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.views.generic import TemplateView, View
+from django.views.generic import View
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
 from django.views.generic.list import ListView
 
-from places.forms import ReviewForm
+from places.forms import RestaurantForm, ReviewForm
 from places.models import Restaurant, Review
 
 
-class HomeView(TemplateView):
+class HomeView(View):
     template_name = "places/home.html"
+
+    def get(self, request):
+        if request.GET:
+            form = RestaurantForm(request.GET)
+            if form.is_valid():
+                target_url = reverse("places:restaurant-list")
+                query_params = {k: v for k, v in form.cleaned_data.items() if v}
+                target_queries = urlencode(query_params)
+                return HttpResponseRedirect(f"{target_url}?{target_queries}")
+        else:
+            form = RestaurantForm()
+        return render(request, self.template_name, {"form": form})
 
 
 class RestaurantListView(ListView):
@@ -31,15 +45,15 @@ class RestaurantListView(ListView):
     def get_queryset(self):
         queries = []
         name = self.request.GET.get("name")
+        category = self.request.GET.get("category")
+        min_party = self.request.GET.get("min_party")
+        max_party = self.request.GET.get("max_party")
         if name:
             queries.append(Q(name__contains=name))
-        category = self.request.GET.get("category")
         if category:
             queries.append(Q(categories__name__contains=category))
-        min_party = self.request.GET.get("min_party")
         if min_party and min_party.isdigit():
             queries.append(Q(min_party__gte=min_party))
-        max_party = self.request.GET.get("max_party")
         if max_party and max_party.isdigit():
             queries.append(Q(max_party__lte=max_party))
         if queries:
