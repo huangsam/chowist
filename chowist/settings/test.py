@@ -1,6 +1,5 @@
 from chowist.settings.base import *  # noqa
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
