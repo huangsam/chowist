@@ -7,9 +7,11 @@
 {% block content %}
 <div class="container lead-container pb-3">
   <h1>{{ restaurant.name }}</h1>
-  {% for category in restaurant.categories.all %}
-    <span class="badge badge-secondary">{{ category.name }}</span>
-  {% endfor %}
+  <div id="categories">
+    {% for category in restaurant.categories.all %}
+      <span class="badge badge-secondary">{{ category.name }}</span>
+    {% endfor %}
+  </div>
   <hr>
   <p>Here are some details about the restaurant:</p>
   <ul>
