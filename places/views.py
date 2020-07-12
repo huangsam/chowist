@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -17,9 +18,34 @@ class HomeView(TemplateView):
 
 class RestaurantListView(ListView):
     model = Restaurant
-    ordering = ["name"]
     paginate_by = 15
     context_object_name = "restaurant_list"
+
+    @staticmethod
+    def get_composite_key(queries):
+        composite = queries[0]
+        for query in queries[1:]:
+            composite &= query
+        return composite
+
+    def get_queryset(self):
+        queries = []
+        name = self.request.GET.get("name")
+        if name:
+            queries.append(Q(name__contains=name))
+        category = self.request.GET.get("category")
+        if category:
+            queries.append(Q(categories__name__contains=category))
+        min_party = self.request.GET.get("min_party")
+        if min_party and min_party.isdigit():
+            queries.append(Q(min_party__gte=min_party))
+        max_party = self.request.GET.get("max_party")
+        if max_party and max_party.isdigit():
+            queries.append(Q(max_party__lte=max_party))
+        if queries:
+            composite = self.get_composite_key(queries)
+            return Restaurant.objects.filter(composite)
+        return Restaurant.objects.all()
 
 
 class RestaurantDetailView(DetailView):

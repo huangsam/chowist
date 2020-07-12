@@ -17,6 +17,7 @@ class Restaurant(models.Model):
 
     class Meta:
         db_table = "restaurant"
+        ordering = ["name"]
 
     def average_rating(self):
         ratings_count = 0
