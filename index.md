@@ -57,11 +57,3 @@ For production, you will want to use `gunicorn` for running the server:
     gunicorn -w 4 chowist.wsgi
 
 When using Gunicorn, remember to host the static files from a web server.
-
-## How to contribute
-
-Feel free to create pull requests for the following:
-
-- Enhancements to Django application logic
-- Additional media content (`JPG`, `SVG`, etc.)
-- Additional restaurants for `restaurant` fixture
