@@ -6,11 +6,11 @@ from portal.forms import UserForm
 class TestUserForm(TestCase):
     """UserForm test suite"""
 
-    def test_form_invalid(self):
+    def test_user_form_invalid(self):
         form = UserForm()
         self.assertFalse(form.is_valid())
 
-    def test_form_valid(self):
+    def test_user_form_valid(self):
         form_data = {
             "username": "johndoe",
             "email": "johndoe@example.org",

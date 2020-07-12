@@ -6,11 +6,11 @@ from places.forms import RestaurantForm
 class TestRestaurantForm(TestCase):
     """RestaurantForm test suite"""
 
-    def test_form_invalid(self):
+    def test_restaurant_form_invalid(self):
         form = RestaurantForm()
         self.assertFalse(form.is_valid())
 
-    def test_form_valid(self):
+    def test_restaurant_form_valid(self):
         form_data = {
             "category": "Burgers",
             "name": "Five Guys",
