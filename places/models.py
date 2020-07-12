@@ -57,6 +57,7 @@ class Review(models.Model):
     class Meta:
         db_table = "review"
         unique_together = ["place", "author"]
+        ordering = ["rating"]
 
     def __repr__(self):
         return f"<Review id={self.id} rating={self.rating}>"
@@ -72,6 +73,7 @@ class Category(models.Model):
     class Meta:
         db_table = "category"
         verbose_name_plural = "categories"
+        ordering = ["name"]
 
     def __repr__(self):
         return f"<Category id={self.id} name='{self.name}'>"
