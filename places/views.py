@@ -36,11 +36,11 @@ class RestaurantListView(ListView):
     context_object_name = "restaurant_list"
 
     @staticmethod
-    def get_composite_key(queries):
-        composite = queries[0]
+    def get_composite_query(queries):
+        composite_query = queries[0]
         for query in queries[1:]:
-            composite &= query
-        return composite
+            composite_query &= query
+        return composite_query
 
     def get_queryset(self):
         queries = []
@@ -57,8 +57,8 @@ class RestaurantListView(ListView):
         if max_party and max_party.isdigit():
             queries.append(Q(max_party__lte=max_party))
         if queries:
-            composite = self.get_composite_key(queries)
-            return Restaurant.objects.filter(composite)
+            composite_query = self.get_composite_query(queries)
+            return Restaurant.objects.filter(composite_query)
         return Restaurant.objects.all()
 
 
