@@ -6,7 +6,9 @@
     "categories": [
       "Singaporean",
       "Thai",
-      "Malaysian"
+      "Malaysian",
+      "Vegetarian",
+      "Curry"
     ],
     "lat": 37.4284055,
     "long": -121.92023840000002,
@@ -20,7 +22,9 @@
     "description": "A go-to Indian Italian fusion cuisine with pizza, appetizers, and more.",
     "address": "528 Lawrence Expy Sunnyvale, CA 94085",
     "categories": [
-      "Pizza"
+      "Indian",
+      "Pizza",
+      "Curry"
     ],
     "lat": 37.382874,
     "long": -121.995084,
@@ -34,7 +38,8 @@
     "description": "Popular lunch place offering a familiar range of Thai favorites.",
     "address": "2591 N 1st St San Jose, CA 95131",
     "categories": [
-      "Thai"
+      "Thai",
+      "Curry"
     ],
     "lat": 37.385773,
     "long": -121.927768,
@@ -48,7 +53,8 @@
     "description": "Bustling Chinese restaurant with late hours serving dim sum and cold dishes.",
     "address": "210 Barber Ct Milpitas, CA 95035",
     "categories": [
-      "Szechuan"
+      "Chinese",
+      "Sichuan"
     ],
     "lat": 37.423813,
     "long": -121.919155,
@@ -78,7 +84,7 @@
     "description": "Smoke Eaters serves the best beer and hot wings in the Silicon Valley.",
     "address": "3175 Mission College Blvd Santa Clara, CA 95054",
     "categories": [
-      "American (New)"
+      "American"
     ],
     "lat": 37.388735,
     "long": -121.98554,
@@ -123,7 +129,7 @@
     "categories": [
       "Barbeque",
       "Southern",
-      "American (Traditional)"
+      "American"
     ],
     "lat": 37.358758,
     "long": -121.902704,
@@ -137,6 +143,7 @@
     "description": "An American fast casual restaurant chain focused on hamburgers, hot dogs, and French fries.",
     "address": "4180 N First St San Jose, CA 95112",
     "categories": [
+      "American",
       "Burgers",
       "Fast Food"
     ],
@@ -152,7 +159,6 @@
     "description": "All you can eat - Mongolian style. Quick, delicious food at a reasonable price.",
     "address": "1135 Tasman Dr Sunnyvale, CA 94089",
     "categories": [
-      "Food",
       "Chinese",
       "Mongolian"
     ],
@@ -182,7 +188,8 @@
     "description": "A no-frills Vietnamese spot for standard pho noodle soup.",
     "address": "2082 N Capitol Ave San Jose, CA 95132",
     "categories": [
-      "Vietnamese"
+      "Vietnamese",
+      "Noodles"
     ],
     "lat": 37.407058,
     "long": -121.886768,
@@ -196,7 +203,7 @@
     "description": "Brewpub earning fans with its house-brewed beer.",
     "address": "1235 Oakmead Pkwy Sunnyvale, CA 94085",
     "categories": [
-      "American (New)",
+      "American",
       "Bars",
       "Breweries"
     ],
@@ -259,7 +266,9 @@
     "address": "3730 N 1st St Ste 110 North San Jose San Jose, CA 95134",
     "categories": [
       "Vietnamese",
-      "Asian Fusion"
+      "Asian Fusion",
+      "Noodles",
+      "Fast Food"
     ],
     "lat": 37.41064799999999,
     "long": -121.945591,
@@ -273,7 +282,9 @@
     "description": "No-frills Asian kitchen serving vegetarian/meat plates and soups with handmade noodles.",
     "address": "416 Barber Ln Milpitas, CA 95035",
     "categories": [
-      "Chinese"
+      "Chinese",
+      "Noodles",
+      "Vegetarian"
     ],
     "lat": 37.4222844,
     "long": -121.918243,
@@ -319,7 +330,8 @@
     "categories": [
       "Sandwiches",
       "Salad",
-      "Soup"
+      "Soup",
+      "Fast Food"
     ],
     "lat": 37.4161071,
     "long": -121.9549435,
@@ -341,5 +353,19 @@
     "minparty": 6,
     "maxparty": 8,
     "yelp": "shivas-indian-restaurant-mountain-view-2"
+  },
+  {
+    "name": "Golden Garlic",
+    "description": "Tianjin and Sichuan specialties are the focus at this comfy Chinese eatery.",
+    "categories": [
+      "Chinese",
+      "Sichuan"
+    ],
+    "address": "3082 Landess Ave, San Jose, CA 95132",
+    "lat": "37.415329000000000",
+    "long": "-121.875840000000000",
+    "minparty": 2,
+    "maxparty": 12,
+    "yelp": "golden-garlic-san-jose"
   }
 ]
