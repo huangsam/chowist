@@ -6,11 +6,11 @@ from portal.forms import ProfileForm
 class TestProfileForm(TestCase):
     """ProfileForm test suite"""
 
-    def test_profileform_invalid(self):
+    def test_form_invalid(self):
         form = ProfileForm()
         self.assertFalse(form.is_valid())
 
-    def test_profileform_valid(self):
+    def test_form_valid(self):
         form_data = {
             "bio": "helloworld",
             "address": "123 World",
