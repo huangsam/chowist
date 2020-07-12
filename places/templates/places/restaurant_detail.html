@@ -9,7 +9,8 @@
   <h1>{{ restaurant.name }}</h1>
   <div id="categories">
     {% for category in restaurant.categories.all %}
-      <span class="badge badge-secondary">{{ category.name }}</span>
+      <a href="{% url 'places:restaurant-list' %}?category={{ category.name }}"
+         class="badge badge-secondary">{{ category.name }}</a>
     {% endfor %}
   </div>
   <hr>
