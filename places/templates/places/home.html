@@ -13,7 +13,6 @@
   <p>There are <a href="{% url 'places:restaurant-list' %}">many restaurants</a> that you can choose from.</p>
   <p>If you are still undecided, please fill out the form below:</p>
   <form class="form-horizontal" action="" method="get">
-    {% csrf_token %}
     {{ form|crispy }}
     <button type="submit" class="btn btn-primary">Submit</button>
     <a href="{% url 'places:restaurant-random' %}" class="btn btn-secondary">Random</a>
