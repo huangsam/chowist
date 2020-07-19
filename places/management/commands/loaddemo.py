@@ -1,11 +1,12 @@
 import json
+import random
 from argparse import FileType
 from collections import defaultdict
 
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand
 
-from places.models import Category, Restaurant, Review
+from places.models import Category, Rating, Restaurant, Review
 
 
 class Command(BaseCommand):
@@ -20,6 +21,20 @@ class Command(BaseCommand):
     @staticmethod
     def get_user_options(user):
         return {"username": user, "email": f"{user}@localhost", "password": user}
+
+    @staticmethod
+    def create_review(restaurant, reviewer):
+        rating = random.randint(1, 5)
+        rating_name = Rating(rating).name
+        rating_title = f"{rating_name.title()} place"
+        rating_body = f"{rating_name.title()} food, {rating_name.lower()} service."
+        Review.objects.create(
+            title=rating_title,
+            body=rating_body,
+            rating=rating,
+            place=restaurant,
+            author=reviewer,
+        )
 
     def handle(self, *args, **options):
         self.stdout.write("Delete existing data")
@@ -61,19 +76,7 @@ class Command(BaseCommand):
         first_normal = self.UserModel.objects.get(username=self.normal_users[0])
         last_normal = self.UserModel.objects.get(username=self.normal_users[-1])
         for restaurant in Restaurant.objects.all():
-            Review.objects.create(
-                title="Great place",
-                body="Great food, great service",
-                rating=5,
-                place=restaurant,
-                author=first_normal,
-            )
-            Review.objects.create(
-                title="Worst place",
-                body="Worst food, worst service",
-                rating=1,
-                place=restaurant,
-                author=last_normal,
-            )
+            self.create_review(restaurant, first_normal)
+            self.create_review(restaurant, last_normal)
 
         self.stdout.write(self.style.SUCCESS("Success"))
