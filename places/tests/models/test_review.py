@@ -1,3 +1,5 @@
+import math
+
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
@@ -11,7 +13,7 @@ class TestReview(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        restaurant = Restaurant.objects.create(
+        place_with_reviews = Restaurant.objects.create(
             name="Plutos",
             address="Jupiter",
             latitude=0.00,
@@ -26,8 +28,18 @@ class TestReview(TestCase):
             title="Amazing",
             body="This place is excellent",
             rating=5,
-            place=restaurant,
+            place=place_with_reviews,
             author=cls.user,
+        )
+
+        place_without_reviews = Restaurant.objects.create(
+            name="Nowhere",
+            address="Mars",
+            latitude=0.00,
+            longitude=0.00,
+            min_party=1,
+            max_party=1,
+            yelp_link="/nowhere-mars",
         )
 
     def test_review_all(self):
@@ -56,6 +68,10 @@ class TestReview(TestCase):
         review = restaurant.reviews.first()
         self.assertEquals(review.place.name, restaurant.name)
 
-    def test_restaurant_average_rating(self):
+    def test_restaurant_rating_with_reviews(self):
         restaurant = Restaurant.objects.get(name="Plutos")
         self.assertEquals(restaurant.average_rating(), 5.0)
+
+    def test_restaurant_rating_without_reviews(self):
+        restaurant = Restaurant.objects.get(name="Nowhere")
+        self.assertTrue(math.isnan(restaurant.average_rating()))
