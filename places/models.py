@@ -19,7 +19,7 @@ class Restaurant(models.Model):
         db_table = "restaurant"
         ordering = ["name"]
 
-    def average_rating(self):
+    def get_average_rating(self):
         ratings_count = 0
         ratings_sum = 0
         for review in self.reviews.all():
@@ -28,6 +28,11 @@ class Restaurant(models.Model):
         if ratings_count == 0:
             return math.nan
         return ratings_sum / ratings_count
+
+    def get_distance_to(self, other):
+        y_diff = self.latitude - other.latitude
+        x_diff = self.longitude - other.longitude
+        return math.sqrt(y_diff ** 2 + x_diff ** 2)
 
     def get_absolute_url(self):
         return reverse("places:restaurant-detail", kwargs={"pk": self.pk})

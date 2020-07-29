@@ -32,7 +32,7 @@ class TestReview(TestCase):
             author=cls.user,
         )
 
-        place_without_reviews = Restaurant.objects.create(
+        Restaurant.objects.create(
             name="Nowhere",
             address="Mars",
             latitude=0.00,
@@ -70,8 +70,8 @@ class TestReview(TestCase):
 
     def test_restaurant_rating_with_reviews(self):
         restaurant = Restaurant.objects.get(name="Plutos")
-        self.assertEquals(restaurant.average_rating(), 5.0)
+        self.assertEquals(restaurant.get_average_rating(), 5.0)
 
     def test_restaurant_rating_without_reviews(self):
         restaurant = Restaurant.objects.get(name="Nowhere")
-        self.assertTrue(math.isnan(restaurant.average_rating()))
+        self.assertTrue(math.isnan(restaurant.get_average_rating()))

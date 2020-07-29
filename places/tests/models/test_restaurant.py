@@ -19,8 +19,8 @@ class TestRestaurant(TestCase):
         Restaurant.objects.create(
             name="In N Out",
             address="Mars",
-            latitude=0.00,
-            longitude=0.00,
+            latitude=2.00,
+            longitude=2.00,
             min_party=1,
             max_party=4,
             yelp_link="/in-n-out-mars",
@@ -46,3 +46,10 @@ class TestRestaurant(TestCase):
     def test_restaurant_empty(self):
         restaurants = Restaurant.objects.filter(max_party__gt=10)
         self.assertEquals(len(restaurants), 0)
+
+    def test_restaurant_distance(self):
+        five_guys = Restaurant.objects.get(name="Five Guys")
+        in_n_out = Restaurant.objects.get(name="In N Out")
+        dist_one = five_guys.get_distance_to(in_n_out)
+        dist_two = in_n_out.get_distance_to(five_guys)
+        self.assertEquals(dist_one, dist_two)
