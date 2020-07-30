@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'core/common.html' %}
 
 {% load crispy_forms_tags %}
 
@@ -6,21 +6,15 @@
 <title>Chowist | Login</title>
 {% endblock %}
 
-{% block content %}
-<div class="container lead-container">
-  <div class="row mb-3">
-    <div class="col">
-      <h1>Login</h1>
-    </div>
-  </div>
-  <div class="row pb-3">
-    <div class="col">
-        <form class="form-horizontal" action="" method="post">
-          {% csrf_token %}
-          {{ form|crispy }}
-          <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-    </div>
-  </div>
-</div>
+{% block content_title %}
+<h1>Login</h1>
+{% endblock %}
+
+{% block content_body %}
+<form class="form-horizontal" action="" method="post">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button type="submit" class="btn btn-primary">Login</button>
+  <a href="{% url 'portal:home' %}" class="btn btn-secondary">Cancel</a>
+</form>
 {% endblock %}

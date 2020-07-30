@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block meta %}
+{% endblock %}
+
+{% block content %}
+<div class="container lead-container">
+  <div class="row mb-3">
+    <div class="col">
+      {% block content_title %}
+      {% endblock %}
+    </div>
+  </div>
+  <div class="row pb-4">
+    <div class="col">
+      {% block content_body %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}

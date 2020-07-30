@@ -1,41 +1,43 @@
-{% extends 'core/base.html' %}
+{% extends 'core/common.html' %}
 
 {% block meta %}
 <title>Chowist | {{ restaurant.name }}</title>
 {% endblock %}
 
-{% block content %}
-<div class="container lead-container pb-3">
-  <h1>{{ restaurant.name }}</h1>
-  <div id="categories">
-    {% for category in restaurant.categories.all %}
-      <a href="{% url 'places:restaurant-list' %}?category={{ category.name }}"
-         class="badge badge-secondary">{{ category.name }}</a>
-    {% endfor %}
-  </div>
-  <hr>
-  <p>Here are some details about the restaurant:</p>
-  <ul>
-    <li>Description: {{ restaurant.description }}</li>
-    <li>Address: {{ restaurant.address }}</li>
-    <li>Minimum Party: {{ restaurant.min_party }}</li>
-    <li>Maximum Party: {{ restaurant.max_party }}</li>
-  </ul>
-  <p>Reviews for this restaurant:</p>
-  <ul>
-    {% for review in restaurant.reviews.all %}
-      <li>{{ review }}</li>
-    {% empty %}
-      <li>No reviews yet.</li>
-    {% endfor %}
-  </ul>
-  <p><a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}">Click here</a> to see the Yelp link.</p>
-  {% if user.is_authenticated %}
-    <a class="btn btn-primary" href="{% url 'places:restaurant-update' restaurant.id %}">Update</a>
-    <a class="btn btn-secondary" href="{% url 'places:restaurant-review' restaurant.id %}">Post Review</a>
-  {% else %}
-    <a class="btn btn-primary disabled" href="#">Update</a>
-    <a class="btn btn-secondary disabled" href="#">Post Review</a>
-  {% endif %}
+{% block content_title %}
+<h1>{{ restaurant.name }}</h1>
+<div id="categories">
+  {% for category in restaurant.categories.all %}
+    <a href="{% url 'places:restaurant-list' %}?category={{ category.name }}"
+       class="badge badge-secondary">{{ category.name }}</a>
+  {% endfor %}
 </div>
+{% endblock %}
+
+{% block content_body %}
+<p>Here are some details about the restaurant:</p>
+<ul>
+  <li>Description: {{ restaurant.description }}</li>
+  <li>Address: {{ restaurant.address }}</li>
+  <li>Minimum Party: {{ restaurant.min_party }}</li>
+  <li>Maximum Party: {{ restaurant.max_party }}</li>
+</ul>
+
+<p>Reviews for this restaurant:</p>
+<ul>
+  {% for review in restaurant.reviews.all %}
+    <li>{{ review }}</li>
+  {% empty %}
+    <li>No reviews yet.</li>
+  {% endfor %}
+</ul>
+
+<p><a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}">Click here</a> to see the Yelp link.</p>
+{% if user.is_authenticated %}
+  <a class="btn btn-primary" href="{% url 'places:restaurant-update' restaurant.id %}">Update</a>
+  <a class="btn btn-secondary" href="{% url 'places:restaurant-review' restaurant.id %}">Post Review</a>
+{% else %}
+  <a class="btn btn-primary disabled" href="#">Update</a>
+  <a class="btn btn-secondary disabled" href="#">Post Review</a>
+{% endif %}
 {% endblock %}
