@@ -33,6 +33,7 @@
 </ul>
 
 <p><a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}">Click here</a> to see the Yelp link.</p>
+
 {% if user.is_authenticated %}
   <a class="btn btn-primary" href="{% url 'places:restaurant-update' restaurant.id %}">Update</a>
   <a class="btn btn-secondary" href="{% url 'places:restaurant-review' restaurant.id %}">Post Review</a>
