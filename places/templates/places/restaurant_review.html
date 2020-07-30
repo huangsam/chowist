@@ -1,6 +1,4 @@
-{% extends 'core/common.html' %}
-
-{% load crispy_forms_tags %}
+{% extends 'core/form.html' %}
 
 {% block meta %}
 <title>Chowist | Post Review</title>
@@ -10,11 +8,6 @@
 <h1>Post Review</h1>
 {% endblock %}
 
-{% block content_body %}
-<form class="form-horizontal" action="" method="post">
-  {% csrf_token %}
-  {{ form|crispy }}
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <a href="{% url 'places:restaurant-detail' restaurant.id %}" class="btn btn-secondary">Cancel</a>
-</form>
+{% block form_cancel %}
+<a href="{% url 'places:restaurant-detail' restaurant.id %}" class="btn btn-secondary">Cancel</a>
 {% endblock %}
