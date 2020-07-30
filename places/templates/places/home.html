@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'core/common.html' %}
 
 {% load crispy_forms_tags %}
 
@@ -6,16 +6,16 @@
 <title>Chowist | Places</title>
 {% endblock %}
 
-{% block content %}
-<div class="container lead-container pb-4">
-  <h1>Places</h1>
-  <p class="lead">Find the places you love.</p>
-  <p>There are <a href="{% url 'places:restaurant-list' %}">many restaurants</a> that you can choose from.</p>
-  <p>If you are still undecided, please fill out the form below:</p>
-  <form class="form-horizontal" action="" method="get">
-    {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="{% url 'places:restaurant-random' %}" class="btn btn-secondary">Random</a>
-  </form>
-</div>
+{% block content_title %}
+<h1>Places</h1>
+{% endblock %}
+
+{% block content_body %}
+<p>There are <a href="{% url 'places:restaurant-list' %}">many restaurants</a> that you can choose from.</p>
+<p>If you are still undecided, please fill out the form below:</p>
+<form class="form-horizontal" action="" method="get">
+{{ form|crispy }}
+<button type="submit" class="btn btn-primary">Submit</button>
+<a href="{% url 'places:restaurant-random' %}" class="btn btn-secondary">Random</a>
+</form>
 {% endblock %}
