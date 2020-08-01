@@ -1,4 +1,4 @@
-# chowist
+# Chowist
 
 [![CircleCI](https://circleci.com/gh/huangsam/chowist.svg?style=svg)](https://circleci.com/gh/huangsam/chowist)
 
