@@ -19,3 +19,8 @@ DATABASES = {
         "PORT": 5432,
     }
 }
+
+
+# Email Backend
+# https://docs.djangoproject.com/en/3.0/topics/email/#email-backends
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
