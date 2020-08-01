@@ -4,7 +4,9 @@ from argparse import FileType
 from collections import defaultdict
 
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import Group, Permission
 from django.core.management.base import BaseCommand
+from django.db.models import Q
 
 from places.models import Category, Rating, Restaurant, Review
 
@@ -42,13 +44,27 @@ class Command(BaseCommand):
         Category.objects.all().delete()
         Review.objects.all().delete()
         Restaurant.objects.all().delete()
+        Group.objects.all().delete()
+
+        self.stdout.write("Create reviewers group")
+        reviewers = Group.objects.create(name="reviewers")
+        is_places = Q(content_type__app_label__exact="places")
+        is_portal = Q(content_type__app_label__exact="portal")
+        is_valid_app = is_places | is_portal
+        is_change = Q(codename__contains="change")
+        is_valid_change = is_change & ~Q(codename__contains="restaurant")
+        permissions = Permission.objects.filter(is_valid_app & is_valid_change)
+        reviewers.permissions.set(permissions)
+        add_review = Permission.objects.get(codename__exact="add_review")
+        reviewers.permissions.add(add_review)
 
         self.stdout.write("Create users")
         admin_options = self.get_user_options(self.admin_user)
         self.UserModel.objects.create_superuser(**admin_options)
         for normal_user in self.normal_users:
             normal_options = self.get_user_options(normal_user)
-            self.UserModel.objects.create_user(**normal_options)
+            user = self.UserModel.objects.create_user(**normal_options)
+            reviewers.user_set.add(user)
 
         self.stdout.write("Create restaurants")
         content = json.load(options["places"])

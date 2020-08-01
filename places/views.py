@@ -1,6 +1,6 @@
 from urllib.parse import urlencode
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -69,10 +69,11 @@ class RestaurantDetailView(DetailView):
     context_object_name = "restaurant"
 
 
-class RestaurantUpdateView(LoginRequiredMixin, UpdateView):
+class RestaurantUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Restaurant
     fields = ["name", "description", "address", "min_party", "max_party", "yelp_link"]
     template_name_suffix = "_update"
+    permission_required = "places.change_restaurant"
 
 
 class RestaurantRandomView(View):

@@ -93,7 +93,7 @@ class TestRestaurantUpdateView(TestCase):
             max_party=8,
             yelp_link="chick-fil-a-venus",
         )
-        cls.UserModel.objects.create_user("john", "john@localhost", "john")
+        cls.UserModel.objects.create_superuser("john", "john@localhost", "john")
 
     def get_url(self, restaurant_id):
         return reverse("places:restaurant-update", args=(restaurant_id,))
