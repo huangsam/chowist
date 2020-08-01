@@ -1,13 +1,14 @@
-{% extends 'core/base.html' %}
+{% extends 'simple.html' %}
 
 {% block meta %}
 <title>Chowist | Bad Request</title>
 {% endblock %}
 
-{% block content %}
-<div class="container lead-container pb-3">
-  <h1>Bad Request</h1>
-  <p class="lead">Sorry but you issued a bad request.</p>
-  <p><a href="{% url 'portal:home' %}">Click here</a> to come back to the home page.</p>
-</div>
+{% block content_tile %}
+<h1>Bad Request</h1>
+{% endblock %}
+
+{% block content_body %}
+<p class="lead">Sorry but you issued a bad request.</p>
+<p><a href="{% url 'portal:home' %}">Click here</a> to come back to the home page.</p>
 {% endblock %}
