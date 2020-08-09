@@ -11,9 +11,9 @@
     <p class="lead">Great places are chosen by great chowists</p>
     <p>This application replicates core features of <a href="https://www.yelp.com">Yelp</a>, and adds a couple more bells and whistles to the mix. Please share this website with awesome chowists like yourself!</p>
     <p>
-      <a class="btn btn-primary btn-lg" href="https://huangsam.github.io/chowist/" role="button">Learn More</a>
+      <a class="btn btn-primary btn-lg" href="https://huangsam.github.io/chowist/" role="button">Learn more</a>
       {% if user.is_authenticated is False %}
-        <a class="btn btn-secondary btn-lg" href="{% url 'portal:signup' %}" role="button">Sign Up</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'portal:signup' %}" role="button">Sign up</a>
       {% endif %}
     </p>
   </div>
@@ -23,12 +23,12 @@
     <div class="col-md-6">
       <h2>Places</h2>
       <p>Take a look at all available restaurants and their associated ratings. Check the restaurants as list or detail views.</p>
-      <p><a class="btn btn-secondary" href="{% url 'places:home' %}" role="button">Try Out &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="{% url 'places:home' %}" role="button">Try out &raquo;</a></p>
     </div>
     <div class="col-md-6">
       <h2>Profile</h2>
       <p>Update your profile to have the best experience on our platform. Some fields include: bio, address.</p>
-      <p><a class="btn btn-secondary" href="{% url 'portal:profile' %}" role="button">Try Out &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="{% url 'portal:profile' %}" role="button">Try out &raquo;</a></p>
     </div>
   </div>
 </div>
