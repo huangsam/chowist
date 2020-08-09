@@ -11,5 +11,6 @@
 {% block content_body %}
 <p>Thanks for trying out the application!</p>
 <p>Please come back again.</p>
-<a class="btn btn-primary" href="{% url 'portal:home' %}">Return</a>
+<a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+<a class="btn btn-secondary" href="{% url 'portal:home' %}">Return</a>
 {% endblock %}
