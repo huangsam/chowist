@@ -1,6 +1,6 @@
 # Contributions
 
-Thanks for taking the time to understand how contributions work for the Chowist project.
+Thanks for taking the time to understand how you can contribute to the Chowist project!
 
 There are three general roles for contributing:
 
@@ -24,7 +24,7 @@ Before submitting a pull request, follow the steps below to ensure that the revi
 
 ### Check Python formatting
 
-Run `black chowist places portal` to cleanup most formatting inconsistencies.
+Run `black chowist places portal` to cleanup formatting inconsistencies.
 
 Run `flake8` to look for remaining code to fix manually.
 
@@ -32,7 +32,7 @@ Run `flake8` to look for remaining code to fix manually.
 
 Verify that HTML uses two-space indents.
 
-Verify that CSS follow the `kebab-case` convention.
+Verify that CSS IDs and classes follow the `kebab-case` convention.
 
 ### Check application correctness
 
@@ -42,7 +42,7 @@ Run `python manage.py runserver` and click through pages to verify workflows.
 
 ## Reviewers
 
-Follow the repository's code of conduct while reviewing pull requests.
+Follow the repository code of conduct while reviewing pull requests.
 
 ## Contributors
 
