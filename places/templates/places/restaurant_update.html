@@ -8,6 +8,7 @@
 <h1>Restaurant Update</h1>
 {% endblock %}
 
-{% block form_cancel %}
+{% block form_buttons %}
+<button type="submit" class="btn btn-primary">Update details</button>
 <a href="{% url 'places:restaurant-detail' restaurant.id %}" class="btn btn-secondary">Cancel</a>
 {% endblock %}

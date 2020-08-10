@@ -12,8 +12,7 @@
 <form class="form-horizontal" action="" method="post">
   {% csrf_token %}
   {{ form|crispy }}
-  <button type="submit" class="btn btn-primary">Submit</button>
-  {% block form_cancel %}
+  {% block form_buttons %}
   {% endblock %}
 </form>
 {% endblock %}

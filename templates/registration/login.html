@@ -8,6 +8,7 @@
 <h1>Login</h1>
 {% endblock %}
 
-{% block form_cancel %}
+{% block form_buttons %}
+<button type="submit" class="btn btn-primary">Login</button>
 <a href="{% url 'portal:home' %}" class="btn btn-secondary">Cancel</a>
 {% endblock %}

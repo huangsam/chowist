@@ -8,6 +8,7 @@
 <h1>Post Review</h1>
 {% endblock %}
 
-{% block form_cancel %}
+{% block form_buttons %}
+<button type="submit" class="btn btn-primary">Post review</button>
 <a href="{% url 'places:restaurant-detail' restaurant.id %}" class="btn btn-secondary">Cancel</a>
 {% endblock %}
