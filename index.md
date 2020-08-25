@@ -1,6 +1,7 @@
 # Chowist
 
-[![CircleCI](https://circleci.com/gh/huangsam/chowist.svg?style=svg)](https://circleci.com/gh/huangsam/chowist)
+![](https://img.shields.io/circleci/build/github/huangsam/chowist)
+![](https://img.shields.io/github/license/huangsam/chowist)
 
 Great places are chosen by great chowists.
 
@@ -11,6 +12,8 @@ Here are some key features:
 - Homepage for marketing purposes
 - Profile for customized experience
 - Places as list and detail views
+
+[Click here](https://youtu.be/SqVBcunjFHQ) to see a quick walkthrough of the application.
 
 ## Getting started
 
