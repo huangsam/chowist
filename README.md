@@ -1,6 +1,6 @@
 # Chowist
 
-[![CircleCI](https://circleci.com/gh/huangsam/chowist.svg?style=svg)](https://circleci.com/gh/huangsam/chowist)
+![](https://img.shields.io/circleci/build/github/huangsam/chowist)
 
 Great places are chosen by great chowists.
 
