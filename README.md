@@ -13,6 +13,8 @@ Here are some key features:
 - Profile for customized experience
 - Places as list and detail views
 
+[Click here](https://youtu.be/SqVBcunjFHQ) to see a quick walkthrough of the application.
+
 ## Getting started
 
 Here are some things to be aware of in development and production.
