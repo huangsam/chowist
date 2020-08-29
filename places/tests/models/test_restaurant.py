@@ -3,12 +3,16 @@ from django.test import TestCase
 from places.models import Restaurant
 
 
+_FIVE_GUYS = "Five Guys"
+_IN_N_OUT = "In N Out"
+
+
 class TestRestaurant(TestCase):
     """Restaurant test suite"""
 
     def setUp(self):
         Restaurant.objects.create(
-            name="Five Guys",
+            name=_FIVE_GUYS,
             address="Earth",
             latitude=0.00,
             longitude=0.00,
@@ -17,7 +21,7 @@ class TestRestaurant(TestCase):
             yelp_link="/five-guys-earth",
         )
         Restaurant.objects.create(
-            name="In N Out",
+            name=_IN_N_OUT,
             address="Mars",
             latitude=2.00,
             longitude=2.00,
@@ -31,7 +35,7 @@ class TestRestaurant(TestCase):
         self.assertEquals(len(restaurants), 2)
 
     def test_restaurant_get(self):
-        restaurant = Restaurant.objects.get(name="Five Guys")
+        restaurant = Restaurant.objects.get(name=_FIVE_GUYS)
         self.assertEquals(restaurant.min_party, 1)
         self.assertEquals(restaurant.max_party, 6)
 
@@ -48,8 +52,8 @@ class TestRestaurant(TestCase):
         self.assertEquals(len(restaurants), 0)
 
     def test_restaurant_distance(self):
-        five_guys = Restaurant.objects.get(name="Five Guys")
-        in_n_out = Restaurant.objects.get(name="In N Out")
+        five_guys = Restaurant.objects.get(name=_FIVE_GUYS)
+        in_n_out = Restaurant.objects.get(name=_IN_N_OUT)
         dist_one = five_guys.get_distance_to(in_n_out)
         dist_two = in_n_out.get_distance_to(five_guys)
         self.assertEquals(dist_one, dist_two)

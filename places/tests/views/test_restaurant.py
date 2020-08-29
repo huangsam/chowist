@@ -5,6 +5,10 @@ from django.urls import reverse
 from places.models import Restaurant
 from places.views import RestaurantListView
 
+# Module-level constants
+_CHICK_FIL_A = "Chick Fil A"
+_VENUS = "Venus"
+
 
 class TestRestaurantListView(TestCase):
     """RestaurantListView test suite"""
@@ -51,8 +55,8 @@ class TestRestaurantDetailView(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.restaurant = Restaurant.objects.create(
-            name="Chick Fil A",
-            address="Venus",
+            name=_CHICK_FIL_A,
+            address=_VENUS,
             latitude=0.00,
             longitude=0.00,
             min_party=3,
@@ -72,7 +76,7 @@ class TestRestaurantDetailView(TestCase):
         self.assertEqual(resp.status_code, 200)
         restaurant = resp.context["restaurant"]
         self.assertTrue(type(restaurant) == Restaurant)
-        self.assertEqual(restaurant.name, "Chick Fil A")
+        self.assertEqual(restaurant.name, _CHICK_FIL_A)
         self.assertEqual(restaurant.min_party, 3)
         self.assertEqual(restaurant.max_party, 8)
 
@@ -85,8 +89,8 @@ class TestRestaurantUpdateView(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.restaurant = Restaurant.objects.create(
-            name="Chick Fil A",
-            address="Venus",
+            name=_CHICK_FIL_A,
+            address=_VENUS,
             latitude=0.00,
             longitude=0.00,
             min_party=3,
@@ -112,8 +116,8 @@ class TestRestaurantRandomView(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.restaurant = Restaurant.objects.create(
-            name="Chick Fil A",
-            address="Venus",
+            name=_CHICK_FIL_A,
+            address=_VENUS,
             latitude=0.00,
             longitude=0.00,
             min_party=3,
