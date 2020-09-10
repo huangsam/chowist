@@ -1,4 +1,4 @@
-# Contributions
+# Contributing
 
 Thanks for taking the time to understand how you can contribute to the Chowist project!
 
