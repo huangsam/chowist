@@ -4,20 +4,12 @@ orbs:
   node: circleci/node@4.0.0
 
 jobs:
-  validate:
+  noop:
     executor: node/default
     steps:
       - checkout
-      - node/install:
-          install-npm: false
-          install-yarn: true
-      - node/install-packages:
-          pkg-manager: yarn
-      - run:
-          command: yarn run lint-md
-          name: Validate formatting
 
 workflows:
   main:
     jobs:
-      - validate
+      - noop
