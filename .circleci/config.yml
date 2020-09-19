@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - node/install:
+          install-npm: false
           install-yarn: true
       - run:
           command: yarn run lint-md
