@@ -7,7 +7,7 @@ workflows:
   validate:
     steps:
       - checkout
-      - node/install
+      - node/install:
           install-yarn: true
       - run:
           command: yarn run lint-md
