@@ -11,6 +11,8 @@ jobs:
       - node/install:
           install-npm: false
           install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
           command: yarn run lint-md
           name: Validate formatting
