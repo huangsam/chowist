@@ -13,3 +13,8 @@ jobs:
       - run:
           command: yarn run lint-md
           name: Validate formatting
+
+workflows:
+  main:
+    jobs:
+      - validate
