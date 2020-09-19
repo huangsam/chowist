@@ -1,22 +1,14 @@
-# Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
-version: 2
-jobs:
-  build:
-    docker:
-      - image: 'circleci/node:11.2'
+version: 2.1
 
-    working_directory: ~/chowist
+orbs:
+  node: circleci/node@4.0.0
 
+workflows:
+  validate:
     steps:
       - checkout
-
+      - node/install
+          install-yarn: true
       - run:
-          name: Install dependencies
-          command: yarn install
-
-      - run:
-          name: Validate formatting
           command: yarn run lint-md
+          name: Validate formatting
