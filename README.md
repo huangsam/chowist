@@ -1,7 +1,7 @@
 # Chowist
 
 [![](https://img.shields.io/circleci/build/github/huangsam/chowist)](https://circleci.com/gh/huangsam/chowist)
-[![](https://img.shields.io/github/license/huangsam/chowist)](LICENSE)
+[![](https://img.shields.io/github/license/huangsam/chowist)](https://github.com/huangsam/chowist/blob/master/LICENSE)
 
 Great places are chosen by great chowists.
 
