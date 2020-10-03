@@ -4,7 +4,7 @@ orbs:
   python: circleci/python@1.1.0
 
 jobs:
-  build:
+  build-and-test:
     docker:
       - image: cimg/python:3.8
         environment:
@@ -24,3 +24,8 @@ jobs:
             python manage.py check
             python manage.py test
           name: Test
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
