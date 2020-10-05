@@ -1,6 +1,9 @@
 .lead-container {
   padding-top: 5rem;
 }
+.restaurant-row {
+  margin-bottom: 10px;
+}
 .restaurant-card {
   margin-bottom: 10px;
 }
