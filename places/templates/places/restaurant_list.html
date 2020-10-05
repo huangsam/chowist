@@ -9,28 +9,38 @@
 {% endblock %}
 
 {% block content_body %}
-<p>The restaurants listed so far:</p>
-<ul>
-{% for restaurant in restaurant_list %}
-  <li>{{ restaurant.name }} -  <a href="{% url 'places:restaurant-detail' restaurant.id %}">Detail View</a> | <a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}">Yelp link</a></li>
-{% empty %}
-  <li>No restaurants yet.</li>
-{% endfor %}
-</ul>
-
-<div class="pagination">
-  <div class="step-links">
-    <p class="current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
-
-    {% if page_obj.has_previous %}
-      <a class="btn btn-secondary" href="?page=1">&laquo; first</a>
-      <a class="btn btn-secondary" href="?page={{ page_obj.previous_page_number }}">previous</a>
-    {% endif %}
-
-    {% if page_obj.has_next %}
-      <a class="btn btn-secondary" href="?page={{ page_obj.next_page_number }}">next</a>
-      <a class="btn btn-secondary" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-    {% endif %}
+{% if restaurant_list %}
+  <div class="row">
+    {% for restaurant in restaurant_list %}
+      <div class="col-sm-6 d-flex">
+        <div class="card flex-fill restaurant-card">
+          <div class="card-body">
+            <h5 class="card-title">{{ restaurant.name }}</h5>
+            <p class="card-text">{{ restaurant.description }}</p>
+            <a href="{% url 'places:restaurant-detail' restaurant.id %}" class="card-link">Detail View</a>
+            <a href="https://www.yelp.com/biz/{{ restaurant.yelp_link }}" class="card-link">Yelp link</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   </div>
-</div>
+  <div class="pagination">
+    <div class="step-links">
+      <p class="current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-secondary" href="?page=1">&laquo; first</a>
+        <a class="btn btn-secondary" href="?page={{ page_obj.previous_page_number }}">previous</a>
+      {% endif %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-secondary" href="?page={{ page_obj.next_page_number }}">next</a>
+        <a class="btn btn-secondary" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+      {% endif %}
+    </div>
+  </div>
+{% else %}
+  <p>No restaurants were found.</p>
+  <p><a href="{% url 'places:home' %}">Click here</a> to try searching again.</p>
+{% endif %}
 {% endblock %}
