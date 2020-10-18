@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  python: circleci/python@1.1.0
+  python: circleci/python@1.2.0
 
 jobs:
   build-and-test:
@@ -25,9 +25,7 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          command: |
-            python manage.py check
-            python manage.py test
+          command: python manage.py test
           name: Test
 
 workflows:
