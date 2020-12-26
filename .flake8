@@ -1,4 +1,4 @@
 [flake8]
 extend-ignore = E203,E266
-max-line-length = 120
+max-line-length = 160
 exclude = settings,venv
