@@ -10,7 +10,7 @@ curl -L "$CLOUDFLARE_BASE/jquery/$JQUERY_VERSION/$JQUERY_JS" -o "./js/$JQUERY_JS
 curl -L "$CLOUDFLARE_BASE/jquery/$JQUERY_VERSION/$JQUERY_JS_MAP" -o "./js/$JQUERY_JS_MAP"
 
 # Download Bootstrap CSS and JS
-BS_VERSION="4.5.3"
+BS_VERSION="4.6.0"
 BS_JS="bootstrap.min.js"
 BS_JS_MAP="$BS_JS.map"
 BS_CSS="bootstrap.min.css"
