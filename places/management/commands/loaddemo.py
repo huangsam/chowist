@@ -47,16 +47,17 @@ class Command(BaseCommand):
         Group.objects.all().delete()
 
         self.stdout.write("Create reviewers group")
-        reviewers = Group.objects.create(name="reviewers")
         is_places = Q(content_type__app_label__exact="places")
         is_portal = Q(content_type__app_label__exact="portal")
         is_valid_app = is_places | is_portal
         is_change = Q(codename__contains="change")
-        is_valid_change = is_change & ~Q(codename__contains="restaurant")
-        permissions = Permission.objects.filter(is_valid_app & is_valid_change)
-        reviewers.permissions.set(permissions)
-        add_review = Permission.objects.get(codename__exact="add_review")
-        reviewers.permissions.add(add_review)
+        is_not_restaurant_change = is_change & ~Q(codename__contains="restaurant")
+        is_add_review = Q(codename__exact="add_review")
+        is_valid_change = is_valid_app & is_not_restaurant_change
+        is_valid_add = is_places & is_add_review
+        valid_permissions = Permission.objects.filter(is_valid_change | is_valid_add)
+        reviewers = Group.objects.create(name="reviewers")
+        reviewers.permissions.set(valid_permissions)
 
         self.stdout.write("Create users")
         admin_options = self.get_user_options(self.admin_user)
