@@ -12,7 +12,7 @@ jobs:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-      - image: postgres:12
+      - image: postgres:14
         environment:
           POSTGRES_USER: circleci
           POSTGRES_PASSWORD: circleci
