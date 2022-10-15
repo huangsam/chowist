@@ -13,6 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterUniqueTogether(
-            name="rating", unique_together={("place", "author")},
+            name="rating",
+            unique_together={("place", "author")},
         ),
     ]

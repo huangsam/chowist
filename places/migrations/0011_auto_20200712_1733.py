@@ -14,5 +14,8 @@ class Migration(migrations.Migration):
             name="category",
             options={"ordering": ["name"], "verbose_name_plural": "categories"},
         ),
-        migrations.AlterModelOptions(name="review", options={"ordering": ["rating"]},),
+        migrations.AlterModelOptions(
+            name="review",
+            options={"ordering": ["rating"]},
+        ),
     ]

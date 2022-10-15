@@ -11,6 +11,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RenameField(
-            model_name="review", old_name="score", new_name="rating",
+            model_name="review",
+            old_name="score",
+            new_name="rating",
         ),
     ]

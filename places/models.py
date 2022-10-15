@@ -32,7 +32,7 @@ class Restaurant(models.Model):
     def get_distance_to(self, other):
         y_diff = self.latitude - other.latitude
         x_diff = self.longitude - other.longitude
-        return math.sqrt(y_diff ** 2 + x_diff ** 2)
+        return math.sqrt(y_diff**2 + x_diff**2)
 
     def get_absolute_url(self):
         return reverse("places:restaurant-detail", kwargs={"pk": self.pk})
