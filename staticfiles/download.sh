@@ -5,12 +5,12 @@ CLOUDFLARE_BASE="https://cdnjs.cloudflare.com/ajax/libs"
 # Download jQuery
 JQUERY_VERSION="3.5.1"
 JQUERY_JS="jquery.slim.min.js"
-JQUERY_JS_MAP="$JQUERY_JS.map"
+JQUERY_JS_MAP="jquery.slim.min.map"
 curl -L "$CLOUDFLARE_BASE/jquery/$JQUERY_VERSION/$JQUERY_JS" -o "./js/$JQUERY_JS"
 curl -L "$CLOUDFLARE_BASE/jquery/$JQUERY_VERSION/$JQUERY_JS_MAP" -o "./js/$JQUERY_JS_MAP"
 
 # Download Bootstrap CSS and JS
-BS_VERSION="4.6.1"
+BS_VERSION="4.6.2"
 BS_JS="bootstrap.min.js"
 BS_JS_MAP="$BS_JS.map"
 BS_CSS="bootstrap.min.css"
