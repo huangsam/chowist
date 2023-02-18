@@ -1,13 +1,11 @@
-main > .container {
-  padding: 15px;
+.lead-container {
+  padding-top: 2rem;
 }
 
-.lead-container {
-  padding-top: 5rem;
-}
 .restaurant-row {
   margin-bottom: 10px;
 }
+
 .restaurant-card {
   margin-bottom: 10px;
 }
