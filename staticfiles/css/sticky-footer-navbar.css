@@ -50,5 +50,15 @@
 }
 
 main > .container {
-  padding: 60px 15px 0;
+  padding-top: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* https://stackoverflow.com/questions/10470241/how-to-position-a-footer-element-relative-to-the-bottom-of-the-page */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* same height as the margin to the bottom of the body */
 }
