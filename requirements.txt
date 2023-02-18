@@ -1,4 +1,5 @@
 crispy-bootstrap4==2022.1
+crispy-bootstrap5==0.7
 Django==4.1.7
 django-crispy-forms==2.0
 gunicorn==20.1.0
