@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "crispy_forms",
+    "crispy_bootstrap4",
     "portal",
     "places",
 ]
@@ -182,5 +183,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Crispy forms
 # https://django-crispy-forms.readthedocs.io/en/latest/install.html
+# https://github.com/django-crispy-forms/crispy-bootstrap4
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
