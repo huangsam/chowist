@@ -9,20 +9,21 @@
   <link rel="stylesheet" href="{% static 'css/sticky-footer-navbar.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
+<body class="d-flex flex-column h-100">
   <header>
     <!-- Fixed navbar -->
     {% include 'core/navigation.html' %}
   </header>
-  <main role="main">
+  <main role="main" class="flex-shrink-0">
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="footer">
+  <footer class="footer mt-auto py-3 bg-light">
     <div class="container">
       <span class="text-muted">&copy; 2014-{% now "Y" %} <a href="https://huangsam.github.io">@huangsam</a></p>
     </div>
   </footer>
+  <script src="{% static 'js/popper.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>
