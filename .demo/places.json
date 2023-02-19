@@ -264,23 +264,6 @@
     "yelp": "pedros-restaurant-and-cantina-santa-clara-2"
   },
   {
-    "name": "Eat Viet",
-    "description": "Fresh and healthy Vietnamese fast food. Online ordering now available.",
-    "address": "3730 N 1st St Ste 110 North San Jose San Jose, CA 95134",
-    "categories": [
-      "Vietnamese",
-      "Asian Fusion",
-      "Noodles",
-      "Fast Food"
-    ],
-    "lat": 37.41064799999999,
-    "long": -121.945591,
-    "minutes": 15,
-    "minparty": 1,
-    "maxparty": 4,
-    "yelp": "eat-viet-san-jose"
-  },
-  {
     "name": "QQ Noodle",
     "description": "No-frills Asian kitchen serving vegetarian/meat plates and soups with handmade noodles.",
     "address": "416 Barber Ln Milpitas, CA 95035",
@@ -314,22 +297,6 @@
     "yelp": "mayflower-restaurant-milpitas"
   },
   {
-    "name": "Extreme Pita",
-    "description": "Sandwich chain offering health-minded pitas with fillings such as falafel & tuna.",
-    "address": "3730 N 1st St Ste 145 North San Jose San Jose, CA 95134",
-    "categories": [
-      "Greek",
-      "Mediterranean",
-      "Sandwiches"
-    ],
-    "lat": 37.41064799999999,
-    "long": -121.945591,
-    "minutes": 30,
-    "minparty": 1,
-    "maxparty": 4,
-    "yelp": "extreme-pita-san-jose"
-  },
-  {
     "name": "Panera Bread",
     "description": "American chain store of bakery-cafe fast casual restaurants.",
     "address": "4180 N. First Street North San Jose San Jose, CA 95134",
@@ -358,19 +325,5 @@
     "minparty": 6,
     "maxparty": 8,
     "yelp": "shivas-indian-restaurant-mountain-view-2"
-  },
-  {
-    "name": "Golden Garlic",
-    "description": "Tianjin and Sichuan specialties are the focus at this comfy Chinese eatery.",
-    "categories": [
-      "Chinese",
-      "Sichuan"
-    ],
-    "address": "3082 Landess Ave, San Jose, CA 95132",
-    "lat": "37.415329000000000",
-    "long": "-121.875840000000000",
-    "minparty": 2,
-    "maxparty": 12,
-    "yelp": "golden-garlic-san-jose"
   }
 ]
