@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="px-3 pb-3 bg-light">
+<div class="py-3 px-3 bg-light">
   <div class="container lead-container">
     <h1 class="display-1">Chowist</h1>
     <p class="lead">Great places are chosen by great chowists</p>
@@ -18,17 +18,19 @@
     </p>
   </div>
 </div>
-<div class="container">
-  <div class="row p-3">
-    <div class="col-12 col-md-6 py-3">
-      <h2>Places</h2>
-      <p>Take a look at all available restaurants and their associated ratings. Check the restaurants as list or detail views.</p>
-      <p><a class="btn btn-secondary" href="{% url 'places:home' %}" role="button">Try out &raquo;</a></p>
-    </div>
-    <div class="col-12 col-md-6 py-3">
-      <h2>Profile</h2>
-      <p>Update your profile to have the best experience on our platform. Some fields include: bio, address.</p>
-      <p><a class="btn btn-secondary" href="{% url 'portal:profile' %}" role="button">Try out &raquo;</a></p>
+<div class="my-4 px-3 px-sm-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <h2>Places</h2>
+        <p>Take a look at all available restaurants and their associated ratings. Check the restaurants as list or detail views.</p>
+        <p><a class="btn btn-secondary" href="{% url 'places:home' %}" role="button">Try out &raquo;</a></p>
+      </div>
+      <div class="col-12 col-md-6">
+        <h2>Profile</h2>
+        <p>Update your profile to have the best experience on our platform. Some fields include: bio, address.</p>
+        <p><a class="btn btn-secondary" href="{% url 'portal:profile' %}" role="button">Try out &raquo;</a></p>
+      </div>
     </div>
   </div>
 </div>
