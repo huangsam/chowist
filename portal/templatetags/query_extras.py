@@ -6,6 +6,7 @@ register = template.Library()
 @register.simple_tag(takes_context=True)
 def updated_params(context, **kwargs):
     # https://blog.ovalerio.net/archives/1512
+    # https://cheat.readthedocs.io/en/latest/django/filter.html
     # https://docs.djangoproject.com/en/4.1/ref/request-response/
     query_dict = context["request"].GET.copy()
     for k, v in kwargs.items():
