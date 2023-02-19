@@ -4,7 +4,6 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [("portal", "0002_auto_20180406_1857")]
 
     operations = [migrations.AlterModelTable(name="profile", table="profile")]
