@@ -1,4 +1,5 @@
 {% extends 'simple.html' %}
+{% load base_extras %}
 
 {% block meta %}
 <title>Chowist | Restaurant List</title>
@@ -29,13 +30,13 @@
       <p class="current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
 
       {% if page_obj.has_previous %}
-        <a class="btn btn-secondary" href="?page=1">&laquo; first</a>
-        <a class="btn btn-secondary" href="?page={{ page_obj.previous_page_number }}">previous</a>
+        <a class="btn btn-secondary" href="?{% updated_params page=1 %}">&laquo; first</a>
+        <a class="btn btn-secondary" href="?{% updated_params page=page_obj.previous_page_number %}">previous</a>
       {% endif %}
 
       {% if page_obj.has_next %}
-        <a class="btn btn-secondary" href="?page={{ page_obj.next_page_number }}">next</a>
-        <a class="btn btn-secondary" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        <a class="btn btn-secondary" href="?{% updated_params page=page_obj.next_page_number %}">next</a>
+        <a class="btn btn-secondary" href="?{% updated_params page=page_obj.paginator.num_pages %}">last &raquo;</a>
       {% endif %}
     </div>
   </div>
