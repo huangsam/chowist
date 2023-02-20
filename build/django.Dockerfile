@@ -7,9 +7,8 @@ RUN apk add --no-cache --update \
     gcc \
     python3-dev \
     musl-dev
-ADD Pipfile ./Pipfile
-ADD Pipfile.lock ./Pipfile.lock
-RUN pip install pipenv && pipenv install --system
+ADD requirements.txt ./requirements.txt
+RUN pip install -r requirements.txt
 ADD . ./
 EXPOSE 8000
 CMD sh entrypoints/django.sh
