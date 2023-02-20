@@ -7,8 +7,8 @@ RUN apk add --no-cache --update \
     gcc \
     python3-dev \
     musl-dev
-ADD requirements.txt ./requirements.txt
+COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
-ADD . ./
+COPY . ./
 EXPOSE 8000
 CMD sh entrypoints/django.sh
