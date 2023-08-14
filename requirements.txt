@@ -2,6 +2,6 @@ crispy-bootstrap5==0.7
 Django==4.2.4
 django-crispy-forms==2.0
 gunicorn==21.2.0
-psycopg2-binary==2.9.6
+psycopg2-binary==2.9.7
 black
 flake8
