@@ -20,7 +20,7 @@
           </li>
           <li class="nav-item">
               <!-- Logout method must be POST, as GET was deprecated in Django 4.1 -->
-              <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
+              <form id="logout-form" method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button class="nav-link" type="submit">Logout</button>
               </form>
