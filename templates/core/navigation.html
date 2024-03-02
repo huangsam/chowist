@@ -19,7 +19,11 @@
             <a class="nav-link {% nav_active request 'portal:profile' %}" href="{% url 'portal:profile' %}">Profile</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link {% nav_active request 'logout' %}" href="{% url 'logout' %}">Logout</a>
+              <!-- Logout method must be POST, as GET was deprecated in Django 4.1 -->
+              <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
+                {% csrf_token %}
+                <button class="nav-link" type="submit">Logout</button>
+              </form>
           </li>
         {% else %}
           <li class="nav-item">
