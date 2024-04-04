@@ -44,33 +44,33 @@ class TestReview(TestCase):
 
     def test_review_all(self):
         reviews = Review.objects.all()
-        self.assertEquals(len(reviews), 1)
+        self.assertEqual(len(reviews), 1)
 
     def test_review_get(self):
         review = Review.objects.get(title="Amazing")
-        self.assertEquals(review.place.name, "Plutos")
-        self.assertEquals(review.rating, 5)
-        self.assertEquals(review.author, self.user)
+        self.assertEqual(review.place.name, "Plutos")
+        self.assertEqual(review.rating, 5)
+        self.assertEqual(review.author, self.user)
 
     def test_review_filter(self):
         reviews = Review.objects.filter(rating=5)
-        self.assertEquals(len(reviews), 1)
+        self.assertEqual(len(reviews), 1)
 
     def test_review_missing(self):
         self.assertRaises(Review.DoesNotExist, Review.objects.get, rating=0)
 
     def test_review_empty(self):
         reviews = Review.objects.filter(rating=0)
-        self.assertEquals(len(reviews), 0)
+        self.assertEqual(len(reviews), 0)
 
     def test_restaurant_reviews(self):
         restaurant = Restaurant.objects.get(name="Plutos")
         review = restaurant.reviews.first()
-        self.assertEquals(review.place.name, restaurant.name)
+        self.assertEqual(review.place.name, restaurant.name)
 
     def test_restaurant_rating_with_reviews(self):
         restaurant = Restaurant.objects.get(name="Plutos")
-        self.assertEquals(restaurant.get_average_rating(), 5.0)
+        self.assertEqual(restaurant.get_average_rating(), 5.0)
 
     def test_restaurant_rating_without_reviews(self):
         restaurant = Restaurant.objects.get(name="Nowhere")

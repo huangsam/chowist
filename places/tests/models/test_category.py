@@ -32,27 +32,27 @@ class TestRestaurant(TestCase):
         cls.earthly_category.places.add(r1)
 
     def test_category_all(self):
-        self.assertEquals(len(Category.objects.all()), 2)
+        self.assertEqual(len(Category.objects.all()), 2)
 
     def test_category_get(self):
         category = Category.objects.get(name="Burgers")
-        self.assertEquals(self.burger_category, category)
+        self.assertEqual(self.burger_category, category)
 
     def test_category_missing(self):
         self.assertRaises(Category.DoesNotExist, Category.objects.get, name="Bogus")
 
     def test_category_burger(self):
         burger_places = self.burger_category.places.all()
-        self.assertEquals(len(burger_places), 2)
+        self.assertEqual(len(burger_places), 2)
 
     def test_category_earthly(self):
         earthly_places = self.earthly_category.places.all()
-        self.assertEquals(len(earthly_places), 1)
+        self.assertEqual(len(earthly_places), 1)
 
     def test_restaurant_five_guys(self):
         five_guys = Restaurant.objects.get(name="Five Guys")
-        self.assertEquals(len(five_guys.categories.all()), 2)
+        self.assertEqual(len(five_guys.categories.all()), 2)
 
     def test_restaurant_in_n_out(self):
         in_n_out = Restaurant.objects.get(name="In N Out")
-        self.assertEquals(len(in_n_out.categories.all()), 1)
+        self.assertEqual(len(in_n_out.categories.all()), 1)

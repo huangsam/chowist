@@ -17,7 +17,7 @@ class TestProfile(TestCase):
 
     def test_profile_all(self):
         profiles = Profile.objects.all()
-        self.assertEquals(len(profiles), len(self.users))
+        self.assertEqual(len(profiles), len(self.users))
 
     def test_profile_get(self):
         user = self.UserModel.objects.get(username="john")
@@ -29,4 +29,4 @@ class TestProfile(TestCase):
 
     def test_profile_empty(self):
         profiles = Profile.objects.filter(bio__exact="Bogus")
-        self.assertEquals(len(profiles), 0)
+        self.assertEqual(len(profiles), 0)

@@ -36,7 +36,7 @@ class TestRestaurantListView(TestCase):
 
     def test_desired_name(self):
         reverse_url = reverse(self.desired_name)
-        self.assertEquals(reverse_url, self.desired_url)
+        self.assertEqual(reverse_url, self.desired_url)
 
     def test_desired_data(self):
         resp = self.client.get(self.desired_url)
