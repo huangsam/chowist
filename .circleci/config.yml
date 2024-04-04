@@ -6,7 +6,7 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: cimg/python:3.11
+      - image: cimg/python:3.12
         environment:
           DJANGO_SETTINGS_MODULE: chowist.settings.test
         auth:
