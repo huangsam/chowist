@@ -2,7 +2,6 @@ from django.test import TestCase
 
 from places.models import Restaurant
 
-
 _FIVE_GUYS = "Five Guys"
 _IN_N_OUT = "In N Out"
 
