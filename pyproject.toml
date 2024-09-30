@@ -1,6 +1,10 @@
 [tool.ruff]
 line-length = 160
 
+[tool.ruff.lint]
+# F405: Star imports are useful for common project settings
+ignore = ["F405"]
+
 [tool.isort]
 multi_line_output = 3
 include_trailing_comma = true
