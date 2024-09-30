@@ -12,8 +12,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="category",
             name="places",
-            field=models.ManyToManyField(
-                related_name="categories", to="places.Restaurant"
-            ),
+            field=models.ManyToManyField(related_name="categories", to="places.Restaurant"),
         ),
     ]

@@ -62,8 +62,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="rating",
             name="place",
-            field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="places.Restaurant"
-            ),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="places.Restaurant"),
         ),
     ]

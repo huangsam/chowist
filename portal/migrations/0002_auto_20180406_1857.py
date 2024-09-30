@@ -6,8 +6,4 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [("portal", "0001_initial")]
 
-    operations = [
-        migrations.AlterField(
-            model_name="profile", name="birth_date", field=models.DateField(null=True)
-        )
-    ]
+    operations = [migrations.AlterField(model_name="profile", name="birth_date", field=models.DateField(null=True))]

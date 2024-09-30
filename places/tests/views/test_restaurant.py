@@ -41,9 +41,7 @@ class TestRestaurantListView(TestCase):
     def test_desired_data(self):
         resp = self.client.get(self.desired_url)
         self.assertEqual(resp.status_code, 200)
-        self.assertEqual(
-            len(resp.context["restaurant_list"]), self.desired_restaurant_count
-        )
+        self.assertEqual(len(resp.context["restaurant_list"]), self.desired_restaurant_count)
         for restaurant in resp.context["restaurant_list"]:
             assert restaurant.name.startswith("Chipotle")
             assert restaurant.yelp_link.startswith("chipotle-bogus-")
