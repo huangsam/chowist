@@ -25,6 +25,9 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
+          command: ruff check
+          name: Lint
+      - run:
           command: python manage.py test
           name: Test
 
