@@ -28,3 +28,5 @@ static/
 venv/
 .DS_Store
 .idea/
+.mypy_cache/
+.ruff_cache/

@@ -75,7 +75,7 @@ class TestRestaurantDetailView(TestCase):
         resp = self.client.get(self.get_url(self.restaurant.id))
         self.assertEqual(resp.status_code, 200)
         restaurant = resp.context["restaurant"]
-        self.assertTrue(type(restaurant) == Restaurant)
+        self.assertIsInstance(restaurant, Restaurant)
         self.assertEqual(restaurant.name, _CHICK_FIL_A)
         self.assertEqual(restaurant.min_party, 3)
         self.assertEqual(restaurant.max_party, 8)
