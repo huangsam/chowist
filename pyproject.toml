@@ -1,6 +1,5 @@
 [tool.ruff]
 line-length = 160
-extend-exclude = ["settings"]
 
 [tool.isort]
 multi_line_output = 3
