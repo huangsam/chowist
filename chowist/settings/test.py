@@ -13,3 +13,5 @@ DATABASES = {
         "PASSWORD": "github_test",
     }
 }
+
+print("DB config for test env - ", DATABASES)
