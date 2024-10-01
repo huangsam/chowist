@@ -53,3 +53,8 @@ jobs:
           coverage report
         env:
           DJANGO_SETTINGS_MODULE: chowist.settings.test
+      - name: Load demo data with Django
+        run: |
+          python manage.py loaddemo .demo/places.json
+        env:
+          DJANGO_SETTINGS_MODULE: chowist.settings.test
