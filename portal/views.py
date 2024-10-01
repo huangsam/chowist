@@ -1,5 +1,3 @@
-import logging
-
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -9,8 +7,6 @@ from django.views.generic.edit import FormView
 
 from portal.forms import ProfileForm, UserForm
 from portal.models import Profile
-
-logger = logging.getLogger(__name__)
 
 
 class HomeView(TemplateView):
@@ -24,7 +20,6 @@ class ProfileSignupView(FormView):
 
     def form_valid(self, form):
         user = form.save(commit=False)
-        username = form.cleaned_data["username"]
         password = form.cleaned_data["password"]
         user.set_password(password)
         user.save()
