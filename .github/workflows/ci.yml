@@ -52,4 +52,4 @@ jobs:
           coverage run manage.py test
           coverage report
         env:
-          DJANGO_SETTINGS_MODULE: 'chowist.settings.test'
+          DJANGO_SETTINGS_MODULE: chowist.settings.test
