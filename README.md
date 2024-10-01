@@ -1,6 +1,6 @@
 # Chowist
 
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/huangsam/chowist/ci.yml)](https://github.com/huangsam/githooks/actions)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/huangsam/chowist/ci.yml)](https://github.com/huangsam/chowist/actions)
 [![License](https://img.shields.io/github/license/huangsam/chowist)](https://github.com/huangsam/chowist/blob/master/LICENSE)
 
 Great places are chosen by great chowists.
