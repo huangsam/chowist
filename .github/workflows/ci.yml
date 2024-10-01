@@ -16,9 +16,11 @@ jobs:
       postgres:
         # Docker Hub image
         image: postgres
-        # Provide the password for postgres
+        # Provide the credentials
         env:
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: github
+          POSTGRES_PASSWORD: github
+          POSTGRES_DB: github_test
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
