@@ -24,8 +24,8 @@ jobs:
         pip install -r requirements.txt
     - name: Lint with ruff
       run: |
-        ruff check python
-    - name: Run tests and coverage
+        ruff check
+    - name: Run tests and report with coverage
       run: |
         coverage run manage.py test
         coverage report
