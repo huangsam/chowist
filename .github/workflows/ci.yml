@@ -15,7 +15,7 @@ jobs:
     services:
       postgres:
         # Docker Hub image
-        image: postgres
+        image: postgres:14
         # Provide the credentials
         env:
           POSTGRES_USER: github
