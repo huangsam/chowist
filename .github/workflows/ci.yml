@@ -53,3 +53,9 @@ jobs:
           coverage report
         env:
           DJANGO_SETTINGS_MODULE: chowist.settings.test
+      - name: Migrate schema and load data with Django
+        run: |
+          python manage.py migrate
+          python manage.py loaddemo .demo/places.json
+        env:
+          DJANGO_SETTINGS_MODULE: chowist.settings.test
