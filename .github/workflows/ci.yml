@@ -18,9 +18,9 @@ jobs:
         image: postgres:14
         # Provide the credentials
         env:
-          POSTGRES_USER: github
-          POSTGRES_PASSWORD: github
-          POSTGRES_DB: github_test
+          POSTGRES_USER: 'github'
+          POSTGRES_PASSWORD: 'github'
+          POSTGRES_DB: 'github_test'
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -50,4 +50,4 @@ jobs:
         coverage run manage.py test
         coverage report
       env:
-        DJANGO_SETTINGS_MODULE: chowist.settings.test
+        DJANGO_SETTINGS_MODULE: 'chowist.settings.test'
