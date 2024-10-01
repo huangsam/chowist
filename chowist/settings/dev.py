@@ -7,13 +7,12 @@ AUTH_PASSWORD_VALIDATORS = []
 
 
 # Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "postgres",
-        "DATABASE": "postgres",
         "USER": "postgres",
         "HOST": "db",
         "PORT": 5432,

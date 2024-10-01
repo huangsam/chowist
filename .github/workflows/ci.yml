@@ -11,6 +11,26 @@ jobs:
   python-build:
     name: Python 3.12
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        # Docker Hub image
+        image: postgres:14
+        # Provide the credentials
+        env:
+          POSTGRES_USER: github
+          POSTGRES_PASSWORD: github
+          POSTGRES_DB: github_test
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5432:5432
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -29,3 +49,5 @@ jobs:
       run: |
         coverage run manage.py test
         coverage report
+      env:
+        DJANGO_SETTINGS_MODULE: 'chowist.settings.test'
