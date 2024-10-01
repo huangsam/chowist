@@ -10,8 +10,8 @@ on:
     - cron: '0 19 * * 5'
 
 jobs:
-  analyse:
-    name: Analyse
+  analyze:
+    name: Analyze
     runs-on: ubuntu-latest
 
     steps:
