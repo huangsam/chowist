@@ -25,11 +25,14 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          command: ruff check
           name: Lint
+          command: ruff check
       - run:
-          command: python manage.py test
           name: Test
+          command: coverage run manage.py test
+      - run:
+          name: Report
+          command: coverage report
 
 workflows:
   main:
