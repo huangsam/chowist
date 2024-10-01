@@ -28,7 +28,6 @@ class ProfileSignupView(FormView):
         password = form.cleaned_data["password"]
         user.set_password(password)
         user.save()
-        logger.info(f"User {username} registered to the system")
         return super().form_valid(form)
 
 
