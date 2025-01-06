@@ -24,9 +24,9 @@ Before submitting a pull request, follow the steps below to ensure that the revi
 
 ### Check Python formatting
 
-Run `black chowist places portal` to cleanup formatting inconsistencies.
+Run `ruff format chowist places portal` to cleanup formatting inconsistencies.
 
-Run `flake8` to look for remaining code to fix manually.
+Run `ruff check chowist places portal` to look for remaining code to fix manually.
 
 ### Check HTML formatting
 
