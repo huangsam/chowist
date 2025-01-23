@@ -15,6 +15,8 @@ Here are some key features:
 
 [Click here](https://youtu.be/SqVBcunjFHQ) to see a quick walkthrough of the application.
 
+<img src="images/chowist.png" alt="Chowist" width="250px" />
+
 ## Getting started
 
 Here are some things to be aware of in development and production.
