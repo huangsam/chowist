@@ -1,18 +1,19 @@
-version: '3'
 services:
   db:
-    image: 'postgres:16-alpine'
+    image: 'postgres:17-alpine'
     volumes:
       - '/var/lib/postgresql/data'
-    restart: always
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    restart: unless-stopped
   app:
     image: 'chowist:dev'
     build:
-      context: '..'
+      context: '.'
       dockerfile: './build/django.Dockerfile'
-    env_file: 'envs/django.env'
+    env_file: './compose/envs/django.env'
     ports:
       - '8000:8000'
     depends_on:
       - db
-    restart: always
+    restart: unless-stopped

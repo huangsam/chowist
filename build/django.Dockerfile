@@ -1,4 +1,4 @@
-FROM python:3.12-alpine
+FROM python:3.13-alpine
 ENV PYTHONUNBUFFERED 1
 ENV PIP_NO_BINARY psycopg2
 WORKDIR /app
