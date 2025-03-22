@@ -7,7 +7,7 @@ services:
       - POSTGRES_HOST_AUTH_METHOD=trust
     restart: unless-stopped
   app:
-    image: 'huangsam/chowist:dev'
+    image: 'huangsam/chowist:latest'
     build:
       context: '.'
       dockerfile: './build/docker/Dockerfile.chowist'
