@@ -53,7 +53,7 @@ Here are the loaded users for reference:
 
 Complete local setup with Docker by running a single command:
 
-    docker-compose -f compose/dev.yml -p chowist up --build -d
+    docker-compose -f build/compose/compose.yml --project-directory=. up --build -d
 
 ### Production setup
 
