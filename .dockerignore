@@ -14,3 +14,4 @@ static/
 .DS_Store
 README.md
 *.md
+.coverage
