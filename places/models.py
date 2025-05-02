@@ -56,7 +56,7 @@ class Review(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
     rating = models.IntegerField(choices=Rating.choices)
-    place = models.ForeignKey("Restaurant", models.CASCADE, related_name="reviews")
+    place = models.ForeignKey(Restaurant, models.CASCADE, related_name="reviews")
     author = models.ForeignKey(get_user_model(), models.CASCADE, related_name="reviews")
 
     class Meta:
