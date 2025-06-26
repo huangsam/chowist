@@ -1,5 +1,5 @@
-crispy-bootstrap5==2025.4
-Django==5.2.2
+crispy-bootstrap5==2025.6
+Django==5.2.3
 django-crispy-forms==2.4
 gunicorn==23.0.0
 psycopg2-binary==2.9.10
