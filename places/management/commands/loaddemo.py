@@ -53,7 +53,7 @@ class DemoBuilder:
 
     @atomic
     def with_clean_data(self):
-        self.stdout.write("Deleting existing data...")
+        self.stdout.write("Delete existing data")
         self.UserModel.objects.all().delete()
         Category.objects.all().delete()
         Review.objects.all().delete()
@@ -138,7 +138,7 @@ class DemoBuilder:
         if not self.normal_users:
             raise ValueError("Normal users must be created before adding reviews.")
 
-        self.stdout.write("Creating reviews...")
+        self.stdout.write("Create reviews")
         first_normal = self.UserModel.objects.get(username=self.normal_users[0])
         last_normal = self.UserModel.objects.get(username=self.normal_users[-1])
 
