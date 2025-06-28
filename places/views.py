@@ -1,7 +1,6 @@
 from urllib.parse import urlencode
 
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -10,6 +9,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
 from django.views.generic.list import ListView
 
+from places.filters import RestaurantFilter
 from places.forms import RestaurantForm, ReviewForm
 from places.models import Restaurant, Review
 
@@ -43,21 +43,9 @@ class RestaurantListView(ListView):
         return composite_query
 
     def get_queryset(self):
-        queries = []
-        if name := self.request.GET.get("name"):
-            queries.append(Q(name__contains=name))
-        if category := self.request.GET.get("category"):
-            queries.append(Q(categories__name__contains=category))
-        if min_party := self.request.GET.get("min_party"):
-            if min_party.isdigit():
-                queries.append(Q(min_party__gte=min_party))
-        if max_party := self.request.GET.get("max_party"):
-            if max_party.isdigit():
-                queries.append(Q(max_party__lte=max_party))
-        if queries:
-            composite_query = self.get_composite_query(queries)
-            return Restaurant.objects.filter(composite_query)
-        return Restaurant.objects.all()
+        queryset = super().get_queryset()
+        filterset = RestaurantFilter(self.request.GET, queryset=queryset)
+        return filterset.qs
 
 
 class RestaurantDetailView(DetailView):
