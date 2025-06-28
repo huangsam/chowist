@@ -180,6 +180,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Crispy forms
 # https://django-crispy-forms.readthedocs.io/en/latest/install.html
-# https://github.com/django-crispy-forms/crispy-bootstrap4
+# https://github.com/django-crispy-forms/crispy-bootstrap5
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
