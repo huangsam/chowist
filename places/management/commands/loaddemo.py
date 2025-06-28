@@ -120,7 +120,7 @@ class DemoBuilder:
         for item in self.restaurants_data:
             # We need to map the JSON items back to the created Restaurant objects
             # Assuming names are unique for simplicity here. In a real app,
-            # you might store a mapping or retrieve by name/pk.
+            # you might store a mapping or retrieve by name/pk
             restaurant = next((r for r in self.created_restaurants if r.name == item["name"]), None)
             if restaurant:
                 for category_name in item["categories"]:
