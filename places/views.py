@@ -19,12 +19,10 @@ class HomeView(View):
 
     def get(self, request):
         if request.GET:
-            form = RestaurantForm(request.GET)
-            if form.is_valid():
+            if (form := RestaurantForm(request.GET)).is_valid():
                 target_url = reverse("places:restaurant-list")
                 query_params = {k: v for k, v in form.cleaned_data.items() if v}
-                target_queries = urlencode(query_params)
-                if target_queries:
+                if target_queries := urlencode(query_params):
                     target_url = f"{target_url}?{target_queries}"
                 return HttpResponseRedirect(target_url)
         else:
@@ -46,18 +44,16 @@ class RestaurantListView(ListView):
 
     def get_queryset(self):
         queries = []
-        name = self.request.GET.get("name")
-        category = self.request.GET.get("category")
-        min_party = self.request.GET.get("min_party")
-        max_party = self.request.GET.get("max_party")
-        if name:
+        if name := self.request.GET.get("name"):
             queries.append(Q(name__contains=name))
-        if category:
+        if category := self.request.GET.get("category"):
             queries.append(Q(categories__name__contains=category))
-        if min_party and min_party.isdigit():
-            queries.append(Q(min_party__gte=min_party))
-        if max_party and max_party.isdigit():
-            queries.append(Q(max_party__lte=max_party))
+        if min_party := self.request.GET.get("min_party"):
+            if min_party.isdigit():
+                queries.append(Q(min_party__gte=min_party))
+        if max_party := self.request.GET.get("max_party"):
+            if max_party.isdigit():
+                queries.append(Q(max_party__lte=max_party))
         if queries:
             composite_query = self.get_composite_query(queries)
             return Restaurant.objects.filter(composite_query)
