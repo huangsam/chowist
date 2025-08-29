@@ -3,7 +3,7 @@
 CLOUDFLARE_BASE="https://cdnjs.cloudflare.com/ajax/libs"
 
 # Download Bootstrap CSS and JS
-BS_VERSION="5.3.6"
+BS_VERSION="5.3.8"
 BS_JS="bootstrap.min.js"
 BS_JS_MAP="$BS_JS.map"
 BS_CSS="bootstrap.min.css"
