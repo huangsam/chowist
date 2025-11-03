@@ -2,6 +2,7 @@
 
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/huangsam/chowist/ci.yml)](https://github.com/huangsam/chowist/actions)
 [![License](https://img.shields.io/github/license/huangsam/chowist)](https://github.com/huangsam/chowist/blob/main/LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/huangsam/chowist)](https://github.com/huangsam/chowist/releases/latest)
 
 Great places are chosen by great chowists.
 
