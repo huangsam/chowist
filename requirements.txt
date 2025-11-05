@@ -1,5 +1,5 @@
 crispy-bootstrap5==2025.6
-Django==5.2.7
+Django==5.2.8
 django-crispy-forms==2.4
 django-filter==25.2
 gunicorn==23.0.0
