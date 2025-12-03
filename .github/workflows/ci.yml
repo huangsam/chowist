@@ -11,13 +11,13 @@ permissions:
 
 jobs:
   python-build:
-    name: Python 3.13
+    name: Python 3.14
     runs-on: ubuntu-latest
 
     services:
       postgres:
         # Docker Hub image
-        image: postgres:16
+        image: postgres:18
         # Provide the credentials
         env:
           POSTGRES_USER: github
@@ -36,10 +36,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-      - name: Set up Python 3.13
+      - name: Set up Python 3.14
         uses: actions/setup-python@v6
         with:
-          python-version: '3.13'
+          python-version: '3.14'
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
