@@ -178,6 +178,14 @@ python manage.py collectstatic
 docker-compose up --build
 ```
 
+**Validation:**
+```
+ruff check
+mypy chowist places portal
+```
+
+**Install:** Virtual environment with latest Python possible at `./venv`. Use `requirements.txt` to install dependencies.
+
 **URLs:** /admin/, /, /places/, /places/restaurants/, /profile/, /accounts/login/
 
 **Relations:** restaurant.reviews.all(), user.reviews.all(), restaurant.categories.all(), user.profile, restaurant.get_average_rating()
