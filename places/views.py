@@ -1,7 +1,9 @@
+from typing import Any
 from urllib.parse import urlencode
 
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.http import HttpResponseRedirect
+from django.db.models import QuerySet
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import View
@@ -17,7 +19,7 @@ from places.models import Restaurant, Review
 class HomeView(View):
     template_name = "places/home.html"
 
-    def get(self, request):
+    def get(self, request: HttpRequest) -> HttpResponse:
         if request.GET:
             if (form := RestaurantForm(request.GET)).is_valid():
                 target_url = reverse("places:restaurant-list")
@@ -36,13 +38,13 @@ class RestaurantListView(ListView):
     context_object_name = "restaurant_list"
 
     @staticmethod
-    def get_composite_query(queries):
+    def get_composite_query(queries: Any) -> Any:
         composite_query = queries[0]
         for query in queries[1:]:
             composite_query &= query
         return composite_query
 
-    def get_queryset(self):
+    def get_queryset(self) -> QuerySet[Restaurant]:
         queryset = super().get_queryset()
         filterset = RestaurantFilter(self.request.GET, queryset=queryset)
         return filterset.qs
@@ -61,7 +63,7 @@ class RestaurantUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateVi
 
 
 class RestaurantRandomView(View):
-    def get(self, request):
+    def get(self, request: HttpRequest) -> HttpResponseRedirect:
         restaurant = Restaurant.objects.order_by("?").first()
         target_url = reverse("places:restaurant-detail", args=[restaurant.id])
         return HttpResponseRedirect(target_url)
@@ -70,7 +72,7 @@ class RestaurantRandomView(View):
 class RestaurantReviewView(LoginRequiredMixin, View):
     template_name = "places/restaurant_review.html"
 
-    def get(self, request, restaurant_id):
+    def get(self, request: HttpRequest, restaurant_id: int) -> HttpResponse:
         restaurant = Restaurant.objects.get(id=restaurant_id)
         try:
             review = Review.objects.get(place=restaurant, author=request.user)
@@ -80,7 +82,7 @@ class RestaurantReviewView(LoginRequiredMixin, View):
         context = {"form": form, "restaurant": restaurant}
         return render(request, self.template_name, context)
 
-    def post(self, request, restaurant_id):
+    def post(self, request: HttpRequest, restaurant_id: int) -> HttpResponse:
         form = ReviewForm(request.POST)
         restaurant = Restaurant.objects.get(id=restaurant_id)
         if not form.is_valid():

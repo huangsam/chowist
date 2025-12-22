@@ -1,7 +1,12 @@
+from typing import TYPE_CHECKING
+
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+
+if TYPE_CHECKING:
+    from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
@@ -13,15 +18,15 @@ class Profile(models.Model):
     class Meta:
         db_table = "profile"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<Profile id={self.id} username='{self.user.username}'>"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Profile for user {self.user.username} w/ email: {self.user.email or 'N/A'}"
 
 
 @receiver(post_save, sender=get_user_model())
-def create_or_update_user_profile(sender, instance, created, **kwargs):
+def create_or_update_user_profile(sender, instance: "User", created: bool, **kwargs) -> None:
     if created:
         Profile.objects.create(user=instance)
     instance.profile.save()

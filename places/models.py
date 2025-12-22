@@ -19,7 +19,7 @@ class Restaurant(models.Model):
         db_table = "restaurant"
         ordering = ["name"]
 
-    def get_average_rating(self):
+    def get_average_rating(self) -> float:
         ratings_count = 0
         ratings_sum = 0
         for review in self.reviews.all():
@@ -29,18 +29,18 @@ class Restaurant(models.Model):
             return math.nan
         return ratings_sum / ratings_count
 
-    def get_distance_to(self, other):
+    def get_distance_to(self, other: "Restaurant") -> float:
         y_diff = self.latitude - other.latitude
         x_diff = self.longitude - other.longitude
         return math.sqrt(y_diff**2 + x_diff**2)
 
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
         return reverse("places:restaurant-detail", kwargs={"pk": self.pk})
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<Restaurant id={self.id} name='{self.name}'>"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Restaurant {self.name} located at {self.address}"
 
 
@@ -64,10 +64,10 @@ class Review(models.Model):
         unique_together = ["place", "author"]
         ordering = ["rating"]
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<Review id={self.id} rating={self.rating}>"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"User {self.author.username} reviewed {self.place.name} with a rating of {self.rating}"
 
 
@@ -80,8 +80,8 @@ class Category(models.Model):
         verbose_name_plural = "categories"
         ordering = ["name"]
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<Category id={self.id} name='{self.name}'>"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Category with the name of {self.name}"

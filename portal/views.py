@@ -1,5 +1,7 @@
+from typing import Any
+
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponseRedirect
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import TemplateView, View
@@ -18,7 +20,7 @@ class ProfileSignupView(FormView):
     form_class = UserForm
     success_url = reverse_lazy("portal:home")
 
-    def form_valid(self, form):
+    def form_valid(self, form: Any) -> HttpResponseRedirect:
         user = form.save(commit=False)
         password = form.cleaned_data["password"]
         user.set_password(password)
@@ -29,7 +31,7 @@ class ProfileSignupView(FormView):
 class ProfileDetailView(LoginRequiredMixin, View):
     template_name = "portal/profile_detail.html"
 
-    def get(self, request):
+    def get(self, request: HttpRequest) -> HttpResponse:
         profile = Profile.objects.get(user=request.user)
         return render(request, self.template_name, {"profile": profile})
 
@@ -37,12 +39,12 @@ class ProfileDetailView(LoginRequiredMixin, View):
 class ProfileUpdateView(LoginRequiredMixin, View):
     template_name = "portal/profile_update.html"
 
-    def get(self, request):
+    def get(self, request: HttpRequest) -> HttpResponse:
         profile = Profile.objects.get(user=request.user)
         form = ProfileForm(instance=profile)
         return render(request, self.template_name, {"form": form})
 
-    def post(self, request):
+    def post(self, request: HttpRequest) -> HttpResponse:
         form = ProfileForm(request.POST)
         if not form.is_valid():
             return render(request, self.template_name, {"form": form})

@@ -15,3 +15,6 @@ line_length = 160
 
 [tool.coverage.report]
 fail_under = 80
+
+[tool.mypy]
+ignore_missing_imports = true

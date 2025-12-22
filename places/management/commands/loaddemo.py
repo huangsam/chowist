@@ -2,6 +2,7 @@ import json
 import random
 from argparse import FileType
 from collections import defaultdict
+from typing import TYPE_CHECKING, Any, Dict, IO, List, Optional
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group, Permission
@@ -11,34 +12,37 @@ from django.db.transaction import atomic
 
 from places.models import Category, Rating, Restaurant, Review
 
+if TYPE_CHECKING:
+    from django.contrib.auth.models import User
+
 
 class DemoBuilder:
-    def __init__(self, stdout, style, places_json_file):
+    def __init__(self, stdout: Any, style: Any, places_json_file: IO[str]) -> None:
         self.stdout = stdout
         self.style = style
         self.places_json_file = places_json_file
         self.UserModel = get_user_model()
         self.admin_user = "admin"
         self.normal_users = ["john", "jane"]
-        self.reviewers_group = None
-        self.restaurants_data = None
-        self.created_restaurants = []
+        self.reviewers_group: Optional[Group] = None
+        self.restaurants_data: Optional[List[Dict[str, Any]]] = None
+        self.created_restaurants: List[Restaurant] = []
 
-    def __enter__(self):
+    def __enter__(self) -> "DemoBuilder":
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    def __exit__(self, exc_type: Optional[type], exc_val: Optional[Exception], exc_tb: Optional[Any]) -> None:
         if exc_type:
             self.stdout.write(self.style.ERROR(f"An error occurred: {exc_val}"))
         else:
             self.stdout.write(self.style.SUCCESS("Demo data loaded successfully!"))
 
     @staticmethod
-    def _get_user_options(user):
+    def _get_user_options(user: str) -> Dict[str, str]:
         return {"username": user, "email": f"{user}@localhost", "password": user}
 
     @staticmethod
-    def _create_review_for_restaurant(restaurant, reviewer):
+    def _create_review_for_restaurant(restaurant: Restaurant, reviewer: "User") -> None:
         rating = random.randint(1, 5)
         rating_name = Rating(rating).name
         rating_title = f"{rating_name.title()} place"
@@ -52,7 +56,7 @@ class DemoBuilder:
         )
 
     @atomic
-    def with_clean_data(self):
+    def with_clean_data(self) -> "DemoBuilder":
         self.stdout.write("Delete existing data")
         self.UserModel.objects.all().delete()
         Category.objects.all().delete()
@@ -62,7 +66,7 @@ class DemoBuilder:
         return self
 
     @atomic
-    def with_reviewers_group(self):
+    def with_reviewers_group(self) -> "DemoBuilder":
         self.stdout.write("Create reviewers group")
         is_places = Q(content_type__app_label__exact="places")
         is_portal = Q(content_type__app_label__exact="portal")
@@ -78,7 +82,7 @@ class DemoBuilder:
         return self
 
     @atomic
-    def with_users(self):
+    def with_users(self) -> "DemoBuilder":
         if not self.reviewers_group:
             raise ValueError("Reviewers group must be created before adding users.")
 
@@ -93,7 +97,7 @@ class DemoBuilder:
         return self
 
     @atomic
-    def with_restaurants(self):
+    def with_restaurants(self) -> "DemoBuilder":
         self.stdout.write("Create restaurants")
         self.restaurants_data = json.load(self.places_json_file)
         for item in self.restaurants_data:
@@ -111,11 +115,12 @@ class DemoBuilder:
         return self
 
     @atomic
-    def with_categories(self):
+    def with_categories(self) -> "DemoBuilder":
         if not self.created_restaurants:
             raise ValueError("Restaurants must be created before adding categories.")
 
         self.stdout.write("Create categories")
+        assert self.restaurants_data is not None
         categories_for_restaurants = defaultdict(list)
         for item in self.restaurants_data:
             # We need to map the JSON items back to the created Restaurant objects
@@ -132,7 +137,7 @@ class DemoBuilder:
         return self
 
     @atomic
-    def with_reviews(self):
+    def with_reviews(self) -> "DemoBuilder":
         if not self.created_restaurants:
             raise ValueError("Restaurants must be created before adding reviews.")
 
@@ -149,10 +154,10 @@ class DemoBuilder:
 class Command(BaseCommand):
     help = "Load demo data for places app"
 
-    def add_arguments(self, parser):
+    def add_arguments(self, parser: Any) -> None:
         parser.add_argument("places", help="JSON artifact", type=FileType("r"))
 
-    def handle(self, *args, **options):
+    def handle(self, *args: Any, **options: Any) -> None:
         with DemoBuilder(self.stdout, self.style, options["places"]) as builder:
             builder = builder.with_clean_data()
             builder = builder.with_reviewers_group().with_users()
