@@ -2,7 +2,7 @@ import json
 import random
 from argparse import FileType
 from collections import defaultdict
-from typing import TYPE_CHECKING, Any, Dict, IO, List, Optional
+from typing import IO, TYPE_CHECKING, Any, Dict, List, Optional
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group, Permission
