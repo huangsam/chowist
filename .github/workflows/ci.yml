@@ -36,26 +36,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-      - name: Set up Python 3.14
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.14'
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: Setup latest version of uv
+        uses: astral-sh/setup-uv@v7
       - name: Lint with ruff
-        run: |
-          ruff check
+        run: uv run ruff check
       - name: Run tests and report with coverage
         run: |
-          coverage run manage.py test
-          coverage report
+          uv run coverage run manage.py test
+          uv run coverage report
         env:
           DJANGO_SETTINGS_MODULE: chowist.settings.test
       - name: Migrate schema and load data with Django
         run: |
-          python manage.py migrate
-          python manage.py loaddemo .demo/places.json
+          uv run manage.py migrate
+          uv run manage.py loaddemo .demo/places.json
         env:
           DJANGO_SETTINGS_MODULE: chowist.settings.test

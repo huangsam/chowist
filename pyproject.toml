@@ -1,3 +1,20 @@
+[project]
+name = "chowist"
+description = "Great places are chosen by great chowists"
+version = "3.3.3"
+dependencies = [
+    "crispy-bootstrap5==2025.6",
+    "Django==6.0",
+    "django-crispy-forms==2.5",
+    "django-filter==25.2",
+    "gunicorn==23.0.0",
+    "psycopg2-binary==2.9.11",
+    "ruff",
+    "mypy",
+    "coverage",
+]
+requires-python = ">=3.12"
+
 [tool.ruff]
 line-length = 160
 
@@ -8,6 +25,9 @@ ignore = ["F405"]
 
 [tool.coverage.report]
 fail_under = 80
+
+[tool.coverage.run]
+source = ["chowist", "places", "portal"]
 
 [tool.mypy]
 ignore_missing_imports = true
