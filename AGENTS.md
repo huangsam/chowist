@@ -111,7 +111,7 @@ Restaurant
 
 **Testing:** python manage.py test (80% coverage).
 
-**Code Quality:** ruff format/check, isort (pyproject.toml).
+**Code Quality:** ruff format/check (pyproject.toml).
 
 ## Key Patterns
 

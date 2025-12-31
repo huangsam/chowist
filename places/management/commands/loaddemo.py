@@ -2,7 +2,7 @@ import json
 import random
 from argparse import FileType
 from collections import defaultdict
-from typing import IO, TYPE_CHECKING, Any, Dict, List, Optional
+from typing import IO, TYPE_CHECKING, Any
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group, Permission
@@ -24,21 +24,21 @@ class DemoBuilder:
         self.UserModel = get_user_model()
         self.admin_user = "admin"
         self.normal_users = ["john", "jane"]
-        self.reviewers_group: Optional[Group] = None
-        self.restaurants_data: Optional[List[Dict[str, Any]]] = None
-        self.created_restaurants: List[Restaurant] = []
+        self.reviewers_group: Group | None = None
+        self.restaurants_data: list[dict[str, Any]] | None = None
+        self.created_restaurants: list[Restaurant] = []
 
     def __enter__(self) -> "DemoBuilder":
         return self
 
-    def __exit__(self, exc_type: Optional[type], exc_val: Optional[Exception], exc_tb: Optional[Any]) -> None:
+    def __exit__(self, exc_type: type | None, exc_val: Exception | None, exc_tb: Any | None) -> None:
         if exc_type:
             self.stdout.write(self.style.ERROR(f"An error occurred: {exc_val}"))
         else:
             self.stdout.write(self.style.SUCCESS("Demo data loaded successfully!"))
 
     @staticmethod
-    def _get_user_options(user: str) -> Dict[str, str]:
+    def _get_user_options(user: str) -> dict[str, str]:
         return {"username": user, "email": f"{user}@localhost", "password": user}
 
     @staticmethod

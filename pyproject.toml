@@ -2,16 +2,9 @@
 line-length = 160
 
 [tool.ruff.lint]
+select = ["E", "F", "UP", "B", "I"]
 # F405: Star imports are useful for common project settings
 ignore = ["F405"]
-
-[tool.isort]
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-ensure_newline_before_comments = true
-line_length = 160
 
 [tool.coverage.report]
 fail_under = 80
