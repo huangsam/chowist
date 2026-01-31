@@ -2,6 +2,7 @@ import math
 
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.db.models import Avg
 from django.urls import reverse
 
 
@@ -20,14 +21,8 @@ class Restaurant(models.Model):
         ordering = ["name"]
 
     def get_average_rating(self) -> float:
-        ratings_count = 0
-        ratings_sum = 0
-        for review in self.reviews.all():
-            ratings_sum += review.rating
-            ratings_count += 1
-        if ratings_count == 0:
-            return math.nan
-        return ratings_sum / ratings_count
+        result = self.reviews.aggregate(avg_rating=Avg("rating"))
+        return result["avg_rating"] if result["avg_rating"] is not None else math.nan
 
     def get_distance_to(self, other: "Restaurant") -> float:
         y_diff = self.latitude - other.latitude
