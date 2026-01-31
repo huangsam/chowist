@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from places.models import Restaurant
+from places.models import Restaurant, Review
 from places.views import RestaurantListView
 
 # Module-level constants
@@ -129,3 +129,106 @@ class TestRestaurantRandomView(TestCase):
     def test_desired_location(self):
         resp = self.client.get(self.get_url())
         self.assertEqual(resp.status_code, 302)
+
+
+class TestRestaurantReviewView(TestCase):
+    """RestaurantReviewView test suite"""
+
+    UserModel = get_user_model()
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.restaurant = Restaurant.objects.create(
+            name=_CHICK_FIL_A,
+            address=_VENUS,
+            latitude=0.00,
+            longitude=0.00,
+            min_party=3,
+            max_party=8,
+            yelp_link="chick-fil-a-venus",
+        )
+        cls.user = cls.UserModel.objects.create_user("john", "john@localhost", "john")
+
+    def get_url(self, restaurant_id):
+        return reverse("places:restaurant-review", args=[restaurant_id])
+
+    def test_get_review_form_new_review(self):
+        """Test GET request for new review form"""
+        self.client.login(username="john", password="john")
+        resp = self.client.get(self.get_url(self.restaurant.id))
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn("form", resp.context)
+        self.assertIn("restaurant", resp.context)
+        self.assertEqual(resp.context["restaurant"], self.restaurant)
+
+    def test_get_review_form_existing_review(self):
+        """Test GET request when user already has a review"""
+        self.client.login(username="john", password="john")
+        # Create existing review
+        Review.objects.create(place=self.restaurant, author=self.user, title="Great place", body="Really enjoyed it", rating=5)
+        resp = self.client.get(self.get_url(self.restaurant.id))
+        self.assertEqual(resp.status_code, 200)
+        form = resp.context["form"]
+        self.assertEqual(form.instance.title, "Great place")
+        self.assertEqual(form.instance.rating, 5)
+
+    def test_get_review_form_invalid_restaurant(self):
+        """Test GET request with invalid restaurant ID"""
+        self.client.login(username="john", password="john")
+        resp = self.client.get(self.get_url(99999))
+        self.assertEqual(resp.status_code, 404)
+
+    def test_get_review_form_unauthenticated(self):
+        """Test GET request without authentication"""
+        resp = self.client.get(self.get_url(self.restaurant.id))
+        self.assertEqual(resp.status_code, 302)  # Redirect to login
+
+    def test_post_review_form_valid_new_review(self):
+        """Test POST request creating new review"""
+        self.client.login(username="john", password="john")
+        form_data = {"title": "Amazing food", "body": "Best chicken sandwich ever", "rating": 5}
+        resp = self.client.post(self.get_url(self.restaurant.id), form_data)
+        self.assertEqual(resp.status_code, 302)
+        # Check review was created
+        review = Review.objects.get(place=self.restaurant, author=self.user)
+        self.assertEqual(review.title, "Amazing food")
+        self.assertEqual(review.rating, 5)
+
+    def test_post_review_form_valid_update_review(self):
+        """Test POST request updating existing review"""
+        self.client.login(username="john", password="john")
+        # Create existing review
+        Review.objects.create(place=self.restaurant, author=self.user, title="Great place", body="Really enjoyed it", rating=4)
+        form_data = {"title": "Amazing place", "body": "Even better than I thought", "rating": 5}
+        resp = self.client.post(self.get_url(self.restaurant.id), form_data)
+        self.assertEqual(resp.status_code, 302)
+        # Check review was updated
+        review = Review.objects.get(place=self.restaurant, author=self.user)
+        self.assertEqual(review.title, "Amazing place")
+        self.assertEqual(review.rating, 5)
+
+    def test_post_review_form_invalid(self):
+        """Test POST request with invalid form data"""
+        self.client.login(username="john", password="john")
+        form_data = {
+            "title": "Hi",  # Too short
+            "body": "Good",  # Too short
+            "rating": 6,  # Invalid rating
+        }
+        resp = self.client.post(self.get_url(self.restaurant.id), form_data)
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn("form", resp.context)
+        self.assertFalse(resp.context["form"].is_valid())
+
+    def test_post_review_form_invalid_restaurant(self):
+        """Test POST request with invalid restaurant ID"""
+        self.client.login(username="john", password="john")
+        form_data = {"title": "Amazing food", "body": "Best chicken sandwich ever", "rating": 5}
+        resp = self.client.post(self.get_url(99999), form_data)
+        self.assertEqual(resp.status_code, 404)
+
+    def test_post_review_form_unauthenticated(self):
+        """Test POST request without authentication"""
+        form_data = {"title": "Amazing food", "body": "Best chicken sandwich ever", "rating": 5}
+        resp = self.client.post(self.get_url(self.restaurant.id), form_data)
+        self.assertEqual(resp.status_code, 302)  # Redirect to login

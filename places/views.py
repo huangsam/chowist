@@ -1,9 +1,8 @@
-from typing import Any
 from urllib.parse import urlencode
 
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.db.models import QuerySet
-from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
+from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import View
@@ -37,13 +36,6 @@ class RestaurantListView(ListView):
     paginate_by = 15
     context_object_name = "restaurant_list"
 
-    @staticmethod
-    def get_composite_query(queries: Any) -> Any:
-        composite_query = queries[0]
-        for query in queries[1:]:
-            composite_query &= query
-        return composite_query
-
     def get_queryset(self) -> QuerySet[Restaurant]:
         queryset = super().get_queryset()
         filterset = RestaurantFilter(self.request.GET, queryset=queryset)
@@ -73,7 +65,10 @@ class RestaurantReviewView(LoginRequiredMixin, View):
     template_name = "places/restaurant_review.html"
 
     def get(self, request: HttpRequest, restaurant_id: int) -> HttpResponse:
-        restaurant = Restaurant.objects.get(id=restaurant_id)
+        try:
+            restaurant = Restaurant.objects.get(id=restaurant_id)
+        except Restaurant.DoesNotExist:
+            raise Http404("Restaurant not found") from None
         try:
             review = Review.objects.get(place=restaurant, author=request.user)
             form = ReviewForm(instance=review)
@@ -83,8 +78,11 @@ class RestaurantReviewView(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
     def post(self, request: HttpRequest, restaurant_id: int) -> HttpResponse:
+        try:
+            restaurant = Restaurant.objects.get(id=restaurant_id)
+        except Restaurant.DoesNotExist:
+            raise Http404("Restaurant not found") from None
         form = ReviewForm(request.POST)
-        restaurant = Restaurant.objects.get(id=restaurant_id)
         if not form.is_valid():
             context = {"form": form, "restaurant": restaurant}
             return render(request, self.template_name, context)
