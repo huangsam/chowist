@@ -1,3 +1,5 @@
+import math
+
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
 from django.test import TestCase
@@ -5,8 +7,6 @@ from django.urls import reverse
 
 from places.models import Restaurant, Review
 from places.views import RestaurantListView
-
-import math
 
 # Module-level constants
 _CHICK_FIL_A = "Chick Fil A"
@@ -80,7 +80,7 @@ class TestRestaurantListView(TestCase):
 
         # Clear cache and get rating (should cache it)
         cache.delete(rating_cache_key)
-        rating1 = restaurant.get_average_rating()
+        restaurant.get_average_rating()
 
         # Verify it's cached
         cached_rating = cache.get(rating_cache_key)
