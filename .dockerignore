@@ -2,6 +2,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 venv/
+.venv/
 *$py.class
 *.cover
 *.db

@@ -1,0 +1,39 @@
+services:
+  db:
+    image: 'postgres:18-alpine'
+    volumes:
+      - 'postgres_data:/var/lib/postgresql/data'
+    environment:
+      # Align credentials with Django dev settings
+      - POSTGRES_DB=chowist
+      - POSTGRES_USER=chowist
+      - POSTGRES_PASSWORD=chowist
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chowist -d chowist"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  app:
+    build:
+      # Specify the path to the Dockerfile
+      dockerfile: './Dockerfile'
+    environment:
+      - DJANGO_SECRET=dummy
+      - DJANGO_SETTINGS_MODULE=chowist.settings.dev
+    ports:
+      - '8000:8000'
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
