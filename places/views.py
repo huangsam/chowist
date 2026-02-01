@@ -1,6 +1,7 @@
 from urllib.parse import urlencode
 
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.core.cache import cache
 from django.db.models import QuerySet
 from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -53,6 +54,12 @@ class RestaurantUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateVi
     template_name_suffix = "_update"
     permission_required = "places.change_restaurant"
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        # Clear restaurant card cache after update
+        cache.delete(f"restaurant_card_{self.object.id}")
+        return response
+
 
 class RestaurantRandomView(View):
     def get(self, request: HttpRequest) -> HttpResponseRedirect:
@@ -90,6 +97,9 @@ class RestaurantReviewView(LoginRequiredMixin, View):
             review = Review.objects.get(place=restaurant, author=request.user)
             review.__dict__.update(**form.cleaned_data)
             review.save()
+            # Clear caches after review update
+            cache.delete(f"restaurant_avg_rating_{restaurant.id}")
+            cache.delete(f"restaurant_card_{restaurant.id}")
         except Review.DoesNotExist:
             Review.objects.create(
                 place=restaurant,
@@ -98,5 +108,8 @@ class RestaurantReviewView(LoginRequiredMixin, View):
                 body=form.cleaned_data["body"],
                 rating=form.cleaned_data["rating"],
             )
+            # Clear caches after review creation
+            cache.delete(f"restaurant_avg_rating_{restaurant.id}")
+            cache.delete(f"restaurant_card_{restaurant.id}")
         success_url = reverse("places:restaurant-detail", args=[restaurant.id])
         return HttpResponseRedirect(success_url)

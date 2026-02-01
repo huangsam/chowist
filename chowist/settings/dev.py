@@ -21,6 +21,16 @@ DATABASES = {
 }
 
 
+# Cache configuration for development
+# Uses Redis for better performance and persistence
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://redis:6379/1",  # Use service name in Docker Compose
+    }
+}
+
+
 # Email Backend
 # https://docs.djangoproject.com/en/4.1/topics/email/#email-backends
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

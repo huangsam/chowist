@@ -1,6 +1,7 @@
 import math
 
 from django.contrib.auth import get_user_model
+from django.core.cache import cache
 from django.db import models
 from django.db.models import Avg
 from django.urls import reverse
@@ -21,8 +22,13 @@ class Restaurant(models.Model):
         ordering = ["name"]
 
     def get_average_rating(self) -> float:
-        result = self.reviews.aggregate(avg_rating=Avg("rating"))
-        return result["avg_rating"] if result["avg_rating"] is not None else math.nan
+        cache_key = f"restaurant_avg_rating_{self.id}"
+        rating = cache.get(cache_key)
+        if rating is None:
+            result = self.reviews.aggregate(avg_rating=Avg("rating"))
+            rating = result["avg_rating"] if result["avg_rating"] is not None else math.nan
+            cache.set(cache_key, rating, 300)  # Cache for 5 minutes
+        return rating
 
     def get_distance_to(self, other: "Restaurant") -> float:
         y_diff = self.latitude - other.latitude

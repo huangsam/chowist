@@ -178,6 +178,16 @@ LOGGING = {
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 
+# Caching configuration
+# https://docs.djangoproject.com/en/6.0/topics/cache/
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-snowflake",
+    }
+}
+
+
 # Crispy forms
 # https://django-crispy-forms.readthedocs.io/en/latest/install.html
 # https://github.com/django-crispy-forms/crispy-bootstrap5
