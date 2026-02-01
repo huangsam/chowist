@@ -54,7 +54,7 @@ Here are the loaded users for reference:
 
 Complete local setup with Docker by running a single command:
 
-    docker-compose -f build/compose/compose.yml --project-directory=. up --build -d
+    docker-compose up --build -d
 
 ### Production setup
 
