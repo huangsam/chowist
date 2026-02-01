@@ -13,3 +13,12 @@ DATABASES = {
         "PORT": "5432",
     }
 }
+
+# Cache configuration for testing
+# Uses Redis in CI to match production caching behavior
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+    }
+}
