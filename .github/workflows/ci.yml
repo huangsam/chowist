@@ -47,7 +47,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Setup latest version of uv
         uses: astral-sh/setup-uv@v7
       - name: Lint with ruff
