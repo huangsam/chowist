@@ -3,7 +3,7 @@ name = "chowist"
 description = "Great places are chosen by great chowists"
 version = "3.3.3"
 dependencies = [
-    "crispy-bootstrap5==2025.6",
+    "crispy-bootstrap5==2026.3",
     "Django==6.0.2",
     "django-crispy-forms==2.5",
     "django-filter==25.2",
