@@ -32,7 +32,7 @@ dependencies = [
 requires-dist = [
     { name = "coverage" },
     { name = "crispy-bootstrap5", specifier = "==2026.3" },
-    { name = "django", specifier = "==6.0.3" },
+    { name = "django", specifier = "~=6.0.0" },
     { name = "django-crispy-forms", specifier = "==2.6" },
     { name = "django-filter", specifier = "==25.2" },
     { name = "gunicorn", specifier = "==25.1.0" },

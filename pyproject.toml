@@ -4,7 +4,7 @@ description = "Great places are chosen by great chowists"
 version = "3.3.3"
 dependencies = [
     "crispy-bootstrap5==2026.3",
-    "Django==6.0.3",
+    "Django~=6.0.0",
     "django-crispy-forms==2.6",
     "django-filter==25.2",
     "gunicorn==25.1.0",
