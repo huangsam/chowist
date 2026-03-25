@@ -7,7 +7,7 @@ dependencies = [
     "Django~=6.0.0",
     "django-crispy-forms==2.6",
     "django-filter==25.2",
-    "gunicorn==25.1.0",
+    "gunicorn==25.2.0",
     "psycopg2-binary==2.9.11",
     "redis==7.4.0",
     "ruff",
