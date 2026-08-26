@@ -7,7 +7,7 @@ dependencies = [
     "Django~=6.0.0",
     "django~=6.0.7",
     "django-filter==26.1",
-    "gunicorn==26.0.0",
+    "gunicorn==26.1.0",
     "psycopg2-binary==2.9.12",
     "redis==8.1.0",
     "ruff",
