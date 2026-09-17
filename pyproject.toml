@@ -8,7 +8,7 @@ dependencies = [
     "django~=6.0.7",
     "django-filter==26.1",
     "gunicorn==26.2.0",
-    "psycopg2-binary==2.9.12",
+    "psycopg2-binary==2.9.13",
     "redis==8.1.0",
     "ruff",
     "mypy",
