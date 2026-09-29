@@ -98,14 +98,13 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "coverage" },
-    { name = "crispy-bootstrap5", specifier = "==2026.9" },
-    { name = "django", specifier = "~=6.0.0" },
+    { name = "crispy-bootstrap5", specifier = "~=2026.9" },
     { name = "django", specifier = "~=6.0.7" },
-    { name = "django-filter", specifier = "==26.1" },
-    { name = "gunicorn", specifier = "==26.2.0" },
+    { name = "django-filter", specifier = "~=26.1" },
+    { name = "gunicorn", specifier = "~=26.2" },
     { name = "mypy" },
-    { name = "psycopg2-binary", specifier = "==2.9.13" },
-    { name = "redis", specifier = "==8.1.0" },
+    { name = "psycopg2-binary", specifier = "~=2.9" },
+    { name = "redis", specifier = "~=8.1" },
     { name = "ruff" },
 ]
 
